@@ -13,7 +13,7 @@
 	
 	}
 
-.login{
+.regist{
 	float:right;
 	width:450px;
 	height:500px;
@@ -108,6 +108,7 @@
 	border:1px solid #ccc;
 	background-color:#fff;
 	background-image:none;
+	margin-bottom:16px;
 	}
 	
 .forgetpwd{
