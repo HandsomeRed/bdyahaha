@@ -31,7 +31,12 @@
 			</result>
 		</action>
 	
-		
+		<!-- 账户检测 -->
+		<action name="doCheck" class="uAction" method="doCheck">
+			<!-- 返回结果
+			<result name="success"></result>
+			<result name="fail"></result> -->
+		</action>
 	</package>
 	 
 </struts>

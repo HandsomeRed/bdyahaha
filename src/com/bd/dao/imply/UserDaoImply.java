@@ -44,5 +44,20 @@ public class UserDaoImply implements UserDao{
 		System.out.println("[UserDaoImply - addUser]结束:" + result);
 		return result;
 	}
+	//查询用户是否可用
+	public boolean checkUser(UserEntity cond) {
+		boolean result = false;
+		List<UserEntity> ueList = null;
+		Session session = sessionFactory.getCurrentSession(); // 创建hibernate session对象
+		Criteria criteria = session.createCriteria(UserEntity.class);
+		Example example = Example.create(cond); // 创建实例对象
+		criteria.add(example);
+		System.out.println(ueList==null);
+		ueList = criteria.list();
+		if(ueList.isEmpty()) {
+			result  = true;
+		}
+		return result;
+	}
 	
 }
