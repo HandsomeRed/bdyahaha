@@ -18,8 +18,8 @@
     	<div class="form">
     		<form action="doLogin">
     		<div class="tab"><!--登录tab-->
-        		<a href id="tab_1" class="tab_1">账号登录</a>
-        		<a href id="tab_2" class="tab_2">免密登录</a>
+        		<a href="" id="tab_1" class="tab_1">账号登录</a>
+        		<a href="" id="tab_2" class="tab_2">免密登录</a>
 	       	</div>
             <div class="clears"></div>
 	       	<div class="accountTab">
@@ -29,7 +29,7 @@
             </div>
             <div class="passwordTab">
             	<div class="password">
-                	<input type="text" name="ue.password" placeholder="密码" id="password" class="pwdInput">
+                	<input type="password" name="ue.password" placeholder="密码" id="password" class="pwdInput">
                 </div>
             </div>
             <div class="forgetpwd"><a href="">忘记密码</a></div>
@@ -46,4 +46,9 @@
 
 </div>
 </body>
+<script type="text/javascript">
+
+
+
+</script>
 </html>
