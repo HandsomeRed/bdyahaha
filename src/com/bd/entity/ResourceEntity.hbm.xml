@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bd.entity.ResourceEntity" table="resource" schema="blog" lazy="false">
+        <id name="id">
+            <column name="id" sql-type="int(10)"/>
+            <generator class="native"/>
+        </id>
+        <property name="releaseTime">
+            <column name="releaseTime" sql-type="date" not-null="false"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(32)" length="32" not-null="false"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(16)" length="16" not-null="false"/>
+        </property>
+        <property name="introduction">
+            <column name="introduction" sql-type="varchar(255)" not-null="false"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="varchar(16)" length="16" not-null="false"/>
+        </property>
+        <property name="addr">
+            <column name="addr" sql-type="varchar(255)" not-null="false"/>
+        </property>
+        <many-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity">
+            <column name="rmId" not-null="false"/>
+        </many-to-one>
+        <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity">
+            <column name="rcsId" not-null="false"/>
+        </many-to-one>
+        <many-to-one name="resourceKeyword" class="com.bd.entity.ResourceKeywordEntity">
+            <column name="rkId" not-null="false"/>
+        </many-to-one>
+        <set name="details" inverse="true">
+            <key>
+                <column name="rId" not-null="false"/>
+            </key>
+            <one-to-many class="com.bd.entity.DetailEntity"/>
+        </set>
+        <set name="favoriteResources" inverse="true">
+            <key>
+                <column name="rId" not-null="false"/>
+            </key>
+            <one-to-many class="com.bd.entity.FavoriteResourceEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -22,15 +22,15 @@ public class UserEntity {
     private String userPic;
     private Integer fans;
     private String status;
-//    private Set<AttentionFansEntity> attentionFansById;
-//    private Set<AttentionFansEntity> attentionFansById_0;
-//    private BlogMngEntity blogMng;
-//    private Set<DetailEntity> detailsById;
-//    private Set<FavoriteAttentionEntity> favoriteAttentionsById;
-//    private Set<FavoriteListEntity> favoriteListsById;
-//    private Set<InformationEntity> informationById;
-//    private Set<InformationEntity> informationById_0;
-//    private Set<ResourceMngEntity> resourceMngsById;
+    private Set<AttentionFansEntity> attentionFansById;
+    private Set<AttentionFansEntity> attentionFansById_0;
+    private BlogMngEntity blogMng;
+    private Set<DetailEntity> detailsById;
+    private Set<FavoriteAttentionEntity> favoriteAttentionsById;
+    private Set<FavoriteListEntity> favoriteListsById;
+    private Set<InformationEntity> informationById;
+    private Set<InformationEntity> informationById_0;
+    private Set<ResourceMngEntity> resourceMngsById;
 
     public int getId() {
         return id;
@@ -197,75 +197,75 @@ public class UserEntity {
         return Objects.hash(id, account, password, name, realName, sex, birth, address, trade, position, introduction, registDate, email, phone, userPic, fans, status);
     }
 
-//    public Set<AttentionFansEntity> getAttentionFansById() {
-//        return attentionFansById;
-//    }
-//
-//    public void setAttentionFansById(Set<AttentionFansEntity> attentionFansById) {
-//        this.attentionFansById = attentionFansById;
-//    }
-//
-//    public Set<AttentionFansEntity> getAttentionFansById_0() {
-//        return attentionFansById_0;
-//    }
-//
-//    public void setAttentionFansById_0(Set<AttentionFansEntity> attentionFansById_0) {
-//        this.attentionFansById_0 = attentionFansById_0;
-//    }
-//
-//    public BlogMngEntity getBlogMng() {
-//        return blogMng;
-//    }
-//
-//    public void setBlogMng(BlogMngEntity blogMngsById) {
-//        this.blogMng = blogMngsById;
-//    }
-//
-//    public Set<DetailEntity> getDetailsById() {
-//        return detailsById;
-//    }
-//
-//    public void setDetailsById(Set<DetailEntity> detailsById) {
-//        this.detailsById = detailsById;
-//    }
-//
-//    public Set<FavoriteAttentionEntity> getFavoriteAttentionsById() {
-//        return favoriteAttentionsById;
-//    }
-//
-//    public void setFavoriteAttentionsById(Set<FavoriteAttentionEntity> favoriteAttentionsById) {
-//        this.favoriteAttentionsById = favoriteAttentionsById;
-//    }
-//
-//    public Set<FavoriteListEntity> getFavoriteListsById() {
-//        return favoriteListsById;
-//    }
-//
-//    public void setFavoriteListsById(Set<FavoriteListEntity> favoriteListsById) {
-//        this.favoriteListsById = favoriteListsById;
-//    }
-//
-//    public Set<InformationEntity> getInformationById() {
-//        return informationById;
-//    }
-//
-//    public void setInformationById(Set<InformationEntity> informationById) {
-//        this.informationById = informationById;
-//    }
-//
-//    public Set<InformationEntity> getInformationById_0() {
-//        return informationById_0;
-//    }
-//
-//    public void setInformationById_0(Set<InformationEntity> informationById_0) {
-//        this.informationById_0 = informationById_0;
-//    }
-//
-//    public Set<ResourceMngEntity> getResourceMngsById() {
-//        return resourceMngsById;
-//    }
-//
-//    public void setResourceMngsById(Set<ResourceMngEntity> resourceMngsById) {
-//        this.resourceMngsById = resourceMngsById;
-//    }
+    public Set<AttentionFansEntity> getAttentionFansById() {
+        return attentionFansById;
+    }
+
+    public void setAttentionFansById(Set<AttentionFansEntity> attentionFansById) {
+        this.attentionFansById = attentionFansById;
+    }
+
+    public Set<AttentionFansEntity> getAttentionFansById_0() {
+        return attentionFansById_0;
+    }
+
+    public void setAttentionFansById_0(Set<AttentionFansEntity> attentionFansById_0) {
+        this.attentionFansById_0 = attentionFansById_0;
+    }
+
+    public BlogMngEntity getBlogMng() {
+        return blogMng;
+    }
+
+    public void setBlogMng(BlogMngEntity blogMngsById) {
+        this.blogMng = blogMngsById;
+    }
+
+    public Set<DetailEntity> getDetailsById() {
+        return detailsById;
+    }
+
+    public void setDetailsById(Set<DetailEntity> detailsById) {
+        this.detailsById = detailsById;
+    }
+
+    public Set<FavoriteAttentionEntity> getFavoriteAttentionsById() {
+        return favoriteAttentionsById;
+    }
+
+    public void setFavoriteAttentionsById(Set<FavoriteAttentionEntity> favoriteAttentionsById) {
+        this.favoriteAttentionsById = favoriteAttentionsById;
+    }
+
+    public Set<FavoriteListEntity> getFavoriteListsById() {
+        return favoriteListsById;
+    }
+
+    public void setFavoriteListsById(Set<FavoriteListEntity> favoriteListsById) {
+        this.favoriteListsById = favoriteListsById;
+    }
+
+    public Set<InformationEntity> getInformationById() {
+        return informationById;
+    }
+
+    public void setInformationById(Set<InformationEntity> informationById) {
+        this.informationById = informationById;
+    }
+
+    public Set<InformationEntity> getInformationById_0() {
+        return informationById_0;
+    }
+
+    public void setInformationById_0(Set<InformationEntity> informationById_0) {
+        this.informationById_0 = informationById_0;
+    }
+
+    public Set<ResourceMngEntity> getResourceMngsById() {
+        return resourceMngsById;
+    }
+
+    public void setResourceMngsById(Set<ResourceMngEntity> resourceMngsById) {
+        this.resourceMngsById = resourceMngsById;
+    }
 }

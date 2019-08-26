@@ -6,17 +6,49 @@
 <head>
 <meta charset="UTF-8">
 <title>注册页面</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 <body>
-<s:form action="doRegist" method="post" name="frm">
-	<table width="300" align="center" style="text-align:center;">					
-		<s:textfield name="ue.account" label="账号" />
-		<s:textfield name="ue.password" label="密码"  />
-		<s:textfield name="ue.name" label="昵称" />
-		<s:textfield name="ue.address" label="家庭住址" />
-		<s:textfield name="ue.email" label="电子邮箱"  />
-		<s:submit value="%{getText('submit')}" align="center"></s:submit>
-	</table>
-</s:form>
+<div class="frame">
+
+	<div class="leftFrame"><!--图片-->
+    	<img src="images/gg.jpg">
+	</div>
+ 	<div class="regist"><!--登录-->
+    	<div class="form">
+    		<form action="doRegist" method="post">
+    		<div class="tab"><!--注册tab-->
+        		<a href id="tab_1" class="tab_1">账号注册</a>
+        		<a href id="tab_2" class="tab_2">邮箱注册</a>
+	       	</div>
+            <div class="clears"></div>
+	       	<div class="accountTab">
+            	<div class="account">
+                	<input type="text" name="ue.account" placeholder="账号 6~13位" id="account" class="accInput">
+                </div>
+            </div>
+            <div class="passwordTab">
+            	<div class="password">
+                	<input type="password" name="ue.password" placeholder="密码" id="password" class="pwdInput">
+                </div>
+            <div class="passwordTab">
+            	<div class="password">
+                	<input type="password" name="repassword" placeholder="确认密码" id="confirmPassword" class="pwdInput">
+                </div>
+            </div>
+            <div class="forgetpwd"><a href="">忘记密码</a></div>
+            <div class="error"><!--失败提示-->注册失败提示</div>
+            <div class="clears"></div>
+            <div class="loginButton">
+            	<button class="btn">注册</button>
+            </div>
+    		</form>
+        	
+        </div>
+    	
+    </div>
+
+</div>
 </body>
 </html>

@@ -39,6 +39,23 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/bd/entity/UserEntity.hbm.xml</value>
+				<value>com/bd/entity/BlogArticleEntity.hbm.xml</value>
+				<value>com/bd/entity/BlogClassifyEntity.hbm.xml</value>
+				<value>com/bd/entity/BlogClassifyListEntity.hbm.xml</value>
+				<value>com/bd/entity/BlogMngEntity.hbm.xml</value>
+				<value>com/bd/entity/ColumnListEntity.hbm.xml</value>
+				<value>com/bd/entity/CommentEntity.hbm.xml</value>
+				<value>com/bd/entity/DetailEntity.hbm.xml</value>
+				<value>com/bd/entity/FavoriteAttentionEntity.hbm.xml</value>
+				<value>com/bd/entity/FavoriteBlogEntity.hbm.xml</value>
+				<value>com/bd/entity/FavoriteListEntity.hbm.xml</value>
+				<value>com/bd/entity/FavoriteResourceEntity.hbm.xml</value>
+				<value>com/bd/entity/InformationEntity.hbm.xml</value>
+				<value>com/bd/entity/ResourceClassifyBigEntity.hbm.xml</value>
+				<value>com/bd/entity/ResourceClassifySmallEntity.hbm.xml</value>
+				<value>com/bd/entity/ResourceEntity.hbm.xml</value>
+				<value>com/bd/entity/ResourceKeywordEntity.hbm.xml</value>
+				<value>com/bd/entity/ResourceMngEntity.hbm.xml</value>
 			</list>
 		</property>		
 	</bean>
@@ -77,6 +94,17 @@
     	<property name="userService" ref="userService"/>
     </bean>
 	
+	<bean id="blogDao" class="com.bd.dao.imply.BlogDaoImply">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	
+	<bean id="blogService" class="com.bd.service.imply.BlogServiceImply">
+		<property name="blogDao" ref="blogDao"></property>
+	</bean>
+	
+	<!-- 定义BlogAction类 ，并为其中属性blogService注入值 -->
+	<bean id="bAciton" class="com.bd.aciton.BlogAction" scope="prototype">
+		<property name="blogService" ref="blogService"></property>
+	</bean>
 	
 </beans>

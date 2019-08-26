@@ -1,113 +1,117 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="com.bd.entity">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
 
-    <class name="UserEntity" table="user" schema="blog">
+    <class name="com.bd.entity.UserEntity" table="user" schema="blog" lazy="false">
         <id name="id">
-            <column name="id" sql-type="int(10)" />
-            <generator class="native"></generator>
+            <column name="id" sql-type="int(10)"/>
+            <generator class="native"/>
         </id>
         <property name="account">
-            <column name="account" sql-type="varchar(16)" length="16" not-null="true"/>
+            <column name="account" sql-type="varchar(16)" length="16"/>
         </property>
         <property name="password">
-            <column name="password" sql-type="varchar(16)" length="16" not-null="true"/>
+            <column name="password" sql-type="varchar(16)" length="16"/>
         </property>
         <property name="name">
-            <column name="name" sql-type="varchar(10)" length="10" />
+            <column name="name" sql-type="varchar(10)" length="10"/>
         </property>
         <property name="realName">
-            <column name="realName" sql-type="varchar(16)" length="16" />
+            <column name="realName" sql-type="varchar(16)" length="16"/>
         </property>
         <property name="sex">
-            <column name="sex" sql-type="varchar(4)" length="4" />
+            <column name="sex" sql-type="varchar(4)" length="4"/>
         </property>
         <property name="birth">
-            <column name="birth" sql-type="date" />
+            <column name="birth" sql-type="date"/>
         </property>
         <property name="address">
-            <column name="address" sql-type="varchar(255)" />
+            <column name="address" sql-type="varchar(255)"/>
         </property>
         <property name="trade">
-            <column name="trade" sql-type="varchar(32)" length="32" />
+            <column name="trade" sql-type="varchar(32)" length="32"/>
         </property>
         <property name="position">
-            <column name="position" sql-type="varchar(32)" length="32" />
+            <column name="position" sql-type="varchar(32)" length="32"/>
         </property>
         <property name="introduction">
-            <column name="introduction" sql-type="longtext" />
+            <column name="introduction" sql-type="longtext"/>
         </property>
         <property name="registDate">
-            <column name="registDate" sql-type="date" />
+            <column name="registDate" sql-type="date"/>
         </property>
         <property name="email">
-            <column name="email" sql-type="varchar(16)" length="16" />
+            <column name="email" sql-type="varchar(16)" length="16"/>
         </property>
         <property name="phone">
-            <column name="phone" sql-type="varchar(16)" length="16" />
+            <column name="phone" sql-type="varchar(16)" length="16"/>
         </property>
         <property name="userPic">
-            <column name="userPic" sql-type="varchar(255)" />
+            <column name="userPic" sql-type="varchar(255)"/>
         </property>
-        <property name="fans">
-            <column name="fans" sql-type="int(12)" />
+        <property name="fansNum">
+            <column name="fansNum" sql-type="int(12)"/>
         </property>
         <property name="status">
-            <column name="status" sql-type="varchar(16)" length="16" />
+            <column name="status" sql-type="varchar(16)" length="16"/>
         </property>
-<!--        <set name="attentionFansById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.AttentionFansEntity"/>-->
-<!--        </set>-->
-<!--        <set name="attentionFansById_0" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="targetId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.AttentionFansEntity"/>-->
-<!--        </set>-->
 
-<!--        &lt;!&ndash; user , blogMng   one to one &ndash;&gt;-->
-<!--        <one-to-one name="blogMng" class="entity.BlogMngEntity" ></one-to-one>-->
 
-<!--        <set name="detailsById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.DetailEntity"/>-->
-<!--        </set>-->
-<!--        <set name="favoriteAttentionsById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.FavoriteAttentionEntity"/>-->
-<!--        </set>-->
-<!--        <set name="favoriteListsById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.FavoriteListEntity"/>-->
-<!--        </set>-->
-<!--        <set name="informationById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.InformationEntity"/>-->
-<!--        </set>-->
-<!--        <set name="informationById_0" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="targetId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.InformationEntity"/>-->
-<!--        </set>-->
-<!--        <set name="resourceMngsById" inverse="true">-->
-<!--            <key>-->
-<!--                <column name="uId" not-null="true"/>-->
-<!--            </key>-->
-<!--            <one-to-many not-found="ignore" class="entity.ResourceMngEntity"/>-->
-<!--        </set>-->
+        <set name="attentions" table="attention_fans" inverse="true">
+            <key>
+                <column name="uId"/>
+            </key>
+            <many-to-many class="com.bd.entity.UserEntity" column="targetId"/>
+        </set>
+        <set name="fans" table="attention_fans" inverse="true">
+            <key>
+                <column name="targetId"/>
+            </key>
+            <many-to-many column="uId" class="com.bd.entity.UserEntity"/>
+        </set>
+
+
+        <set name="details">
+            <key>
+                <column name="uId"/>
+            </key>
+            <one-to-many class="com.bd.entity.DetailEntity"/>
+        </set>
+
+        <set name="favoriteAttentions" inverse="true">
+            <key>
+                <column name="uId"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bd.entity.FavoriteAttentionEntity"/>
+        </set>
+
+        <set name="favoriteLists" inverse="true">
+            <key>
+                <column name="uId"/>
+            </key>
+            <one-to-many class="com.bd.entity.FavoriteListEntity"/>
+        </set>
+
+        <!-- infor send and accept mapping-->
+        <set name="inforSend">
+            <key>
+                <column name="uId"/>
+            </key>
+            <one-to-many class="com.bd.entity.InformationEntity"/>
+        </set>
+        <set name="inforAccepted" inverse="true">
+            <key>
+                <column name="targetId"/>
+            </key>
+            <one-to-many class="com.bd.entity.InformationEntity"/>
+        </set>
+
+        <!-- user , blogMng   one to one -->
+        <one-to-one name="blogMng" class="com.bd.entity.BlogMngEntity"/>
+        <!-- user , resource one to one   -->
+        <one-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity"/>
+
     </class>
 </hibernate-mapping>
