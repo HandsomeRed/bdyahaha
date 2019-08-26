@@ -9,6 +9,7 @@
 <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/public.css">
 <link rel="stylesheet" type="text/css" href="css/regist.css">
+
 </head>
 <body>
 <div class="frame">

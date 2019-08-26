@@ -16,7 +16,7 @@
 	</div>
  	<div class="login"><!--登录-->
     	<div class="form">
-    		<form action="doLogin">
+    		<form action="doLogin" method="post">
     		<div class="tab"><!--登录tab-->
         		<a href="" id="tab_1" class="tab_1">账号登录</a>
         		<a href="" id="tab_2" class="tab_2">免密登录</a>
