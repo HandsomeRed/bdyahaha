@@ -95,16 +95,16 @@
     </bean>
 	
 	<bean id="blogDao" class="com.bd.dao.imply.BlogDaoImply">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
 	<bean id="blogService" class="com.bd.service.imply.BlogServiceImply">
-		<property name="blogDao" ref="blogDao"></property>
+		<property name="blogDao" ref="blogDao"/>
 	</bean>
 	
 	<!-- 定义BlogAction类 ，并为其中属性blogService注入值 -->
-	<bean id="bAciton" class="com.bd.aciton.BlogAction" scope="prototype">
-		<property name="blogService" ref="blogService"></property>
+	<bean id="bAction" class="com.bd.action.BlogAction" scope="prototype">
+		<property name="blogService" ref="blogService"/>
 	</bean>
 	
 </beans>
