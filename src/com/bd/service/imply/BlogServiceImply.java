@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bd.dao.BlogDao;
 import com.bd.entity.BlogArticleEntity;
+import com.bd.entity.BlogClassifyEntity;
 import com.bd.service.BlogService;
 
 public class BlogServiceImply implements BlogService {
@@ -16,8 +17,14 @@ public class BlogServiceImply implements BlogService {
 
 
 	@Override
-	public List<BlogArticleEntity> getAllBlogArticle() {
-		return blogDao.getAllBlogActicle();
+	public List<BlogClassifyEntity> getBlogClassify() {
+		return blogDao.getBlogClassify();
+	}
+
+	@Override
+	public List<BlogArticleEntity> getSelectBlogArticles(BlogClassifyEntity bc) {
+		return blogDao.getSelectArticle(bc);
+
 	}
 
 }
