@@ -56,7 +56,7 @@ public class UserAction extends ActionSupport {
 		
 	}
 	//检测用户名
-	public void doCheck() throws Exception{
+	public String doCheck() throws Exception{
 		HttpServletResponse response=ServletActionContext.getResponse();  
         //以下代码从JSON.java中拷过来的  
         response.setContentType("text/html");  
@@ -69,6 +69,7 @@ public class UserAction extends ActionSupport {
 			System.out.println("账户不可用");
 			out.print("fail");
 		}
+		return "test";
 	}
 	
 }

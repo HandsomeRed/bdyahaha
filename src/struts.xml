@@ -8,7 +8,7 @@
 	<constant name="struts.ui.theme" value="simple"></constant>
 	 -->
 	 <!-- 国际化 -->
-	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	 
 	<!-- 定义一个名称为shop的包-->
 	<package name="blog" namespace="/" extends="struts-default">

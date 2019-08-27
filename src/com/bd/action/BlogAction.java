@@ -15,15 +15,17 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BlogAction extends ActionSupport implements RequestAware,SessionAware{
 
-	BlogService blogService; // 需注入
+
+
+    BlogService blogService; // 需注入
 	
 	Map<String,Object> request;
 	Map<String,Object> session;
-	
-	
-	public void setBlogService(BlogService blogService) {
-		this.blogService = blogService;
-	}
+
+
+    public void setBlogService(BlogService blogService) {
+        this.blogService = blogService;
+    }
 
 	@Override
 	public void setSession(Map<String, Object> session) {

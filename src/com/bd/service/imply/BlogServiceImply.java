@@ -7,10 +7,10 @@ import com.bd.entity.BlogArticleEntity;
 import com.bd.service.BlogService;
 
 public class BlogServiceImply implements BlogService {
-	BlogDao blogDao; // 需注入
-	
-	
-	public void setblogDao(BlogDao blogDao) {
+    BlogDao blogDao; // 需注入
+
+
+	public void setBlogDao(BlogDao blogDao) {
 		this.blogDao = blogDao;
 	}
 
