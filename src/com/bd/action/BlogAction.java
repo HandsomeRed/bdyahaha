@@ -72,6 +72,6 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
 		return "index";
 	}
-	
+
 
 }

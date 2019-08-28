@@ -24,15 +24,13 @@ public class UserDaoImply implements UserDao{
 
 	// 查找用户
 	@Override
-	public List<UserEntity> search(UserEntity cond) {
+	public UserEntity search(UserEntity cond) {
 		// TODO Auto-generated method stub
-		List<UserEntity> ueList = null;
 		Session session = sessionFactory.getCurrentSession(); // 创建hibernate session对象
 		Criteria criteria = session.createCriteria(UserEntity.class);
 		Example example = Example.create(cond); // 创建实例对象
 		criteria.add(example);
-		ueList = criteria.list();
-		return ueList;
+		return (UserEntity) criteria.uniqueResult();
 	}
 
 	
