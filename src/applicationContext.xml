@@ -107,4 +107,8 @@
 		<property name="blogService" ref="blogService"/>
 	</bean>
 	
+	<!-- 定义WriteBlogAction类 -->
+	<bean id="wbAction" class="com.bd.action.WriteBlogAction" scope="prototype">
+	</bean>
+	
 </beans>
