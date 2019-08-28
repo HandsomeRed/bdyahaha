@@ -2,7 +2,12 @@ package com.bd.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.bd.entity.UserEntity;
 import com.bd.service.UserService;
@@ -48,6 +53,23 @@ public class UserAction extends ActionSupport {
 			System.out.println("注册失败");
 			return "regist";
 		}
+		
+	}
+	//检测用户名
+	public String doCheck() throws Exception{
+		HttpServletResponse response=ServletActionContext.getResponse();  
+        //以下代码从JSON.java中拷过来的  
+        response.setContentType("text/html");  
+        PrintWriter out;  
+        out = response.getWriter();  
+		if(userService.checkUser(ue)) {
+			System.out.println("账户可用");
+			out.print(SUCCESS);
+		}else {
+			System.out.println("账户不可用");
+			out.print("fail");
+		}
+		return "test";
 	}
 	
 }

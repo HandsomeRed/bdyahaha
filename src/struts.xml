@@ -8,7 +8,7 @@
 	<constant name="struts.ui.theme" value="simple"></constant>
 	 -->
 	 <!-- 国际化 -->
-	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	 
 	<!-- 定义一个名称为shop的包-->
 	<package name="blog" namespace="/" extends="struts-default">
@@ -30,7 +30,12 @@
 				/Regist.jsp
 			</result>
 		</action>
-		
+		<!-- 账户检测 -->
+		<action name="doCheck" class="uAction" method="doCheck">
+			<!-- 返回结果
+			<result name="success"></result>
+			<result name="fail"></result> -->
+		</action>
 		<!-- 主页博文 -->
 		<action name="list" class="bAction" method="list">
 			<result name="index">/index.jsp</result>
