@@ -31,7 +31,7 @@
                 </div>
             </li>
             <li class="writeBlog">
-            	<a href="WriteBlog.html" title="writeBlog">
+            	<a href="WriteBlog.jsp" title="writeBlog">
                 	<img src="images/write_blog.jpg"/>
                     <span>写博客</span>
                 </a>

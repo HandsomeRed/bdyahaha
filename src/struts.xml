@@ -20,6 +20,11 @@
 			<result name="login" type="redirect">Login.jsp</result>
 		</action>
 		
+		<!-- 主页博文 -->
+		<action name="list" class="bAction" method="list">
+			<result name="index">/index.jsp</result>
+		</action>
+		
 		<!-- 注册 -->
 		<action name="doRegist" class="uAction" method="doRegist">
 			<!-- 返回结果 -->
@@ -36,14 +41,10 @@
 			<result name="success"></result>
 			<result name="fail"></result> -->
 		</action>
-		<!-- 主页博文 -->
-		<action name="list" class="bAction" method="list">
-			<result name="index">/index.jsp</result>
-		</action>
 		
 		<!-- 写博文 -->
 		<action name="doWriteBlog" class="wbAction" method="doWriteBlog">
-			<result name="index">/index.jsp</result>
+			<result name="index">list</result>
 		</action>
 		
 	</package>
