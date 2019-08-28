@@ -2,6 +2,8 @@ package com.bd.dao.imply;
 
 import java.util.List;
 
+import com.bd.entity.BlogMngEntity;
+import com.bd.entity.ResourceMngEntity;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,16 +36,28 @@ public class UserDaoImply implements UserDao{
 	}
 
 	
-	// 添加用户
+	// 添加用户 同时添加其blogMng , resourceMng.
+	// 对于blogMng , resourceMng : default lv  rank = 1 -1.
+	// 对于resourceMng : default upload = 5
 	@Override
 	public int addUser(UserEntity cond) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tran = session.getTransaction();
+
+		cond.setResourceMng(new ResourceMngEntity());
+		cond.getResourceMng().setUser(cond);
+
+		cond.setBlogMng(new BlogMngEntity());
+		cond.getBlogMng().setUser(cond);
+		cond.getBlogMng().setTitle(cond.getAccount() + " 的博客");
+
+
 		int result =  (Integer) session.save(cond); // 添加至数据库 .save()返回的是主键
 		System.out.println("[UserDaoImply - addUser]结束:" + result);
 		return result;
 	}
+
 	//查询用户是否可用
 	public boolean checkUser(UserEntity cond) {
 		boolean result = false;
