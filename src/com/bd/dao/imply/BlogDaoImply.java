@@ -48,4 +48,5 @@ public class BlogDaoImply implements BlogDao {
 	public List<BlogArticleEntity> getAllArticles() {
 		return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).list();
 	}
+
 }

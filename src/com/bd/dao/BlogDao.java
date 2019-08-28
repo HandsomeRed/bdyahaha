@@ -13,5 +13,4 @@ public interface BlogDao {
 	public List<BlogArticleEntity> getSelectArticle(BlogClassifyEntity bc);
 	//获取全部article
 	public List<BlogArticleEntity> getAllArticles();
-	
 }
