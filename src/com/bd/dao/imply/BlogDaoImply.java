@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 
 import com.bd.dao.BlogDao;
 import com.bd.entity.BlogArticleEntity;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 
 public class BlogDaoImply implements BlogDao {
 
@@ -35,13 +37,9 @@ public class BlogDaoImply implements BlogDao {
 		List<BlogArticleEntity> list = null;
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogClassifyEntity.class);
-
-		for (BlogClassifyEntity b : (List<BlogClassifyEntity>)criteria.list()){
-			if (b.getName().equals(bc.getName())){
-				list = new ArrayList<>(b.getBlogArticles());
-			}
-		}
-		return list;
+        criteria.add(Example.create(bc));
+        bc = (BlogClassifyEntity) criteria.uniqueResult();
+        return new ArrayList<>(bc.getBlogArticles());
 	}
 
 	@Override

@@ -56,7 +56,7 @@
     	<ul class="classifyUL">
     		<li class="focus"><a  href="">推荐</a></li>
     		<s:iterator id="classify" value="#request.ArticleClassifyList"><!-- blogclassifyList 包含分类以及分类下文章集合的集合 -->
-    			<li><a href="list?type.name='${classify.name}'">${classify.name}</a></li>
+            <li><a href="list?type.name=${classify.name}">${classify.name}</a></li>
     		</s:iterator>
         </ul>
     </div><!--左侧分类-->

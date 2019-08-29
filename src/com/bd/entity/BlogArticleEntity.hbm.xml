@@ -36,7 +36,7 @@
         <many-to-one name="blogMng" class="com.bd.entity.BlogMngEntity" cascade="all">
             <column name="bmId" not-null="false"/>
         </many-to-one>
-        <many-to-one name="blogClassify" class="com.bd.entity.BlogClassifyEntity">
+        <many-to-one name="blogClassify" class="com.bd.entity.BlogClassifyEntity" cascade="all">
             <column name="bcId" not-null="false"/>
         </many-to-one>
         <many-to-one name="blogClassifyList" class="com.bd.entity.BlogClassifyListEntity">
