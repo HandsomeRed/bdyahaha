@@ -26,7 +26,7 @@
             <column name="uId" unique="true"/>
         </many-to-one>
 
-        <set name="blogArticles" inverse="true">
+        <set name="blogArticles" inverse="true" cascade="all">
             <key>
                 <column name="bmId"/>
             </key>

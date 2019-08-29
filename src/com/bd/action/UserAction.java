@@ -37,7 +37,7 @@ public class UserAction extends ActionSupport implements SessionAware {
         ue = userService.login(ue);
         if (ue != null) {
             // 登录成功 跳转至 index.jsp,同时将user 信息储存于session.
-            session.put("userInfor", ue);
+			session.put(Key_Value.user, ue);
 			return "index";
 		}else {
 			// 登录失败 login.jsp
@@ -47,10 +47,8 @@ public class UserAction extends ActionSupport implements SessionAware {
 	
 	// 注册
 	public String doRegist() throws Exception {
-		int result = 0;
-		result = userService.addUser(ue);
-		System.out.println(result);
-		if(result != 0) {
+
+		if (userService.addUser(ue)) {
 			System.out.println("注册成功");
 			return "login";
 		}else {

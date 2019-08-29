@@ -4,10 +4,7 @@ import java.util.List;
 
 import com.bd.entity.BlogMngEntity;
 import com.bd.entity.ResourceMngEntity;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibernate.criterion.Example;
 
 import com.bd.dao.UserDao;
@@ -38,7 +35,7 @@ public class UserDaoImply implements UserDao{
 	// 对于blogMng , resourceMng : default lv  rank = 1 -1.
 	// 对于resourceMng : default upload = 5
 	@Override
-	public int addUser(UserEntity cond) {
+	public boolean addUser(UserEntity cond) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tran = session.getTransaction();
@@ -50,10 +47,14 @@ public class UserDaoImply implements UserDao{
 		cond.getBlogMng().setUser(cond);
 		cond.getBlogMng().setTitle(cond.getAccount() + " 的博客");
 
+		try {
+			session.save(cond);
+			return true;
+		} catch (HibernateException he) {
+			he.printStackTrace();
+			return false;
+		}
 
-		int result =  (Integer) session.save(cond); // 添加至数据库 .save()返回的是主键
-		System.out.println("[UserDaoImply - addUser]结束:" + result);
-		return result;
 	}
 
 	//查询用户是否可用

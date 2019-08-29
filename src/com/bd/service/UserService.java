@@ -1,7 +1,5 @@
 package com.bd.service;
 
-import java.util.List;
-
 import com.bd.entity.UserEntity;
 
 public interface UserService {
@@ -10,7 +8,7 @@ public interface UserService {
     public UserEntity login(UserEntity cond);
 	
 	// 添加用户(注册)
-	public int addUser(UserEntity cond);
+	public boolean addUser(UserEntity cond);
 	
 	//查询用户(检查是否可用)
 	public boolean checkUser(UserEntity cond);

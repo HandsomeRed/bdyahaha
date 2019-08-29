@@ -18,7 +18,7 @@ public class UserServiceImply implements UserService {
 	}
 
 	@Override
-	public int addUser(UserEntity cond) {
+	public boolean addUser(UserEntity cond) {
 		return userDao.addUser(cond);
 	}
 

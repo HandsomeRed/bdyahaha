@@ -33,7 +33,7 @@
         <property name="likeNum">
             <column name="likeNum" sql-type="int(12)" not-null="false"/>
         </property>
-        <many-to-one name="blogMng" class="com.bd.entity.BlogMngEntity">
+        <many-to-one name="blogMng" class="com.bd.entity.BlogMngEntity" cascade="all">
             <column name="bmId" not-null="false"/>
         </many-to-one>
         <many-to-one name="blogClassify" class="com.bd.entity.BlogClassifyEntity">

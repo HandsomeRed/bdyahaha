@@ -16,7 +16,7 @@
 		
 		<!-- 登录 -->
 		<action name="doLogin" class="uAction" method="doLogin">
-			<result name="index" type="dispatcher">list</result>
+			<result name="index" type="redirect">list</result>
 			<result name="login" type="redirect">Login.jsp</result>
 		</action>
 		

@@ -9,7 +9,7 @@ public interface UserDao {
     public UserEntity search(UserEntity cond);
 	
 	// 添加用户(注册)
-	public int addUser(UserEntity cond);
+	public boolean addUser(UserEntity cond);
 	
 	//查询用户(检查是否可用)
 	public boolean checkUser(UserEntity cond);

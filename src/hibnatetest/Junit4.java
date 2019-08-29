@@ -1,8 +1,10 @@
 package hibnatetest;
 
+import com.bd.entity.BlogArticleEntity;
 import com.bd.entity.BlogMngEntity;
 import com.bd.entity.ResourceMngEntity;
 import com.bd.entity.UserEntity;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.junit.After;
 import org.junit.Before;
@@ -33,18 +35,18 @@ public class Junit4 {
     public void addData() {
 
         session.getTransaction().begin();
-        UserEntity user = new UserEntity();
-        BlogMngEntity bmng = new BlogMngEntity();
-        ResourceMngEntity rmng = new ResourceMngEntity();
-        user.setBlogMng(bmng);
-        user.setResourceMng(rmng);
+        BlogMngEntity bmng = session.load(BlogMngEntity.class, 21);
+        BlogArticleEntity article = new BlogArticleEntity();
+        article.setBlogMng(bmng);
+        try {
+            session.saveOrUpdate(article);
+            session.getTransaction().commit();
+            System.out.println("success");
+        } catch (HibernateException he) {
+            he.printStackTrace();
+            System.out.println("fail");
+        }
 
-        session.saveOrUpdate(user);
-//        session.saveOrUpdate(bmng);
-
-        System.out.println(bmng.getUser());
-        System.out.println(rmng.getUser());
-        session.getTransaction().commit();
 
     }
 
