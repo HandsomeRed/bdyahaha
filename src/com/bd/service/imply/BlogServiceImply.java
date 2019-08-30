@@ -30,4 +30,9 @@ public class BlogServiceImply implements BlogService {
 			return blogDao.getSelectArticle(bc);
 	}
 
+	@Override
+	public BlogArticleEntity getArticle(BlogArticleEntity ba) {
+		return blogDao.getArticle(ba);
+	}
+
 }

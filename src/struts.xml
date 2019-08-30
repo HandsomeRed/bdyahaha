@@ -3,6 +3,7 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
+<!--suppress Struts2ModelInspection -->
 <struts>
 	<!-- struts2 ui 风格主题设置
 	<constant name="struts.ui.theme" value="simple"></constant>
@@ -47,6 +48,10 @@
 			<result name="index">list</result>
 		</action>
 		
+		<!-- 找博文 -->
+		<action name="doGetBlogArticle" class="bAction" method="getArticle">
+
+		</action>
 	</package>
 	 
 </struts>

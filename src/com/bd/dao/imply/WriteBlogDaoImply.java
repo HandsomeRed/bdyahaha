@@ -7,6 +7,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.sql.Date;
+
+
 public class WriteBlogDaoImply implements WriteBlogDao{
 
     private SessionFactory sessionFactory;
@@ -15,6 +18,7 @@ public class WriteBlogDaoImply implements WriteBlogDao{
     public boolean addArticle(UserEntity user, BlogArticleEntity blogArticle) {
         Session session = sessionFactory.getCurrentSession();
         blogArticle.setBlogMng(user.getBlogMng());
+        blogArticle.setReleaseTime(new Date(new java.util.Date().getTime()));
         try {
             session.saveOrUpdate(blogArticle);
             return true;

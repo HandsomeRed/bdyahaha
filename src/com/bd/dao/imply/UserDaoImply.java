@@ -42,9 +42,15 @@ public class UserDaoImply implements UserDao{
 
 		cond.setResourceMng(new ResourceMngEntity());
 		cond.getResourceMng().setUser(cond);
+        cond.getResourceMng().setLv(1);
+        cond.getResourceMng().setUploadLimit(5);
+        cond.getResourceMng().setRank(-1);
 
 		cond.setBlogMng(new BlogMngEntity());
 		cond.getBlogMng().setUser(cond);
+        cond.getBlogMng().setLv(1);
+        cond.getBlogMng().setRank(-1);
+
 		cond.getBlogMng().setTitle(cond.getAccount() + " µÄ²©¿Í");
 
 		try {

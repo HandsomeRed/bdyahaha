@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.bd.entity.BlogClassifyEntity;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -45,6 +46,20 @@ public class BlogDaoImply implements BlogDao {
 	@Override
 	public List<BlogArticleEntity> getAllArticles() {
 		return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).list();
+	}
+
+
+	@Override // 有记录则返回记录,没有返回null;
+	public BlogArticleEntity getArticle(BlogArticleEntity ba) {
+		Session session = sessionFactory.getCurrentSession();
+		BlogArticleEntity ret = null;
+
+		try {
+			return session.load(BlogArticleEntity.class, ba.getId());
+		} catch (HibernateException he) {
+			return null;
+		}
+
 	}
 
 }

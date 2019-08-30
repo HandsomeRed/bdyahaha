@@ -15,9 +15,11 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
     BlogService blogService; // 需注入
 
-	BlogClassifyEntity type; // 前台需给出欲加载的文章类型
-	Map<String,Object> request;
-	Map<String,Object> session;
+	private BlogClassifyEntity type; // 前台需给出欲加载的文章类型
+	private BlogArticleEntity ba; // 前台传入
+
+	private Map<String, Object> request;
+	private Map<String, Object> session;
 
 
     public void setBlogService(BlogService blogService) {
@@ -27,6 +29,15 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
 	public void setType(BlogClassifyEntity type) {
 		this.type = type;
+	}
+
+
+	public BlogArticleEntity getBa() {
+		return ba;
+	}
+
+	public void setBa(BlogArticleEntity ba) {
+		this.ba = ba;
 	}
 
 
@@ -55,6 +66,15 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 		}
 
 		return "index";
+	}
+
+
+	// 加载指定article 成功返回success,失败返回fail
+	public String getArticle() {
+		ba = blogService.getArticle(ba);
+		if (ba == null) return "fail";
+		request.put("blogArticle", ba);
+		return "success";
 	}
 
 
