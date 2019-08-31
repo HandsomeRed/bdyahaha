@@ -45,12 +45,13 @@
 		
 		<!-- 写博文 -->
 		<action name="doWriteBlog" class="wbAction" method="doWriteBlog">
-			<result name="index">list</result>
+			<result name="success" type="redirect">list</result>
 		</action>
-		
+
 		<!-- 找博文 -->
 		<action name="doGetBlogArticle" class="bAction" method="getArticle">
-
+			<result name="success">BlogArticle.jsp</result>
+			<result name="fail" type="redirect">list</result>
 		</action>
 	</package>
 	 

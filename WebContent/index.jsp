@@ -13,8 +13,8 @@
 <div class="navigation"> <!--导航-->
 	<div class="navigatLeft">
     	<ul>
-        	<li><a href="index.html" title="首页图片"><img src="images/ico.jpg"/></a></li>
-            <li><a href="index.html" title="首页" style="margin-left:0px">首页</a></li>
+        	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
+            <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
             <li><a href="" title="博客">博客</a></li>
             <li><a href="" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>
@@ -23,7 +23,7 @@
             <li><a href="" title="课程">课程</a></li>
             <li><a href="" title="GitHub">GitHub</a></li>
             <li>
-            	<div>
+            	<div class="navigatLeftSearch">
                 	<input type="text" class="inputSearch" name="search" id="search" placeholder="搜索"/>
                     <a href="">
                     	<img  src="images/search.jpg" class="icoSearch"/>
@@ -42,11 +42,20 @@
                     <span>消息</span>
                 </a>
             </li>
-            <li class="login_regist">
-            	<a href="Login.jsp" title="login">登陆</a>
-                <span></span>
-                <a href="Regist.jsp" title="regist">注册</a>
-            </li>
+            <s:if test="#session.saveUserInformationTOSession==null">
+            	<li class="login_regist">
+            		<a href="Login.jsp" title="login">登陆</a>
+             	   <span></span>
+             	   <a href="Regist.jsp" title="regist">注册</a>
+            	</li>
+            </s:if>
+            <s:else>
+            	<li class="loginedUser">
+            		<div class="loginedUserBox">
+                    	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
+                    </div>
+            	</li>
+            </s:else>
         </ul>
     </div>
 </div>
@@ -68,7 +77,7 @@
         		<li><!-- 单条博文开始 --><!-- 单条博文开始 -->
                 	<div class="listContent">
                     	<div class="titleDiv">
-                            <h2><a href="" class="titleH2">${blogList.getBlogMng().getUser().getId()}</a></h2>
+                        	<h2><a href="doGetBlogArticle?ba.id=${blogList.id}" class="titleH2">${blogList.title}</a></h2>
                         </div>
                         <div class="summary"><!-- 概要 -->
                         	${blogList.content}
@@ -78,7 +87,7 @@
                             	<a href="" class="userImg"><img src="images/touxiang.jpg"/></a>
                             </dt>
                             <dd class="name">
-                            	<a href="">LIBD的博客</a>
+                            	<a href="">${blogList.blogMng.title}</a>
                             </dd>
                             <div class="fenge"></div>
                             <dd class="time">${blogList.releaseTime}</dd>

@@ -10,10 +10,10 @@
             <generator class="native"/>
         </id>
         <property name="lv">
-            <column name="lv" sql-type="int(11)" default="1"/>
+            <column name="lv" sql-type="int(11)"/>
         </property>
         <property name="rank">
-            <column name="rank" sql-type="int(12)" default="-1"/>
+            <column name="rank" sql-type="int(12)"/>
         </property>
         <property name="title">
             <column name="title" sql-type="varchar(128)" length="128"/>
