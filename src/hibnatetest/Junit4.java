@@ -32,21 +32,13 @@ public class Junit4 {
 
 
     @Test
-    public void addData() {
+    public void test() {
 
         session.getTransaction().begin();
-        BlogMngEntity bmng = session.load(BlogMngEntity.class, 21);
-        BlogArticleEntity article = new BlogArticleEntity();
-        article.setBlogMng(bmng);
-        try {
-            session.saveOrUpdate(article);
-            session.getTransaction().commit();
-            System.out.println("success");
-        } catch (HibernateException he) {
-            he.printStackTrace();
-            System.out.println("fail");
-        }
-
+        UserEntity user = new UserEntity();
+        user.setBlogMng(new BlogMngEntity());
+        session.save(user);
+        session.getTransaction().commit();
 
     }
 

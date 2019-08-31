@@ -68,7 +68,7 @@
         		<li><!-- 单条博文开始 --><!-- 单条博文开始 -->
                 	<div class="listContent">
                     	<div class="titleDiv">
-                        	<h2><a href="" class="titleH2">${blogList.title}</a></h2>
+                            <h2><a href="" class="titleH2">${blogList.getBlogMng().getUser().getId()}</a></h2>
                         </div>
                         <div class="summary"><!-- 概要 -->
                         	${blogList.content}

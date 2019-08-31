@@ -109,7 +109,7 @@
         </set>
 
         <!-- user , blogMng   one to one -->
-        <one-to-one name="blogMng" class="com.bd.entity.BlogMngEntity"  cascade="all"/>
+        <one-to-one name="blogMng" class="com.bd.entity.BlogMngEntity" cascade="all" lazy="proxy"/>
         <!-- user , resource one to one   -->
         <one-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity" cascade="all"/>
 

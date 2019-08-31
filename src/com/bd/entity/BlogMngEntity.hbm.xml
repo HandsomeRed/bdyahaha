@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.BlogMngEntity" table="blog_mng" schema="blog" lazy="false">
+    <class name="com.bd.entity.BlogMngEntity" table="blog_mng" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -22,9 +22,7 @@
             <column name="`desc`" sql-type="varchar(255)"/>
         </property>
 
-        <many-to-one name="user" class="com.bd.entity.UserEntity" cascade="all" insert="true">
-            <column name="uId" unique="true"/>
-        </many-to-one>
+        <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all" lazy="proxy"/>
 
         <set name="blogArticles" inverse="true" cascade="all">
             <key>
