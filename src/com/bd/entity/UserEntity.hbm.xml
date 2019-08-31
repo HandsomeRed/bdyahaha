@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.UserEntity" table="user" schema="blog" lazy="false">
+    <class name="com.bd.entity.UserEntity" table="user" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -109,9 +109,9 @@
         </set>
 
         <!-- user , blogMng   one to one -->
-        <one-to-one name="blogMng" class="com.bd.entity.BlogMngEntity"/>
+        <one-to-one name="blogMng" class="com.bd.entity.BlogMngEntity"  cascade="all"/>
         <!-- user , resource one to one   -->
-        <one-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity"/>
+        <one-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity" cascade="all"/>
 
     </class>
 </hibernate-mapping>

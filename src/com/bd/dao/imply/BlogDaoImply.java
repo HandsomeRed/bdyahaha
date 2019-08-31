@@ -5,11 +5,14 @@ import java.util.List;
 
 import com.bd.entity.BlogClassifyEntity;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.bd.dao.BlogDao;
 import com.bd.entity.BlogArticleEntity;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 
 public class BlogDaoImply implements BlogDao {
 
@@ -35,18 +38,28 @@ public class BlogDaoImply implements BlogDao {
 		List<BlogArticleEntity> list = null;
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogClassifyEntity.class);
-
-		for (BlogClassifyEntity b : (List<BlogClassifyEntity>)criteria.list()){
-			if (b.getName().equals(bc.getName())){
-				list = new ArrayList<>(b.getBlogArticles());
-			}
-		}
-		return list;
+        criteria.add(Example.create(bc));
+        bc = (BlogClassifyEntity) criteria.uniqueResult();
+        return new ArrayList<>(bc.getBlogArticles());
 	}
 
 	@Override
 	public List<BlogArticleEntity> getAllArticles() {
 		return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).list();
+	}
+
+
+	@Override // 有记录则返回记录,没有返回null;
+	public BlogArticleEntity getArticle(BlogArticleEntity ba) {
+		Session session = sessionFactory.getCurrentSession();
+		BlogArticleEntity ret = null;
+
+		try {
+			return session.load(BlogArticleEntity.class, ba.getId());
+		} catch (HibernateException he) {
+			return null;
+		}
+
 	}
 
 }

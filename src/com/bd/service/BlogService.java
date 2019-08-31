@@ -8,8 +8,9 @@ import com.bd.entity.BlogClassifyEntity;
 public interface BlogService {
 	
 	// 获取所有文章类型
-	public List<BlogClassifyEntity> getBlogClassify();
+	List<BlogClassifyEntity> getBlogClassify();
 	//获取欲加载的一类文章
-	public List<BlogArticleEntity> getSelectBlogArticles(BlogClassifyEntity bc);
-	
+	List<BlogArticleEntity> getSelectBlogArticles(BlogClassifyEntity bc);
+
+	BlogArticleEntity getArticle(BlogArticleEntity ba);
 }

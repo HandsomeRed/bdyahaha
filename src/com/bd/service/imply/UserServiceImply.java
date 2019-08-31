@@ -1,7 +1,5 @@
 package com.bd.service.imply;
 
-import java.util.List;
-
 import com.bd.dao.UserDao;
 import com.bd.entity.UserEntity;
 import com.bd.service.UserService;
@@ -15,12 +13,12 @@ public class UserServiceImply implements UserService {
 	}
 
 	@Override
-	public List<UserEntity> login(UserEntity cond) {
+    public UserEntity login(UserEntity cond) {
 		return userDao.search(cond);
 	}
 
 	@Override
-	public int addUser(UserEntity cond) {
+	public boolean addUser(UserEntity cond) {
 		return userDao.addUser(cond);
 	}
 

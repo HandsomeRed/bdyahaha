@@ -8,10 +8,11 @@ import com.bd.entity.BlogClassifyEntity;
 public interface BlogDao {
 	
 	// 获取所有文章类型
-	public List<BlogClassifyEntity> getBlogClassify();
+	List<BlogClassifyEntity> getBlogClassify();
 	//获取欲加载的一类文章
-	public List<BlogArticleEntity> getSelectArticle(BlogClassifyEntity bc);
+	List<BlogArticleEntity> getSelectArticle(BlogClassifyEntity bc);
 	//获取全部article
-	public List<BlogArticleEntity> getAllArticles();
+	List<BlogArticleEntity> getAllArticles();
 
+	BlogArticleEntity getArticle(BlogArticleEntity ba);
 }

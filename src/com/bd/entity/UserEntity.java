@@ -206,7 +206,7 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, password, name, realName, sex, birth, address, trade, position, introduction, registDate, email, phone, userPic, fans, status);
+        return Objects.hash(id, account, password, name, realName, sex, birth, address, trade, position, introduction, registDate, email, phone, userPic, fansNum, status);
     }
 
     public Set<UserEntity> getAttentions() {

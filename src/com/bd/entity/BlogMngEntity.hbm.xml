@@ -10,23 +10,23 @@
             <generator class="native"/>
         </id>
         <property name="lv">
-            <column name="lv" sql-type="int(11)"/>
+            <column name="lv" sql-type="int(11)" default="1"/>
         </property>
         <property name="rank">
-            <column name="rank" sql-type="int(12)"/>
+            <column name="rank" sql-type="int(12)" default="-1"/>
         </property>
         <property name="title">
             <column name="title" sql-type="varchar(128)" length="128"/>
         </property>
         <property name="desc">
-            <column name="desc" sql-type="varchar(255)"/>
+            <column name="`desc`" sql-type="varchar(255)"/>
         </property>
 
-        <many-to-one name="user" class="com.bd.entity.UserEntity">
+        <many-to-one name="user" class="com.bd.entity.UserEntity" cascade="all" insert="true">
             <column name="uId" unique="true"/>
         </many-to-one>
 
-        <set name="blogArticles" inverse="true">
+        <set name="blogArticles" inverse="true" cascade="all">
             <key>
                 <column name="bmId"/>
             </key>

@@ -13,15 +13,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BlogAction extends ActionSupport implements RequestAware,SessionAware{
 
-
-
     BlogService blogService; // 需注入
 
+	private BlogClassifyEntity type; // 前台需给出欲加载的文章类型
+	private BlogArticleEntity ba; // 前台传入
 
-
-	BlogClassifyEntity type; // 前台需给出欲加载的文章类型
-	Map<String,Object> request;
-	Map<String,Object> session;
+	private Map<String, Object> request;
+	private Map<String, Object> session;
 
 
     public void setBlogService(BlogService blogService) {
@@ -31,6 +29,15 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
 	public void setType(BlogClassifyEntity type) {
 		this.type = type;
+	}
+
+
+	public BlogArticleEntity getBa() {
+		return ba;
+	}
+
+	public void setBa(BlogArticleEntity ba) {
+		this.ba = ba;
 	}
 
 
@@ -48,30 +55,28 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	// 加载主页内容 博客
 	public String list(){
 
-//    	test
-//    	BlogClassifyEntity type = new BlogClassifyEntity();
-//    	type.setName("one");
-		
 		List<BlogClassifyEntity> baList = blogService.getBlogClassify();
 		List<BlogArticleEntity> selectArticle = blogService.getSelectBlogArticles(type);
-		for (BlogClassifyEntity b: baList) {
-			System.out.println(b.getName());
-		}
 
-		for (BlogArticleEntity ba : selectArticle){
-			System.out.println(ba.getId());
-		}
-
-
-		if(baList.size()>0) {
+        if (baList != null) {
 			request.put("ArticleClassifyList", baList);
 		}
-		if (selectArticle.size()>0){
+        if (selectArticle != null) {
 			request.put("selectArticlesList",selectArticle);
 		}
 
 		return "index";
 	}
-	
+
+
+	// 加载指定article 成功返回success,失败返回fail
+	public String getArticle() {
+		System.out.println(ba.getId());
+		ba = blogService.getArticle(ba);
+		if (ba == null) return "fail";
+		request.put("blogArticle", ba);
+		return "success";
+	}
+
 
 }
