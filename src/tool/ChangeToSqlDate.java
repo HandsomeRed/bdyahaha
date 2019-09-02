@@ -13,14 +13,9 @@ public class ChangeToSqlDate extends DefaultTypeConverter {
         if (value == null || toType != Date.class) return false;
         if (value instanceof String[]) {
             String before = ((String[]) (value))[0];
-            System.out.println("---------------------------------");
-            System.out.println(before);
-            System.out.println("---------------------------------");
 
             try {
-                Date date = Date.valueOf(before);
-                System.out.println(date.toString());
-                return date;
+                return Date.valueOf(before);
             } catch (Exception se) {
                 se.printStackTrace();
                 return false;

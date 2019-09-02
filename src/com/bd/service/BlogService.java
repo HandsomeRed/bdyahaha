@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bd.entity.BlogArticleEntity;
 import com.bd.entity.BlogClassifyEntity;
+import com.bd.entity.UserEntity;
 
 public interface BlogService {
 	
@@ -14,5 +15,6 @@ public interface BlogService {
 
 	BlogArticleEntity getArticle(BlogArticleEntity ba);
 
-    List<BlogArticleEntity> getMyArticles(BlogArticleEntity ba);
+	//根据条件获取关于我的博文
+	List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba);
 }

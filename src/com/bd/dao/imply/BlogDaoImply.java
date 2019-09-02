@@ -55,7 +55,10 @@ public class BlogDaoImply implements BlogDao {
 		BlogArticleEntity ret = null;
 
 		try {
-			return session.load(BlogArticleEntity.class, ba.getId());
+			BlogArticleEntity article = session.load(BlogArticleEntity.class, ba.getId());
+			article.setReadNum(article.getReadNum() + 1);
+			session.update(article);
+			return article;
 		} catch (HibernateException he) {
 			return null;
 		}
@@ -63,20 +66,20 @@ public class BlogDaoImply implements BlogDao {
 	}
 
 	@Override
-	public List<BlogArticleEntity> getMyArticles(BlogArticleEntity ba) {
+	public List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba) {
 
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogArticleEntity.class);
 
 		//绑定blogMng
-		ba.setBlogMng(session.load(UserEntity.class, ba.getBlogMng().getUser().getId()).getBlogMng());
+		ba.setBlogMng(user.getBlogMng());
 
 		// 时间约束
 		if (ba.getReleaseTime() != null)
 			criteria.add(Restrictions.ge("releaseTime", ba.getReleaseTime()));
 
 		//status 约束
-		System.out.println(ba.getStatus());
+//		System.out.println(ba.getStatus());
 		if (ba.getStatus() != null)
 			criteria.add(Restrictions.eq("status", ba.getStatus()));
 

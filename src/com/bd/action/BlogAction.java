@@ -86,26 +86,9 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
         if (user == null) return "fail";
         List<BlogArticleEntity> myArticles = null;
 
-
-        // ½«user blogmng ·â×° µ½ba.
-        BlogMngEntity blogmng = new BlogMngEntity();
-        blogmng.setUser(user);
-        if (ba == null) ba = new BlogArticleEntity();
-
-        if (ba.getStatus() == null || ba.getStatus().equals("all")) ba.setStatus(null);
-        ba.setBlogMng(blogmng);
-
-        myArticles = blogService.getMyArticles(ba);
+        myArticles = blogService.getMyArticles(user, ba);
         if (myArticles == null) return "fail";
         request.put("myArticles", myArticles);
-
-        System.out.println(myArticles.size());
-        for (BlogArticleEntity article : myArticles) {
-            System.out.println(article.getId());
-        }
-
-//		System.out.println("date:   "+ba.getReleaseTime());
-
         return "success";
     }
 

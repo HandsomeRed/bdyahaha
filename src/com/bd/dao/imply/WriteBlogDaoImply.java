@@ -19,6 +19,8 @@ public class WriteBlogDaoImply implements WriteBlogDao{
         Session session = sessionFactory.getCurrentSession();
         blogArticle.setBlogMng(user.getBlogMng());
         blogArticle.setReleaseTime(new Date(new java.util.Date().getTime()));
+        blogArticle.setReadNum(0);
+        blogArticle.setLikeNum(0);
         try {
             session.saveOrUpdate(blogArticle);
             return true;

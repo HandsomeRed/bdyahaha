@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bd.entity.BlogArticleEntity;
 import com.bd.entity.BlogClassifyEntity;
+import com.bd.entity.UserEntity;
 
 public interface BlogDao {
 	
@@ -16,5 +17,5 @@ public interface BlogDao {
 
 	BlogArticleEntity getArticle(BlogArticleEntity ba);
 
-    List<BlogArticleEntity> getMyArticles(BlogArticleEntity ba);
+	List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba);
 }
