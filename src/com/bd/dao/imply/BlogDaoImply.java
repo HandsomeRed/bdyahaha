@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bd.entity.BlogClassifyEntity;
+import com.bd.entity.UserEntity;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,11 +18,10 @@ import org.hibernate.criterion.Restrictions;
 public class BlogDaoImply implements BlogDao {
 
 	SessionFactory sessionFactory;// 注入Spring容器中的sessionFactory实例
-	
+
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
 
 
 	@Override // 查询所有博文类型 返回List<博文类型对象>
@@ -38,9 +38,9 @@ public class BlogDaoImply implements BlogDao {
 		List<BlogArticleEntity> list = null;
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogClassifyEntity.class);
-        criteria.add(Example.create(bc));
-        bc = (BlogClassifyEntity) criteria.uniqueResult();
-        return new ArrayList<>(bc.getBlogArticles());
+		criteria.add(Example.create(bc));
+		bc = (BlogClassifyEntity) criteria.uniqueResult();
+		return new ArrayList<>(bc.getBlogArticles());
 	}
 
 	@Override
@@ -62,4 +62,51 @@ public class BlogDaoImply implements BlogDao {
 
 	}
 
+	@Override
+	public List<BlogArticleEntity> getMyArticles(BlogArticleEntity ba) {
+
+		Session session = sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(BlogArticleEntity.class);
+
+		//绑定blogMng
+		ba.setBlogMng(session.load(UserEntity.class, ba.getBlogMng().getUser().getId()).getBlogMng());
+
+		// 时间约束
+		if (ba.getReleaseTime() != null)
+			criteria.add(Restrictions.ge("releaseTime", ba.getReleaseTime()));
+
+		//status 约束
+		System.out.println(ba.getStatus());
+		if (ba.getStatus() != null)
+			criteria.add(Restrictions.eq("status", ba.getStatus()));
+
+		//blogMng约束
+		criteria.add(Restrictions.eq("blogMng", ba.getBlogMng()));
+
+
+		return criteria.list();
+
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -49,10 +49,15 @@
 		</action>
 
 		<!-- 找博文 -->
-		<action name="doGetBlogArticle" class="bAction" method="getArticle">
+		<action name="doGetBlogArticle" class="bAction" method="doGetArticle">
 			<result name="success">BlogArticle.jsp</result>
 			<result name="fail" type="redirect">list</result>
 		</action>
+
+		<action name="doGetMyArticles" class="bAction" method="doGetMyArticles">
+			<result name="success">/index.jsp</result>
+		</action>
+
 	</package>
 	 
 </struts>

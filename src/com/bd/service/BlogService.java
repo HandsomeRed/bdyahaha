@@ -13,4 +13,6 @@ public interface BlogService {
 	List<BlogArticleEntity> getSelectBlogArticles(BlogClassifyEntity bc);
 
 	BlogArticleEntity getArticle(BlogArticleEntity ba);
+
+    List<BlogArticleEntity> getMyArticles(BlogArticleEntity ba);
 }

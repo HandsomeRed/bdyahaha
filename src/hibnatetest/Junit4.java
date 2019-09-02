@@ -4,23 +4,29 @@ import com.bd.entity.BlogArticleEntity;
 import com.bd.entity.BlogMngEntity;
 import com.bd.entity.ResourceMngEntity;
 import com.bd.entity.UserEntity;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.sql.Date;
+import java.util.Scanner;
 
 public class Junit4 {
 
     private Session session = null;
 
-    @Before
+    // @Before
     public void after() {
         if (session == null) session = HibernateSession.getSession();
     }
 
 
-    @After
+    //@After
     public void before() {
         if (session != null) {
             if (session.isConnected()) {
@@ -34,11 +40,11 @@ public class Junit4 {
     @Test
     public void test() {
 
-        session.getTransaction().begin();
-        UserEntity user = new UserEntity();
-        user.setBlogMng(new BlogMngEntity());
-        session.save(user);
-        session.getTransaction().commit();
+        Scanner scan = new Scanner(System.in);
+
+        while (true)
+            System.out.println(Date.valueOf(scan.next()));
+
 
     }
 
