@@ -38,7 +38,16 @@ public class BlogServiceImply implements BlogService {
 
     @Override
 	public List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba) {
-		return blogDao.getMyArticles(user, ba);
+		return blogDao.getArticles(user, ba);
     }
+
+	@Override
+	public List<BlogArticleEntity> getBlogMng(UserEntity user) {
+
+		BlogArticleEntity example = new BlogArticleEntity();
+		example.setStatus("public");
+		return blogDao.getArticles(user, example);
+
+	}
 
 }

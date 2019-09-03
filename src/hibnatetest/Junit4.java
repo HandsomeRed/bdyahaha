@@ -20,13 +20,13 @@ public class Junit4 {
 
     private Session session = null;
 
-    // @Before
+    @Before
     public void after() {
         if (session == null) session = HibernateSession.getSession();
     }
 
 
-    //@After
+    @After
     public void before() {
         if (session != null) {
             if (session.isConnected()) {
@@ -39,12 +39,10 @@ public class Junit4 {
 
     @Test
     public void test() {
-
-        Scanner scan = new Scanner(System.in);
-
-        while (true)
-            System.out.println(Date.valueOf(scan.next()));
-
+        UserEntity user = new UserEntity();
+        user.setId(6);
+        user = session.load(UserEntity.class, user.getId());
+        System.out.println(user.getAccount());
 
     }
 

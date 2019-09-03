@@ -17,4 +17,6 @@ public interface BlogService {
 
 	//根据条件获取关于我的博文
 	List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba);
+
+	List<BlogArticleEntity> getBlogMng(UserEntity user);
 }

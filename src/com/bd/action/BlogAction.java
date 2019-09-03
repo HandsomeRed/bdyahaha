@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.bd.entity.BlogClassifyEntity;
-import com.bd.entity.BlogMngEntity;
 import com.bd.entity.UserEntity;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -20,6 +19,7 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	private BlogClassifyEntity type; // 前台需给出欲加载的文章类型
 	private BlogArticleEntity ba; // 前台传入
 
+    private UserEntity user; //访问他人博客主页用
 	private Map<String, Object> request;
 	private Map<String, Object> session;
 
@@ -49,6 +49,9 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 		
 	}
 
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 
     @Override
 	public void setRequest(Map<String, Object> request) {
@@ -72,6 +75,19 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	}
 
 
+    //加载他人博客主页
+    public String doGetBlogMng() {
+        if (user == null || user.getId() == 0) {
+            return "fail";
+        }
+        List<BlogArticleEntity> publicArticles;
+        publicArticles = blogService.getBlogMng(user);
+        request.put("blogMng", publicArticles);
+        return "success";
+    }
+
+
+
 	// 加载指定article 成功返回success,失败返回fail
     public String doGetArticle() {
 		ba = blogService.getArticle(ba);
@@ -84,7 +100,7 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
         UserEntity user = (UserEntity) session.get(Key_Value.user);
         if (user == null) return "fail";
-        List<BlogArticleEntity> myArticles = null;
+        List<BlogArticleEntity> myArticles;
 
         myArticles = blogService.getMyArticles(user, ba);
         if (myArticles == null) return "fail";

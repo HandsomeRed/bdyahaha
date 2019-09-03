@@ -54,8 +54,14 @@
 			<result name="fail" type="redirect">list</result>
 		</action>
 
+		<!--加载个人主页-->
 		<action name="doGetMyArticles" class="bAction" method="doGetMyArticles">
 			<result name="success">/index.jsp</result>
+		</action>
+
+		<!--加载他人博客主页-->
+		<action name="doGetBlogMng" class="bAction" method="doGetBlogMng">
+			<result/>
 		</action>
 
 	</package>

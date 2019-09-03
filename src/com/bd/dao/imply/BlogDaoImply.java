@@ -13,6 +13,7 @@ import org.hibernate.SessionFactory;
 import com.bd.dao.BlogDao;
 import com.bd.entity.BlogArticleEntity;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 public class BlogDaoImply implements BlogDao {
@@ -66,10 +67,13 @@ public class BlogDaoImply implements BlogDao {
 	}
 
 	@Override
-	public List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba) {
+	public List<BlogArticleEntity> getArticles(UserEntity user, BlogArticleEntity ba) {
 
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogArticleEntity.class);
+
+		//预加载user对象
+		user = session.load(user.getClass(), user.getId());
 
 		//绑定blogMng
 		ba.setBlogMng(user.getBlogMng());
@@ -79,14 +83,14 @@ public class BlogDaoImply implements BlogDao {
 			criteria.add(Restrictions.ge("releaseTime", ba.getReleaseTime()));
 
 		//status 约束
-//		System.out.println(ba.getStatus());
 		if (ba.getStatus() != null)
 			criteria.add(Restrictions.eq("status", ba.getStatus()));
 
 		//blogMng约束
 		criteria.add(Restrictions.eq("blogMng", ba.getBlogMng()));
 
-
+		//按日期降序
+		criteria.addOrder(Order.desc("releaseTime"));
 		return criteria.list();
 
 	}

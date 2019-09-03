@@ -17,5 +17,5 @@ public interface BlogDao {
 
 	BlogArticleEntity getArticle(BlogArticleEntity ba);
 
-	List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba);
+    List<BlogArticleEntity> getArticles(UserEntity user, BlogArticleEntity ba);
 }
