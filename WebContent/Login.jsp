@@ -24,7 +24,7 @@
             <div class="clears"></div>
 	       	<div class="accountTab">
             	<div class="account">
-                	<input type="text" name="ue.account" placeholder="手机号/邮箱/用户名" id="account" class="accInput">
+                	<input type="text" name="ue.account" placeholder="手机号/邮箱/用户名" id="account" class="accInput" onblur="Check(this)">
                 </div>
             </div>
             <div class="passwordTab">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="forgetpwd"><a href="">忘记密码</a></div>
-            <div class="error"><!--失败提示-->登录失败提示</div>
+            <div class="error"><!--失败提示--><s:div theme="simple"><s:actionerror/></s:div></div>
             <div class="clears"></div>
             <div class="loginButton">
             	<button class="btn">登录</button>
@@ -47,7 +47,18 @@
 </div>
 </body>
 <script type="text/javascript">
-
+function Check(t){
+	if(t.id == "account"){
+		var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/;
+		if(myReg.test(t.value)){
+			t.setAttribute("name","ue.email");
+		}
+	}
+	if(t.id == "password"){
+		
+	}
+	
+}
 
 
 </script>

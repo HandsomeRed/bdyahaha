@@ -10,7 +10,7 @@ public class BlogServiceImply implements BlogService {
 	BlogDao blogDao; // Ðè×¢Èë
 	
 	
-	public void setblogDao(BlogDao blogDao) {
+	public void setBlogDao(BlogDao blogDao) {
 		this.blogDao = blogDao;
 	}
 
