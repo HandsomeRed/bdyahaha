@@ -10,18 +10,16 @@
             <generator class="native"/>
         </id>
         <property name="lv">
-            <column name="lv" sql-type="int(11)"/>
+            <column name="lv" default="1" sql-type="int(11)"/>
         </property>
         <property name="uploadLimit">
-            <column name="uploadLimit" sql-type="int(11)"/>
+            <column name="uploadLimit" default="10" sql-type="int(11)"/>
         </property>
         <property name="rank">
-            <column name="rank" sql-type="int(12)"/>
+            <column name="rank" sql-type="int(12)" default="-1"/>
         </property>
 
-        <many-to-one name="user" class="com.bd.entity.UserEntity">
-            <column name="uId" unique="true"/>
-        </many-to-one>
+        <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all"/>
 
         <set name="favoriteResources" inverse="true">
             <key>

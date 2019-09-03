@@ -33,6 +33,8 @@
 				<prop key="hibernate.dialect">
 					org.hibernate.dialect.MySQLDialect
 				</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
 		<!-- 配置Hibernate映射文件的位置以及名称 -->
@@ -95,16 +97,30 @@
     </bean>
 	
 	<bean id="blogDao" class="com.bd.dao.imply.BlogDaoImply">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
 	<bean id="blogService" class="com.bd.service.imply.BlogServiceImply">
-		<property name="blogDao" ref="blogDao"></property>
+		<property name="blogDao" ref="blogDao"/>
 	</bean>
 	
 	<!-- 定义BlogAction类 ，并为其中属性blogService注入值 -->
-	<bean id="bAciton" class="com.bd.aciton.BlogAction" scope="prototype">
-		<property name="blogService" ref="blogService"></property>
+	<bean id="bAction" class="com.bd.action.BlogAction" scope="prototype">
+		<property name="blogService" ref="blogService"/>
+	</bean>
+
+	<!-- 请规范命名,不要简写 -->
+	<bean id="writeBlogDaoImply" class="com.bd.dao.imply.WriteBlogDaoImply" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="writeBlogServiceImply" class="com.bd.service.imply.WriteBlogServiceImply" scope="prototype">
+		<property name="writeBlogDao" ref="writeBlogDaoImply"/>
+	</bean>
+
+	<!-- 定义WriteBlogAction类 -->
+	<bean id="wbAction" class="com.bd.action.WriteBlogAction" scope="prototype">
+		<property name="wbs" ref="writeBlogServiceImply"/>
 	</bean>
 	
 </beans>

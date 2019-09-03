@@ -13,6 +13,7 @@
 <div class="frame">
 
 	<div class="leftFrame"><!--图片-->
+        <img src="images/gg.jpg"/>
 	</div>
  	<div class="login"><!--登录-->
     	<div class="form">

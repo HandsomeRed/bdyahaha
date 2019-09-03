@@ -9,6 +9,7 @@ public class BlogClassifyEntity {
     private Set<BlogArticleEntity> blogArticles;
     private Set<ColumnListEntity> columnLists;
 
+    
     public int getId() {
         return id;
     }

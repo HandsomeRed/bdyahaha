@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost/blog</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- DB schema will be updated if needed -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!--    mapping    -->
+<!--        <mapping resource="entity/AttentionFansEntity.hbm.xml"/>-->
+        <mapping resource="com/bd/entity/BlogArticleEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/BlogClassifyEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/BlogClassifyListEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/BlogMngEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ColumnListEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/CommentEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/DetailEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/FavoriteAttentionEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/FavoriteBlogEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/FavoriteListEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/FavoriteResourceEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/InformationEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ResourceEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ResourceClassifyBigEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ResourceClassifySmallEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ResourceKeywordEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/ResourceMngEntity.hbm.xml"/>
+        <mapping resource="com/bd/entity/UserEntity.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
+
