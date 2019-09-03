@@ -9,8 +9,7 @@ import com.bd.entity.UserEntity;
 import com.bd.service.BlogService;
 
 public class BlogServiceImply implements BlogService {
-    BlogDao blogDao; // 需注入
-
+	BlogDao blogDao; // 需注入
 
 	public void setBlogDao(BlogDao blogDao) {
 		this.blogDao = blogDao;

@@ -96,6 +96,7 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 		return "success";
 	}
 
+    //×Ô¼ºblogMng
     public String doGetMyArticles() {
 
         UserEntity user = (UserEntity) session.get(Key_Value.user);

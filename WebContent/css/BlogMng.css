@@ -1,0 +1,316 @@
+/* CSS Document */
+* {
+    box-sizing: border-box;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.notice {
+    padding: 8px 16px 8px 24px;
+    margin-top: 10px;
+    width: 1200px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 26px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.noticeIco_1 {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -4px;
+}
+
+.noticeText {
+    color: #999999;
+}
+
+.noticeIco_X {
+    fill: #ccc;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.blogMngMain {
+    width: 1200px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    min-width: 1200px;
+    box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.blogMngMainBox {
+    padding: 0;
+    margin-left: 0px;
+    margin-right: 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.leftBox {
+    min-width: 179px;
+    min-height: 560px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-right: 1px solid #e9e9e9;
+    background: #fff;
+    max-width: 180px;
+}
+
+.leftGroup {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.leftBoxLine {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.leftGroupItem {
+    padding: 0.75rem 10px .75rem 40px;
+    color: #4d4d4d;
+    font-size: 14px;
+    border: 0px;
+}
+
+.leftGroupTitle {
+    margin-left: -20px;
+    color: #B9B9B9;
+}
+
+.richText {
+    height: 45px;
+    text-align: left;
+    padding: 12px 16px;
+    color: #CA0C16;
+    font-size: 14px;
+    border: 0px;
+}
+
+.leftBoxIco {
+    width: 24px;
+    height: 16px;
+}
+
+.rightBox {
+    background-color: #FFF;
+    margin-left: 0px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+    padding: 25px;
+    min-width: 1020px;
+}
+
+.statusDiv {
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.statusUl {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+.statusLi {
+    margin-right: 24px;
+    font-size: 16px;
+    color: #999;
+    padding: 0;
+    padding-bottom: 14px;
+}
+
+.contentTab {
+    display: block;
+}
+
+.contentTabBox {
+    padding: 8px 0 16px 0;
+    box-sizing: border-box;
+}
+
+.contentArticle {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dotted #ddd;
+    padding: 1rem 0 1rem 0;
+    color: #999;
+    font-size: 12px;
+}
+
+.contentArticleTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.contentArticleInfor {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contentArticleTitleTag {
+    font-size: 12px;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 0.5rem;
+    border: 1px solid #e9e9e9;
+}
+
+.contentArticleTitleTxt {
+    font-size: 18px;
+    color: #4d4d4d;
+    margin-bottom: 0;
+}
+
+.contentArticleTitleTxt > a {
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+.contentArticleInforLeft > span {
+    margin-right: 1.5rem;
+}
+
+.contentArticleInforRight {
+    margin-left: auto;
+}
+
+.contentArticleInforRight > a {
+    color: #349EDF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contentArticleInforRight > span {
+    color: #349EDF;
+    padding: 0px .5rem;
+    border-right: 1px solid #e9e9e9;
+    cursor: pointer;
+}
+
+
+.searchBox {
+    margin-top: 16px;
+    padding: 16px;
+    font-size: 14px;
+    background-color: #f2f5f7;
+}
+
+.searchBoxForm {
+    margin-left: auto;
+    margin-top: 0;
+}
+
+
+<!--
+div ul 仿select开始-- >
+.select {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 325px;
+    color: #cccccc;
+    vertical-align: middle;
+    text-align: left;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.select > .placeholder {
+    position: relative;
+    display: block;
+    background-color: #393d41;
+    z-index: 1;
+    padding: 1em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.select > .placeholder:hover {
+    background: #34383c;
+}
+
+.select > .placeholder:after {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'FontAwesome';
+    content: '\f078';
+    z-index: 10;
+}
+
+.select.is-open > .placeholder:after {
+    content: '\f077';
+}
+
+.select.is-open > ul {
+    display: block;
+}
+
+.select.select--white > .placeholder {
+    background: #fff;
+    color: #999;
+}
+
+.select.select--white > .placeholder:hover {
+    background: #fafafa;
+}
+
+.select > ul {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 5px 0 0 0;
+    padding: 0;
+    z-index: 100;
+}
+
+.select > ul > li {
+    display: block;
+    text-align: left;
+    padding: 0.8em 1em 0.8em 1em;
+    color: #999;
+    cursor: pointer;
+}
+
+.select > ul > li:hover {
+    background: #4ebbf0;
+    color: #fff;
+}
+
+<!--
+div ul 仿select结束-- >
