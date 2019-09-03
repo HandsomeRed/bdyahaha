@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/BlogPerson.css">
+</head>
+
+<body>
+<div class="navigation"> <!--导航-->
+	<div class="navigatLeft">
+    	<ul>
+        	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
+            <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
+            <li><a href="" title="博客">博客</a></li>
+            <li><a href="" title="下载">下载</a></li>
+            <li><a href="" title="APP">APP</a></li>
+            <li><a href="" title="专题">专题</a></li>
+            <li><a href="" title="招聘">招聘</a></li>
+            <li><a href="" title="课程">课程</a></li>
+            <li><a href="" title="GitHub">GitHub</a></li>
+            <li>
+            	<div class="navigatLeftSearch">
+                	<input type="text" class="inputSearch" name="search" id="search" placeholder="搜索"/>
+                    <a href="">
+                    	<img  src="images/search.jpg" class="icoSearch"/>
+                    </a>
+                </div>
+            </li>
+            <li class="writeBlog">
+            	<a href="WriteBlog.jsp" title="writeBlog">
+                	<img src="images/write_blog.jpg"/>
+                    <span>写博客</span>
+                </a>
+            </li>
+            <li class="message">
+            	<a href="" title="message">
+                	<img src="images/message.jpg" />
+                    <span>消息</span>
+                </a>
+            </li>
+            <s:if test="#session.saveUserInformationTOSession==null">
+            	<li class="login_regist">
+            		<a href="Login.jsp" title="login">登陆</a>
+             	   <span></span>
+             	   <a href="Regist.jsp" title="regist">注册</a>
+            	</li>
+            </s:if>
+            <s:else>
+            	<li class="loginedUser">
+            		<div class="loginedUserBox">
+                    	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
+                    </div>
+            	</li>
+            </s:else>
+        </ul>
+    </div>
+</div>
+<div class="clears"></div>
+<div class="banner">
+	<div class="container">
+    	<div class="title">
+        	<h1 class="title_blog">
+            	<a href="">沉默王者</a>
+            </h1>
+            <p class="description">一个有趣的程序员，带你突围职场蜕变</p>
+        </div>
+    </div>
+
+</div>
+<div class="content" id="">
+	<div class="aside left">
+    	<div class="asideBox">
+       	  <div class="personal_intro">
+           	<div class="avatar left">
+                	<a href="">
+                    	<img src="images/defaultPic.jpg" class="avatar_pic">
+                        <img src="images/message.jpg" class="user_years">
+                    </a>
+                </div>
+            <div class="user_info left">
+                	<p class="name"><a href="">沉默王者</a></p>
+                    <p class="flag"><a>博客专家</a></p>
+                  <p class="home_page"><a href="">TA的个人主页 ></a></p>
+                </div>
+            <div class="opt left">
+                	<span class=""><a href="" class="btn">关注</a></span>
+                </div>
+                <div class="clears"></div>
+          </div>
+            <div class="personal_data">
+            	<dl class="text_center left">
+                	<dt><a href="">原创</a></dt>
+                    <dd><a href=""><span class="count">589</span></a></dd>
+                </dl>
+                <dl class="text_center left" id="">
+                	<dt>粉丝</dt>
+                    <dd><span class="count" id="">6855</span></dd>
+                </dl>
+                <dl class="text_center left" id="">
+                	<dt>喜欢</dt>
+                    <dd><span class="count" id="">4139</span></dd>
+                </dl>
+                <dl class="text_center left" id="">
+                	<dt>评论</dt>
+                    <dd><span class="count">3589</span></dd>
+                </dl>
+            </div>
+          <div class="grade">
+          	<dl>
+            	<dt>等级:</dt>
+                <dd><a href="" title="点击查看等级说明">7</a></dd>
+            </dl>
+            <dl>
+            	<dt>访问:</dt>
+                <dd title="2503453">250万+</dd>
+            </dl>
+            <dl>
+            	<dt>积分:</dt>
+                <dd title="20010">2万+</dd>
+            </dl>
+            <dl>
+            	<dt>排名:</dt>
+                <dd title="543">543</dd>
+            </dl>
+          </div>
+          <div class="clears"></div>
+          <div class="badge">
+          	<div class="left">勋章：</div>
+            <div class="badgeBox left">
+            	<div class="icon_badge" title="勋章1">
+                	<div mouse_box>
+                    	<img src="images/image_true.png" width="22" height="20">
+                    </div>
+                </div><!--其他勋章同上-->
+            </div>
+          </div>
+      </div><!--自定义模块-->
+    </div>
+    <div class="main left">
+   	  <div class="filter_box ">
+        	
+        <table width="700" border="0">
+  <tr>
+    <td width="100"><form action="" id="Original">
+            <label class="ck_box" for="ckOriginal">
+            	<input onChange="" type="checkbox" id="">
+            	只看原创
+        	</form></td>
+    <td width="20">排序</td>
+    <td width="10"><a href="">默认</a></td>
+    <td width="40"><a href="">按更新间</a></td>
+    <td width="40"><a href="">按访问量</a></td>
+    <td width="40"><a href="">RSS订阅</a></td>
+  </tr>
+</table>
+		<div class="article-list left">
+       	  <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+            <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+            <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+            <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+            <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+            <div class="articleBox">
+            	<h4><a href=""><span class="article_type">原</span>你为什么成为程序员？</a></h4>                <div class="cnt"><a href="">你还记得自己成为一名程序员的初心吗？遥想公瑾当年，不，遥想我当年,似乎是命中注定...</a></div>
+
+                <div class="info_box">
+                	<span><span class="date">2019-09-03 08:05:26</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">阅读数  </span><span class="num">20</span></span>
+                    <span class="point"></span>
+                    <span><span class="reead_num">评论数  </span><span class="num">3</span></span>
+                </div>
+            </div>
+        </div>
+            
+      </div>
+    </div>
+    <div class="clears"></div>
+</div>
+
+</body>
+</html>
