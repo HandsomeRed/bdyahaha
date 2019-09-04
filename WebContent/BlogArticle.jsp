@@ -16,8 +16,8 @@
 <div class="navigation"> <!--导航-->
     <div class="navigatLeft">
         <ul>
-            <li><a href="index.jsp" title="首页图片"><img src="images/ico.jpg"/></a></li>
-            <li><a href="index.jsp" title="首页" style="margin-left:0px">首页</a></li>
+            <li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
+            <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
             <li><a href="" title="博客">博客</a></li>
             <li><a href="" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>

@@ -29,6 +29,11 @@ public class WriteBlogAction extends ActionSupport implements SessionAware {
 		return wbs.addArticle(user, be) ? "success" : "fail";
 	}
 
+	// º”‘ÿ–¥≤©øÕ“≥√Ê
+	public String doLoginWriteBlog() {
+		return "success";
+	}
+	
 	@Override
 	public void setSession(Map<String, Object> map) {
 		this.session = map;
