@@ -102,11 +102,19 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
         UserEntity user = (UserEntity) session.get(Key_Value.user);
         if (user == null) return "fail";
         List<BlogArticleEntity> myArticles;
-
         myArticles = blogService.getMyArticles(user, ba);
+
         if (myArticles == null) return "fail";
         request.put("blogArticleList", myArticles);
+
         return "success";
+    }
+
+    public String doDeleteBlogArticle() {
+        UserEntity user = (UserEntity) session.get(Key_Value.user);
+        if (user == null) return "fail";
+
+        return blogService.doDeleteBlogArticle(user, ba);
     }
 
 

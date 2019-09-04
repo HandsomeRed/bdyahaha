@@ -78,7 +78,7 @@ public class BlogDaoImply implements BlogDao {
 		}
 		
 		//预加载user对象
-		user = session.load(user.getClass(), user.getId());
+        user = session.load(UserEntity.class, user.getId());
 
 		//绑定blogMng
 		ba.setBlogMng(user.getBlogMng());
@@ -96,9 +96,29 @@ public class BlogDaoImply implements BlogDao {
 
 		//按日期降序
 		criteria.addOrder(Order.desc("releaseTime"));
-		return criteria.list();
+
+
+        return criteria.list();
 
 	}
+
+    @Override
+    public String deleteArticle(UserEntity user, BlogArticleEntity ba) {
+
+        Session session = sessionFactory.getCurrentSession();
+        user = session.load(UserEntity.class, user.getId());
+        ba = session.load(BlogArticleEntity.class, ba.getId());
+        if (user.getId() != ba.getBlogMng().getUser().getId()) return "fail";
+
+        try {
+            session.delete(ba);
+            return "success";
+        } catch (HibernateException he) {
+            he.printStackTrace();
+            return "fail";
+        }
+
+    }
 
 }
 
