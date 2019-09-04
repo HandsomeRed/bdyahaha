@@ -20,7 +20,7 @@ public class UploadAction extends ActionSupport implements SessionAware {
 
     public String uploadFile() {
         UserEntity user = (UserEntity) session.get(Key_Value.user);
-        if (user == null) return "fail";
+        if (user == null || resource == null) return "fail";
         resourceService.saveResource(user, file, fileFileName, resource);
         return "success";
     }
