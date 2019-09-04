@@ -105,11 +105,11 @@
             <div class="statusDiv"><!--文章状态-->
                 <ul class="statusUl">
                     <li class="statusLi"><a href="doGetMyArticles" class="a_text_black">全部</a></li>
-                    <li class="statusLi"><a href="doGetMyArticles?ba.status='公开'" class="a_text_black">公开</a></li>
-                    <li class="statusLi"><a href="doGetMyArticles?ba.status='私密'" class="a_text_black">私密</a></li>
-                    <li class="statusLi"><a href="doGetMyArticles?ba.status='审核'" class="a_text_black">审核</a></li>
-                    <li class="statusLi"><a href="doGetMyArticles?ba.status='草稿'" class="a_text_black">草稿箱</a></li>
-                    <li class="statusLi"><a href="doGetMyArticles?ba.status='弃置'" class="a_text_black">回收站</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status=公开" class="a_text_black">公开</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status=私密" class="a_text_black">私密</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status=审核" class="a_text_black">审核</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status=草稿" class="a_text_black">草稿箱</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status=弃置" class="a_text_black">回收站</a></li>
                 </ul>
             </div>
 
@@ -166,24 +166,24 @@
 
             <div class="contentTab"><!--博文List-->
             	<!--循环开始-->
-            	<s:iterator id="ba" value="#request.blogArticleList">
+            	<s:iterator id="bAriticle" value="#request.blogArticleList">
                 <div  class="contentTabBox">
                     <div class="contentArticle">
                         <div class="contentArticleTitle">
-                            <span class="contentArticleTitleTag">${ba.status}</span>
+                            <span class="contentArticleTitleTag">${bAriticle.status}</span>
                             <p class="contentArticleTitleTxt">
-                                <a href="doGetBlogArticle?ba.id=${ba.id}" target="" title="">${ba.title}</a>
+                                <a href="doGetBlogArticle?ba.id=${bAriticle.id}" target="" title="">${bAriticle.title}</a>
                             </p>
                         </div>
                         <div class="contentArticleInfor">
                             <div class="contentArticleInforLeft">
-                                <span class="">${ba.type}</span>
-                                <span class="">${ba.releaseTime}</span>
-                                <span class=""><img src="images/bookIco.jpg"/>${ba.readNum}</span>
-                                <span class=""><img src="images/commentIco.jpg"/>${ba.likeNum}</span><!-- 得加博文表评论字段  这里暂用likeNum代替 -->
+                                <span class="">${bAriticle.type}</span>
+                                <span class="">${bAriticle.releaseTime}</span>
+                                <span class=""><img src="images/bookIco.jpg"/>${bAriticle.readNum}</span>
+                                <span class=""><img src="images/commentIco.jpg"/>${bAriticle.likeNum}</span><!-- 得加博文表评论字段  这里暂用likeNum代替 -->
                             </div>
                             <div class="contentArticleInforRight">
-                                <a href="doGetBlogArticle?ba.id=${ba.id}" class="a_text_blue"><span>查看</span></a>
+                                <a href="doGetBlogArticle?ba.id=${bAriticle.id}" class="a_text_blue"><span>查看</span></a>
                                 <a href="" class="a_text_red"><span>删除</span></a>
                             </div>
                         </div>

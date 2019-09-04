@@ -15,6 +15,23 @@
 	<package name="blog" namespace="/" extends="struts-default">
 		<!-- 为类中的方法配置映射 -->
 		
+		
+		<!-- 配置拦截器 AuthorizationInterceptor -->
+		<interceptors>
+			<interceptor name="loginCheck" class="com.bd.interceptor.AuthorizationInterceptor"></interceptor>
+			<interceptor-stack name="myInterceptorStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="loginCheck" />
+            </interceptor-stack>
+		</interceptors>
+		
+		<!-- 拦截器 全局变量 -->
+		<global-results>
+			<result name="Login">
+				/Login.jsp
+			</result>
+		</global-results>
+		
 		<!-- 登录 -->
 		<action name="doLogin" class="uAction" method="doLogin">
 			<result name="index" type="redirect">list</result>
@@ -41,6 +58,13 @@
 			<!-- 返回结果
 			<result name="success"></result>
 			<result name="fail"></result> -->
+		</action>
+		
+		<!-- 加载写博文页面 -->
+		<action name="doLoginWriteBlog" class="wbAction" method="doLoginWriteBlog">
+			<result name="success" type="redirectAction">doWriteBlog</result>
+			<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="loginCheck" />
 		</action>
 		
 		<!-- 写博文 -->
