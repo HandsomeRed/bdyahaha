@@ -38,19 +38,16 @@ public class UserDaoImply implements UserDao{
 	public boolean addUser(UserEntity cond) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Transaction tran = session.getTransaction();
-
 		cond.setResourceMng(new ResourceMngEntity());
 		cond.getResourceMng().setUser(cond);
         cond.getResourceMng().setLv(1);
         cond.getResourceMng().setUploadLimit(5);
         cond.getResourceMng().setRank(-1);
-
 		cond.setBlogMng(new BlogMngEntity());
 		cond.getBlogMng().setUser(cond);
         cond.getBlogMng().setLv(1);
         cond.getBlogMng().setRank(-1);
-
+        cond.setName(cond.getAccount());
 		cond.getBlogMng().setTitle(cond.getAccount() + " µÄ²©¿Í");
 
 		try {
