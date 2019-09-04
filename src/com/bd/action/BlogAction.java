@@ -75,7 +75,7 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	}
 
 
-    //加载他人博客主页
+    //加载他人博客主页 | 加载个人博客管理页面的 博文List
     public String doGetBlogMng() {
         if (user == null || user.getId() == 0) {
             return "fail";
@@ -105,7 +105,7 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 
         myArticles = blogService.getMyArticles(user, ba);
         if (myArticles == null) return "fail";
-        request.put("myArticles", myArticles);
+        request.put("blogArticleList", myArticles);
         return "success";
     }
 

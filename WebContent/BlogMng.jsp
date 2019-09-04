@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
@@ -79,7 +81,7 @@
     <div class="blogMngMainBox">
         <div class="leftBox"><!--左侧box-->
             <div class="leftGroup leftBoxLine">
-                <a href="" class="richText leftGroupItem" target=""><img src="images/write_blog.jpg" class="leftBoxIco"/>富文本编辑器</a>
+                <a href="WriteBlog.jsp" class="richText leftGroupItem" target=""><img src="images/write_blog.jpg" class="leftBoxIco"/>富文本编辑器</a>
             </div>
             <div class="leftGroup leftBoxLine">
                 <a href="" class="leftGroupItem" target="">查看主页</a>
@@ -102,19 +104,19 @@
         <div class="rightBox"><!--右侧box-->
             <div class="statusDiv"><!--文章状态-->
                 <ul class="statusUl">
-                    <li class="statusLi"><a>全部</a></li>
-                    <li class="statusLi"><a>公开</a></li>
-                    <li class="statusLi"><a>私密</a></li>
-                    <li class="statusLi"><a>审核</a></li>
-                    <li class="statusLi"><a>草稿箱</a></li>
-                    <li class="statusLi"><a>回收站</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles" class="a_text_black">全部</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status='公开'" class="a_text_black">公开</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status='私密'" class="a_text_black">私密</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status='审核'" class="a_text_black">审核</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status='草稿'" class="a_text_black">草稿箱</a></li>
+                    <li class="statusLi"><a href="doGetMyArticles?ba.status='弃置'" class="a_text_black">回收站</a></li>
                 </ul>
             </div>
 
             <div class="mainSearchBox"><!--searchBox--><!--暂做静态处理-->
-                <form action="" class="mainSearchForm">
+                <form action="doGetMyArticles" class="mainSearchForm">
                     <div class="select dowebok">
-                        <span class="placeholder">年</span>
+                        <span class="placeholder" id="year">年</span>
                         <ul>
                             <li>不限</li>
                             <li>2019</li>
@@ -122,7 +124,7 @@
                     </div>
                     
                     <div class="select dowebok">
-                        <span class="placeholder">月</span>
+                        <span class="placeholder" id="month">月</span>
                         <ul>
                             <li>不限</li>
                             <li>1</li>
@@ -140,7 +142,7 @@
                         </ul>
                     </div>
                     <div class="select dowebok">
-                        <span class="placeholder">类型</span>
+                        <span class="placeholder" id="type">类型</span>
                         <ul>
                             <li>不限</li>
                             <li>原创</li>
@@ -148,14 +150,14 @@
                             <li>其他</li>
                         </ul>
                     </div>
-                    <div class="select1 dowebok">
+                    <div class="select1 dowebok" id="classify">
                         <span class="placeholder">分类专栏</span>
                         <ul>
                             <li>不限</li>
                         </ul>
                     </div>
-                    <input class="keywordInput" id="key" type="text" name="keyword" value="" placeholder="标题关键词"/>
-                    <button type="button" class="mainSearchBtn">搜索</button>
+                    <input class="keywordInput" id="key" type="text" name="ba.title" value="" placeholder="标题关键词"/>
+                    <button type="button" class="mainSearchBtn" onclick="">搜索</button>
                     <div class="clears"></div>
                 </form>
 	
@@ -163,28 +165,32 @@
 
 
             <div class="contentTab"><!--博文List-->
-                <div class="contentTabBox"><!--循环开始-->
+            	<!--循环开始-->
+            	<s:iterator id="ba" value="#request.blogArticleList">
+                <div  class="contentTabBox">
                     <div class="contentArticle">
                         <div class="contentArticleTitle">
-                            <span class="contentArticleTitleTag">私密</span>
+                            <span class="contentArticleTitleTag">${ba.status}</span>
                             <p class="contentArticleTitleTxt">
-                                <a href="" target="" title="">CSDN博客测试</a>
+                                <a href="doGetBlogArticle?ba.id=${ba.id}" target="" title="">${ba.title}</a>
                             </p>
                         </div>
                         <div class="contentArticleInfor">
                             <div class="contentArticleInforLeft">
-                                <span class="">转载</span>
-                                <span class="">2019年07月14日 15:23:20</span>
-                                <span class=""><img src="images/bookIco.jpg"/>3</span>
-                                <span class=""><img src="images/commentIco.jpg"/>0</span>
+                                <span class="">${ba.type}</span>
+                                <span class="">${ba.releaseTime}</span>
+                                <span class=""><img src="images/bookIco.jpg"/>${ba.readNum}</span>
+                                <span class=""><img src="images/commentIco.jpg"/>${ba.likeNum}</span><!-- 得加博文表评论字段  这里暂用likeNum代替 -->
                             </div>
                             <div class="contentArticleInforRight">
-                                <a href="" target="_blank"><span class="">查看</span></a>
-                                <a href="javascript:void(0);" data-aid="95888689"><span class="">删除</span></a>
+                                <a href="doGetBlogArticle?ba.id=${ba.id}" class="a_text_blue"><span>查看</span></a>
+                                <a href="" class="a_text_red"><span>删除</span></a>
                             </div>
                         </div>
                     </div>
-                </div><!--循环结束-->
+                </div>
+            </s:iterator>
+            <!--循环结束-->
             </div>
         </div>
     </div>

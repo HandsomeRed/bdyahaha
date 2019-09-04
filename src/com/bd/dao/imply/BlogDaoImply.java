@@ -72,6 +72,11 @@ public class BlogDaoImply implements BlogDao {
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(BlogArticleEntity.class);
 
+		// 处理第一次进入博客管理页面时 前端不传ba
+		if(ba==null) {
+			ba = new BlogArticleEntity();
+		}
+		
 		//预加载user对象
 		user = session.load(user.getClass(), user.getId());
 
