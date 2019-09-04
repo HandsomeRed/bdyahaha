@@ -70,6 +70,10 @@
             <result/>
         </action>
 
-	</package>
+        <action name="upload" class="com.bd.action.UploadAction" method="uploadFile">
+
+        </action>
+
+    </package>
 	 
 </struts>

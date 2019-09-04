@@ -122,5 +122,20 @@
 	<bean id="wbAction" class="com.bd.action.WriteBlogAction" scope="prototype">
 		<property name="wbs" ref="writeBlogServiceImply"/>
 	</bean>
-	
+
+
+	<!--定义upload-->
+	<bean id="resourceDaoImply" class="com.bd.dao.imply.ResourceDaoImply" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="resourceServiceImply" class="com.bd.service.imply.ResourceServiceImply" scope="prototype">
+		<property name="resourceDao" ref="resourceDaoImply"/>
+	</bean>
+
+	<bean id="uploadAction" class="com.bd.action.UploadAction" scope="prototype">
+		<property name="resourceService" ref="resourceServiceImply"/>
+	</bean>
+
+
 </beans>
