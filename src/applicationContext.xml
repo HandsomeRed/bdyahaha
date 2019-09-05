@@ -137,5 +137,10 @@
 		<property name="resourceService" ref="resourceServiceImply"/>
 	</bean>
 
+	<!-- resource list configure-->
+	<bean id="resourceAction" class="com.bd.action.ResourceAction" scope="prototype">
+		<property name="resourceService" ref="resourceServiceImply"/>
+	</bean>
+
 
 </beans>

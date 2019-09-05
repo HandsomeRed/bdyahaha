@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.ResourceEntity" table="resource" schema="blog" lazy="false">
+    <class name="com.bd.entity.ResourceEntity" table="resource" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -27,7 +27,7 @@
         <property name="addr">
             <column name="addr" sql-type="varchar(255)" not-null="false"/>
         </property>
-        <many-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity">
+        <many-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity" cascade="save-update">
             <column name="rmId" not-null="false"/>
         </many-to-one>
         <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity">

@@ -36,19 +36,12 @@ public class BlogDaoImply implements BlogDao {
 
 	@Override	//获取欲加载的一类文章
 	public List<BlogArticleEntity> getSelectArticle(BlogClassifyEntity bc) {
-		List<BlogArticleEntity> list = null;
-		Session session = sessionFactory.getCurrentSession();
-		Criteria criteria = session.createCriteria(BlogClassifyEntity.class);
-		criteria.add(Example.create(bc));
-		bc = (BlogClassifyEntity) criteria.uniqueResult();
-		return new ArrayList<>(bc.getBlogArticles());
-	}
 
-	@Override
-	public List<BlogArticleEntity> getAllArticles() {
-		return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).list();
-	}
+		if (bc == null)
+			return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).addOrder(Order.desc("releaseTime")).list();
+		return sessionFactory.getCurrentSession().createCriteria(BlogArticleEntity.class).addOrder(Order.desc("releaseTime")).createCriteria("blogClassify").add(Restrictions.eq("id", bc.getId())).list();
 
+	}
 
 	@Override // 有记录则返回记录,没有返回null;
 	public BlogArticleEntity getArticle(BlogArticleEntity ba) {

@@ -1,6 +1,6 @@
 package com.bd.service.imply;
 
-import com.bd.action.Key_Value;
+import tool.Key_Value;
 import com.bd.dao.ResourceDao;
 import com.bd.entity.ResourceEntity;
 import com.bd.entity.UserEntity;
@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 public class ResourceServiceImply implements ResourceService {
 
@@ -21,14 +22,13 @@ public class ResourceServiceImply implements ResourceService {
 
         String path = Key_Value.fileUrl + Key_Value.enter + user.getId();
         String fileName = new Date().getTime() + Key_Value.spile + fileFileName;
+        //System.out.println(file.toURI().toString());
         if (!uploadFile(file, path, fileName)) {
             return "fail";
         }
+        resource.setAddr(fileName);
 
-        resource.setAddr(path + Key_Value.enter + fileName);
-        resource.setName(fileFileName);
-
-        if (!resourceDao.addResurce(user, resource)) {
+        if (!resourceDao.addResource(user, resource)) {
             File delete = new File(resource.getAddr());
             if (delete.exists()) delete.delete();
             return "fail";
@@ -38,11 +38,30 @@ public class ResourceServiceImply implements ResourceService {
 
     }
 
+    @Override
+    public List<ResourceEntity> getMyResources(UserEntity user, ResourceEntity resource) {
+
+        return resourceDao.getResources(user, resource);
+
+    }
+
+    @Override
+    public List<ResourceEntity> getResourceList(ResourceEntity resource) {
+
+        return resourceDao.getResourceList(resource);
+    }
+
+    @Override
+    public ResourceEntity getResource(ResourceEntity resource) {
+        return resourceDao.getResource(resource);
+    }
+
+    //保存文件 常见的 io 操作
     private Boolean uploadFile(File file, String path, String fileName) {
 
-        FileInputStream fileInputStream = null;
-        FileOutputStream fileOutputStream = null;
-        File save;
+        FileInputStream fileInputStream = null; //输入流
+        FileOutputStream fileOutputStream = null; //输出流
+        File save; //文件保存地址
         try {
 
             fileInputStream = new FileInputStream(file);
@@ -63,9 +82,8 @@ public class ResourceServiceImply implements ResourceService {
             return false;
         } finally {
             try {
-                assert fileOutputStream != null;
-                fileOutputStream.close();
-                fileOutputStream.close();
+                if (fileOutputStream != null) fileOutputStream.close();
+                if (fileInputStream != null) fileInputStream.close();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

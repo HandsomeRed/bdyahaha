@@ -11,6 +11,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.bd.entity.BlogArticleEntity;
 import com.bd.service.BlogService;
 import com.opensymphony.xwork2.ActionSupport;
+import tool.Key_Value;
 
 public class BlogAction extends ActionSupport implements RequestAware,SessionAware{
 
@@ -32,7 +33,6 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	public void setType(BlogClassifyEntity type) {
 		this.type = type;
 	}
-
 
 	public BlogArticleEntity getBa() {
 		return ba;
@@ -85,7 +85,6 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
         request.put("blogMng", publicArticles);
         return "success";
     }
-
 
 
 	// 加载指定article 成功返回success,失败返回fail

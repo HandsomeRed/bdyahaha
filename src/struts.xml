@@ -94,9 +94,24 @@
             <result/>
         </action>
 
-        <action name="upload" class="com.bd.action.UploadAction" method="uploadFile">
-
+        <!--upload file-->
+        <action name="upload" class="uploadAction" method="uploadFile">
+            <result name="success" type="redirect">list</result>
         </action>
+
+		<!-- get reources -->
+		<action name="doGetMyResources" class="resourceAction" method="doGetMyResources">
+            <result name="success">index.jsp</result>
+        </action>
+
+		<action name="doGetResourceList" class="resourceAction" method="doGetResourceList">
+			<result/>
+		</action>
+
+
+		<action name="doGetResource" class="resourceAction" method="doGetResource">
+			<result/>
+		</action>
 
     </package>
 	 

@@ -5,6 +5,7 @@ import com.bd.entity.UserEntity;
 import com.bd.service.ResourceService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
+import tool.Key_Value;
 
 import java.io.File;
 import java.util.Map;
@@ -21,8 +22,9 @@ public class UploadAction extends ActionSupport implements SessionAware {
     public String uploadFile() {
         UserEntity user = (UserEntity) session.get(Key_Value.user);
         if (user == null) return "fail";
-        resourceService.saveResource(user, file, fileFileName, resource);
-        return "success";
+        if (resource == null) resource = new ResourceEntity();
+
+        return resourceService.saveResource(user, file, fileFileName, resource);
     }
 
     public File getFile() {
