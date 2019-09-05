@@ -33,7 +33,7 @@
                 	<input type="password" name="ue.password" placeholder="密码" id="password" class="pwdInput">
                 </div>
             </div>
-            <div class="forgetpwd"><a href="">忘记密码</a></div>
+            <div class="forgetpwd"><a href="Login.jsp">忘记密码</a></div>
             <div class="error"><!--失败提示--><s:div theme="simple"><s:actionerror/></s:div></div>
             <div class="clears"></div>
             <div class="loginButton">
