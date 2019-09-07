@@ -54,7 +54,7 @@ body{
     height: 26px;
     border: 1px solid #CCC;
     border-radius: 4px;
-	margin-top:6px;
+    margin-top: 6px;
 	}
 
 .inputSearch{
@@ -153,206 +153,240 @@ body{
     float: right;
     margin-top: 8px;
 }
+
 .meeting_main {
     width: 1200px;
     margin: 8px auto;
 }
 
-.download_profile {
-    margin-top: 8px;
-}
-.profile_card {
-    padding: 20px 20px 0;
-    background: #fff;
-    border: 1px solid #eee;
-	height:150px;
+.download_new {
+    position: relative;
 }
 
-.profile_card .cardl {
-    width: 65%;
+.create_album_wrap {
+    padding: 10px 20px;
 }
-.profile_card .cardl .user_img {
-    position: relative;
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    border-radius: 50%;
+
+.create_album_wrap, .dl_wrap {
     border: 1px solid #eee;
+    background: #fff;
 }
-.profile_card .cardl .user_img img {
+
+.create_album_wrap {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+
+.dl_common_t {
+    height: 24px;
+    line-height: 24px;
+}
+
+.create_album .create_album_list {
+    padding: 20px 0 0;
+}
+
+.upl_resources .create_album_list .resource_li {
+    position: relative;
+}
+
+.create_album .create_album_list li {
+    font-size: 0;
+    padding: 4px 0;
+}
+
+.upl_resources .create_album_list li .choose_wrap {
+    background: #f3f9ff;
+    border: 1px dashed #d7e1f6;
+    border-radius: 2px;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.upl_resources .create_album_list li .choose_wrap #progress_box_new {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+    background: #e7f4fd;
+    border: 1px dashed #d7e1f6;
+    border-radius: 2px;
+    z-index: 11;
+}
+
+.upl_resources .create_album_list li .choose_wrap #progress_box_new #progress_bar_new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #86ca5e;
+}
+
+.upl_resources .create_album_list li .choose_wrap #progress_box_new #progress_status_new {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #333;
+}
+
+.create_album .create_album_list li .choose_intro {
     display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.upl_resources .create_album_list li .choose_wrap .file {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    border: none;
-}
-.avatar {
-    float: left;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1px solid #eee;
-    margin-right: 20px;
+    z-index: 1;
+    opacity: 0;
 }
 
-.profile_card .cardl, .profile_card .cardr {
-    display: inline-block;
-    float: left;
-}
-.profile_card .cardl .brief .name {
-    font-size: 16px;
-}
-.rights {
-    line-height: 1;
-    margin-top: 14px;
-}
-
-.rights span {
-    color: #333;
-    position: relative;
-    bottom: -1px;
-}
-.rights span, .rights span label {
-    line-height: 16px;
+.upl_resources .create_album_list li .choose_wrap .choose_file em {
     font-size: 14px;
+    color: #333;
+    word-break: break-all;
 }
 
-.datas {
-    margin: 28px 0 26px -20px;
-}
-.datas li {
-    float: left;
-    width: 15%;
-}
-.datas label {
+.create_album .create_album_list li input, .create_album .create_album_list li label, .create_album .create_album_list li select, .create_album .create_album_list li textarea {
+    display: inline-block;
     font-size: 14px;
     color: #666;
-    margin-bottom: 15px;
-	text-align:center;
+    outline: 0;
 }
-.cardr label, .datas label, .datas span {
+
+.form_error {
+    margin-top: 2px;
     display: block;
+    margin-left: 62px;
+    height: 12px;
     line-height: 1;
+    font-size: 12px;
+    color: #ca0c16;
+    font-weight: 400;
+    padding-left: 20px;
+    font-style: normal;
 }
-.datas span {
-    font-family: arial;
-    font-weight: 700;
-    font-size: 24px;
-    color: #ff9358;
-	text-align:center;
-}
-.profile_card .cardr {
-    width: 35%;
-}
-.profile_card .cardr {
-    display: inline-block;
-    float: left;
-}
-.cardr {
-	background: #fff;
-	float:right;
-    text-align: right;
-	margin-top:-100px;
-}
-.cardr .non_members {
-    margin: 70px;
-}
-.cardr ul li{ text-align:center;}
-.cardr .btn_vip{
-	margin-right:50px;
-    display: block;
-    padding: 0 25px;
+
+.res_tip {
+    display: inline;
+    width: 240px;
+    height: 20px;
+    overflow: hidden;
     font-size: 14px;
-    line-height: 36px;
-    height: 36px;
-    background:red;
+}
+
+.upl_resources .create_album_list .tag_li .txt-box .btn_add_tag {
+    display: inline-block;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    color: #3399ea;
+    font-size: 14px;
+    cursor: pointer;
+    outline: 0;
+    height: 28px;
+    line-height: 28px;
+}
+
+.form_tips_b {
+    display: block;
+    margin-left: 83px;
+    line-height: 27px;
+    font-size: 14px;
+    color: #999;
+    font-style: normal;
+    margin-bottom: -8px;
+}
+
+.create_album .create_album_list li textarea {
+    width: 1074px;
+    height: 96px;
+    padding: 4px 8px;
+    resize: none;
+}
+
+.create_album .create_album_b {
+    padding: 30px 0;
+    text-align: left;
+    font-size: 0;
+}
+
+.create_album .create_album_b .album_submit {
+    padding: 0;
+    background: #ca0c16;
+    line-height: 40px;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+}
+
+.create_album .create_album_b input {
+    display: inline-block;
+    padding: 0 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
     color: #fff;
     border-radius: 4px;
-}
-.datas_detail {
-    margin-top: 8px;
-    width: 892px;
-}
-
-.datas_detail .tabs {
-    background: #eef1f3;
+    border: none;
+    outline: 0;
+    margin-left: 82px;
 }
 
-.datas_detail .tabs li.cur {
-    background: #fff;
-    border: 1px solid #eee;
-    border-bottom: 1px solid transparent;
-}
-
-.datas_detail .tabs li {
-	text-align:center;
-    float: left;
-    width: 122px;
-    height: 42px;
-    line-height: 42px;
-    background: #eef1f3;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-}
-.selector_box {
-    padding: 16px 20px 0;
-    background-color: #fff;
-}
-.selector-box .btn_selector .active, .selector_box .btn_selector:hover {
-    background: #ca0c16;
-    color: #fff;
-}
-.selector_box .btn_selector {
-    display: inline-block;
-    margin-right: 6px;
-    padding: 0 18px;
-    line-height: 24px;
-    border-radius: 14px;
+.btn_report {
+    margin-top: 22px;
+    float: right;
     font-size: 14px;
-    color: #6b6b6b;
-    background: #f5f6f7;
-    transition: all .3s ease-in-out;
+    color: #3d3d3d;
+    background-color: transparent;
+    border: none;
 }
 
-.list_container {
-    min-height: 530px;
-    background: #fff;
-    padding: 18px;
-    margin-top: 0;
-}
-.aside {
-    margin: 8px 0 0 8px;
-    width: calc(100% - 900px);
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
-.aside .btns a {
-    float: left;
-    display: block;
+#targetLayer {
     width: 100%;
-    height: 44px;
-    background: #e33f3f;
-    font-size: 16px;
-    line-height: 44px;
-    color: #fff;
-	text-align:center;
-	margin-bottom:25px;
+    text-align: center;
 }
-.aside .tags {
-    margin-top: 8px;
-    padding: 20px;
-    border: 1px solid #eee;
+
+.create_album .create_album_list li #sel_subclass, .create_album .create_album_list li .add_source_inpt, .create_album .create_album_list li .album_inpt, .create_album .create_album_list li .select, .create_album .create_album_list li .select_score, .create_album .create_album_list li textarea {
+    width: 350px;
+    height: 32px;
     background: #fff;
-}
-.aside .tags h3 {
-    font-size: 16px;
-    color: #4a4a4a;
-    line-height: 24px;
-    margin-bottom: 12px;
-}
-.aside .tags .content {
-    margin-left: -4px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    border-radius: 4px;
 }
 
-
+.upl_resources .create_album_list li label span.required-icon {
+    color: #ca0c16;
+}

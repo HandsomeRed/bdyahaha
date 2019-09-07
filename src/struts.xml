@@ -69,7 +69,7 @@
 		
 		<!-- 写博文 -->
 		<action name="doWriteBlog" class="wbAction" method="doWriteBlog">
-			<result name="success" type="redirect">list</result>
+			<result name="success" type="redirectAction">doGetMyArticles</result>
 		</action>
 
 		<!-- 找博文 -->

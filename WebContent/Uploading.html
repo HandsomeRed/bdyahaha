@@ -77,80 +77,100 @@
     <div class="clears"></div>
 </div>
 <div class="meeting_main">
-	<div class="download_profile">
-    	<div class="profile_card">
-        	<div class="card1">
-            	<img src="images/defaultPic.jpg" class="avatar">
-            </div>
-            <div class="brief">
-            	<div class="name"><span>猴子搬来的逗比</span></div>
-                <p class="rights">
-                	<span><img src="images/grade.png"></span>
-                    <span><label>上传权限：</label>220M</span>
-                </p>
-            </div>
-            <ul class="datas">
-            	<li><label>积分</label>
-                	<span>0</span>
-                </li>
-                <li><label>总排名</label>
-                	<span>427390943</span>
-                </li>
-                <li><label>上传资源</label>
-                	<span>0</span>
-                </li>
-                <li><label>下载资源</label>
-                	<span>1</span>
-                </li>
-                <li><label>创建专辑</label>
-                	<span>0</span>
-                </li>
-            </ul>
-        </div>
-        <div class="cardr">
-        	<ul class="non_nembers">
-            	<li>
-                	<a href="" class="btn_vip">开通会员免积分下载</a>
-                </li>
-            </ul>
-        </div>
-        <div class="clears"></div>
-        <div class="main">
-        <div class="datas_detail left">
-        	<ul class="tabs">
-            	<li class="cur"><a href="">上传资源</a></li>
-                <li><a href="">积分明细</a></li>
-                <li><a href="">下载明细</a></li>
-                <li><a href="">我的收藏</a></li>
-                <li><a href="">VIP下载服务</a></li>
-            </ul>
-            <div class="clears"></div>
-            <br>
-            <div class="items">
-            	<div class="selector_box">
-                	<a href="" class="btn_selector active">全部</a>
-                    <a href="" class="btn_selector">待审核</a>
-                    <a href="" class="btn_selector">已通过</a>
-                    <a href="" class="btn_selector">未通过</a>
-                    <a href="" class="btn_selector">已私密</a>
+    <div class="download_new">
+        <div>
+            <div class="create_album_wrap">
+                <h4 class="dl_common_t"><span>上传资源</span></h4>
+                <div class="create_album upl_resources">
+                    <form class="form">
+                        <div id="targetLayer"></div>
+                        <ul class="create_album_list">
+                            <li class="resource_li">
+                                <div class="choose_weap">
+                                    <div id="progress_box_new">
+                                        <div id="progress_box_new"></div>
+                                        <span id="progress_status_new">上传中...(0%)</span>
+                                    </div>
+                                    <span class="choose_intro choose_file"><em
+                                            id="li_userfile">✙点击上传资源，文件小于220M</em></span>
+                                    <input type="file" class="file">
+
+                                </div>
+                                <em class="form_error"></em>
+                            </li>
+                            <li>
+                                <label>
+                                    <span class="requird_icon">*</span>
+                                    资源名称：
+                                </label>
+                                <input type="text" max="80" id="title" name="title" placeholder="请输入资源名称"
+                                       class="album_inpt">
+                                <em class="form_error"></em>
+                            </li>
+                            <li>
+                                <label>
+                                    <span class="requird_icon">*</span>
+                                    资源类型：
+                                </label>
+                                <select def="0" class="select" id="">
+                                    <option value="0">请选择</option>
+                                    <option value="1">文档</option>
+                                    <option value="2">代码类</option>
+                                    <option value="3">工具类</option>
+                                    <option value="4">其他</option>
+                                </select>
+                                <div class="res_tip"></div>
+                                <em class="form_error"></em>
+                            </li>
+                            <li>
+                                <label>
+                                    <span class="requird_icon">*</span>
+                                    所属分类：
+                                </label>
+                                <select def="0" class="select" id="">
+                                    <option value="0">请选择</option>
+                                    <option value="1">移动开发</option>
+                                    <option value="2">课程资源</option>
+                                    <option value="3">信息化</option>
+                                    <option value="4">其他</option>
+                                    <!--其他再进行添加-->
+                                </select>
+                                <em class="form_error"></em>
+                            </li>
+                            <li class="tag_li">
+                                <label>
+                                    <span class="requird_icon">*</span>
+                                    资源标签：
+                                </label>
+                                <div class="txt-box">
+                                    <div class="txt-box">
+                                        <button id="addTag" class="btn_add_tag">添加标签</button>
+                                    </div>
+                                </div>
+                                <em class="form_error"></em>
+                                <div class="form_tips_b">最多添加5个标签，每个标签不超过16个字符</div>
+                            </li>
+                            <li>
+                                <label>
+                                    <span class="requird_icon">*</span>
+                                    资源描述：
+                                </label>
+                                <textarea name="txt_desc" max="500"
+                                          placeholder="描述不支持HTML标签；详细的资源描述有机会获得我们的推荐，更有利于他人下载，赚更多积分。如描述不清，有可能审核不能通过。"></textarea>
+                                <em class="form_error"></em>
+                            </li>
+                            <li class="source_tips">
+                                <input type="checkbox" checked="checked">
+                                <label style="width:auto;" for="cb_agree">同意<a href="">资源共享规则</a></label>
+                            </li>
+                            <div class="create_album_b">
+                                <input type="button" value="提交" class="album_submit">
+                                <button class="btn btn_report">意见反馈</button>
+                            </div>
+                        </ul>
+                    </form>
                 </div>
-                <div class="list_container"></div>
             </div>
-        </div>
-        
-        <div class="aside right">
-        	<div class="btns">
-            	<a href="">上传资源</a>
-            </div>
-            <div class="tags">
-            	<h3>我的tag</h3>
-                <div class="content">
-                	暂无内容
-                </div>
-            </div>
-            <div class="clears"></div>
-            <div></div><!--这个div是公司内容-->
-        </div>
         </div>
     </div>
 </div>
