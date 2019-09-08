@@ -85,7 +85,7 @@
             </div>
             <s:div id="bAriticleList" value="#request.blogArticleList">
             <div class="leftGroup leftBoxLine">
-                <a href="doGetBlogMng?user.id=${session.saveUserInformationTOSession.id }" class="leftGroupItem" target="">查看主页</a>
+                <a href="doGetBlogMng?user.id=#session.saveUserInformationTOSession.id" class="leftGroupItem" target="">查看主页</a>
             </div>
             </s:div>
             <div class="leftGroupItem leftGroupTitle">内容</div>

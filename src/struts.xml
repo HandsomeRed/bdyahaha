@@ -86,7 +86,8 @@
 
 		<!--加载他人博客主页-->
 		<action name="doGetBlogMng" class="bAction" method="doGetBlogMng">
-            <result/>
+            <result name="success">/BlogPerson.jsp</result>
+			<result name="fail">/404.html</result>
 		</action>
 
         <!--删除blogArticle-->
