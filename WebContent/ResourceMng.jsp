@@ -1,8 +1,11 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>无标题文档</title>
+    <title>资源管理</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/MyResource.css">
 </head>
@@ -83,7 +86,7 @@
                 <img src="images/defaultPic.jpg" class="avatar">
             </div>
             <div class="brief">
-                <div class="name"><span>猴子搬来的逗比</span></div>
+                <div class="name"><span>${session.saveUserInformationTOSession.name}</span></div>
                 <p class="rights">
                     <span><img src="images/grade.png"></span>
                     <span><label>上传权限：</label>220M</span>
@@ -110,7 +113,7 @@
         <div class="cardr">
             <ul class="non_nembers">
                 <li>
-                    <a href="" class="btn_vip">开通会员免积分下载</a>
+                    <a href="" class="btn_vip">下载资源</a>
                 </li>
             </ul>
         </div>
@@ -122,7 +125,6 @@
                     <li><a href="">积分明细</a></li>
                     <li><a href="">下载明细</a></li>
                     <li><a href="">我的收藏</a></li>
-                    <li><a href="">VIP下载服务</a></li>
                 </ul>
                 <div class="clears"></div>
                 <div class="items">
@@ -135,6 +137,7 @@
                     </div>
                     <div class="clears"></div>
                     <div class="list_container">
+                    <s:iterator id="mResource" value="#request.myResources">
                     	<!--循环开始-->
                     	<ul>
                         	<li>
@@ -145,21 +148,21 @@
                                     </div>
                                     <div class="resourceCon"><!--资源信息-->
                                     	<h3>
-                                        	<a target="_blank" href="">蠕虫代码.txt</a>
+                                        	<a target="_blank" href="">${mResource.name}</a>
                                         </h3>
                                     </div>
                                     <div class="clears"></div>
                                     <div class="resourceTagBox">
                                     	<p class="resourceTag">
-                                        	<a target="_blank" href="">蠕虫</a>
+                                        	<a target="_blank" href="">${mResource.introduction}</a>
                                         </p>
                                         <div class="resourceState">
-                                        	<span class="resourceStatu">已通过</span>
+                                        	<span class="resourceStatu">${mResource.status}</span>
                                         </div>
                                     </div>
                                     <div class="resourceDate">
                                     	<label>上传时间：</label>
-                                        2019-07-15
+                                        ${mResource.releaseTime}
                                     </div>
                                     <div class="resourceScore">
                                     	<label>所需积分/C币：</label>
@@ -177,48 +180,7 @@
                             </li>
                         </ul>
                         <div class="list_container_nav"><!--分割线--></div>
-                    	<!--循环结束-->
-                        <ul>
-                        	<li>
-                            	<div class="resourceBox">
-                                
-                                	<div class="resourceImg"><!--资源类型图片-->
-                                    	<a><img src="images/fileImg.jpg"/></a>
-                                    </div>
-                                    <div class="resourceCon"><!--资源信息-->
-                                    	<h3>
-                                        	<a target="_blank" href="">蠕虫代码.txt</a>
-                                        </h3>
-                                    </div>
-                                    <div class="clears"></div>
-                                    <div class="resourceTagBox">
-                                    	<p class="resourceTag">
-                                        	<a target="_blank" href="">蠕虫</a>
-                                        </p>
-                                        <div class="resourceState">
-                                        	<span class="resourceStatu">已通过</span>
-                                        </div>
-                                    </div>
-                                    <div class="resourceDate">
-                                    	<label>上传时间：</label>
-                                        2019-07-15
-                                    </div>
-                                    <div class="resourceScore">
-                                    	<label>所需积分/C币：</label>
-                                        5
-                                    </div>
-                                    <div class="resourceOperate">
-                                    	<a href="" class="">编辑</a>
-                                       	<label class="ShuXian"></label>
-                                        <a href="" class="">私密</a>
-                                        <label class="ShuXian"></label>
-                                        <a href="" class="">复制链接</a>
-                                    </div>
-                                </div>
-                                
-                            </li>
-                        </ul>
-                        <div class="list_container_nav"><!--分割线--></div>
+					</s:iterator>
                     </div>
                 </div>
             </div>

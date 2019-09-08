@@ -102,11 +102,12 @@
 
 		<!-- get reources -->
 		<action name="doGetMyResources" class="resourceAction" method="doGetMyResources">
-            <result name="success">index.jsp</result>
+            <result name="success">ResourceMng.jsp</result>
+            <result name="fail">404.html</result>
         </action>
 
 		<action name="doGetResourceList" class="resourceAction" method="doGetResourceList">
-			<result/>
+			<result name="success"></result>
 		</action>
 
 
