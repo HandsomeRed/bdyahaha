@@ -1,5 +1,5 @@
 /* CSS Document */
-*{ margin:0px; padding:0px; }/*鎵�鏈夋爣绛惧潎鎵ц*/
+*{ margin:0px; padding:0px; }/*閹碉拷閺堝鐖ｇ粵鎯ф綆閹笛嗩攽*/
 
 body{ 
 	background:#f5f6f7;
@@ -26,7 +26,6 @@ a{
 	background:#fff;
 	color:#333;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-	width:100%;
 	padding: 0 28px 0 17px;
 	
 	}
@@ -383,7 +382,7 @@ dl {
 	}
 
 
-<!--淇敼宸︿晶浣滆�卋ox鐨勬牱寮�-->
+<!--娣囶喗鏁煎锔挎櫠娴ｆ粏锟藉崑ox閻ㄥ嫭鐗卞锟�-->
 .leftBox {
     float: left;
     display: block;

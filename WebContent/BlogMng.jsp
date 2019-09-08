@@ -4,10 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>无标题文档</title>
+    <meta charset=utf-8"/>
+    <title>博客管理</title>
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/BlogMng.css"/>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="js/test.js" type="text/javascript"></script>
@@ -60,6 +59,9 @@
                         <a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
                     </div>
                 </li>
+                <li>
+            		<a href="doGetMyArticles" style="margin-left:30px;">博客管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>
@@ -85,7 +87,7 @@
             </div>
             <s:div id="bAriticleList" value="#request.blogArticleList">
             <div class="leftGroup leftBoxLine">
-                <a href="doGetBlogMng?user.id=#session.saveUserInformationTOSession.id" class="leftGroupItem" target="">查看主页</a>
+                <a href="doGetBlogMng?user.id=${session.saveUserInformationTOSession.id }" class="leftGroupItem" target="">查看主页</a>
             </div>
             </s:div>
             <div class="leftGroupItem leftGroupTitle">内容</div>

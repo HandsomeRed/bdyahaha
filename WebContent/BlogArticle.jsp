@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>无标题文档</title>
+    <title>LIBD_${ba.title}</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/BlogArticle.css">
@@ -58,6 +58,9 @@
                         <a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
                     </div>
                 </li>
+                <li>
+            		<a href="doGetMyArticles">博客管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>
