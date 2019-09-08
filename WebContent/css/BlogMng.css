@@ -27,6 +27,19 @@ body{
     cursor: pointer;
 	}
 
+.inputSearch{
+	font-size: 14px;
+    color: #999;
+    display: block;
+    float: left;
+    width: 150px;
+    padding: 4px 0 4px 7px;
+    border: 0;
+    height: 24px;
+    border-radius: 10px;
+    background: 0 0;
+	}
+
 .notice {
     padding: 8px 16px 8px 24px;
     margin-top: 10px;

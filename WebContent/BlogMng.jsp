@@ -83,9 +83,11 @@
             <div class="leftGroup leftBoxLine">
                 <a href="WriteBlog.jsp" class="richText leftGroupItem" target=""><img src="images/write_blog.jpg" class="leftBoxIco"/>富文本编辑器</a>
             </div>
+            <s:div id="bAriticleList" value="#request.blogArticleList">
             <div class="leftGroup leftBoxLine">
-                <a href="" class="leftGroupItem" target="">查看主页</a>
+                <a href="doGetBlogMng?user.id=${session.saveUserInformationTOSession.id }" class="leftGroupItem" target="">查看主页</a>
             </div>
+            </s:div>
             <div class="leftGroupItem leftGroupTitle">内容</div>
             <div class="leftGroup">
                 <a href="" class="leftGroupItem" target="">文章管理</a>

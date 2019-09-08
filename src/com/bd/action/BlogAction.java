@@ -11,6 +11,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.bd.entity.BlogArticleEntity;
 import com.bd.service.BlogService;
 import com.opensymphony.xwork2.ActionSupport;
+import tool.Key_Value;
 
 public class BlogAction extends ActionSupport implements RequestAware,SessionAware{
 
@@ -32,7 +33,6 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
 	public void setType(BlogClassifyEntity type) {
 		this.type = type;
 	}
-
 
 	public BlogArticleEntity getBa() {
 		return ba;
@@ -87,7 +87,6 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
     }
 
 
-
 	// 加载指定article 成功返回success,失败返回fail
     public String doGetArticle() {
 		ba = blogService.getArticle(ba);
@@ -102,11 +101,19 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
         UserEntity user = (UserEntity) session.get(Key_Value.user);
         if (user == null) return "fail";
         List<BlogArticleEntity> myArticles;
-
         myArticles = blogService.getMyArticles(user, ba);
+
         if (myArticles == null) return "fail";
         request.put("blogArticleList", myArticles);
+
         return "success";
+    }
+
+    public String doDeleteBlogArticle() {
+        UserEntity user = (UserEntity) session.get(Key_Value.user);
+        if (user == null) return "fail";
+
+        return blogService.doDeleteBlogArticle(user, ba);
     }
 
 

@@ -80,15 +80,39 @@
 
 		<!--加载博客管理页面-->
 		<action name="doGetMyArticles" class="bAction" method="doGetMyArticles">
-			<result name="success">/BlogMng.jsp</result>
+            <result name="success" type="dispatcher">/BlogMng.jsp</result>
 			<result name="fail">/404.html</result>
 		</action>
 
 		<!--加载他人博客主页-->
 		<action name="doGetBlogMng" class="bAction" method="doGetBlogMng">
-			<result />
+            <result/>
 		</action>
 
-	</package>
+        <!--删除blogArticle-->
+        <action name="doDeleteBlogArticle" class="bAction" method="doDeleteBlogArticle">
+            <result/>
+        </action>
+
+        <!--upload file-->
+        <action name="upload" class="uploadAction" method="uploadFile">
+            <result name="success" type="redirect">list</result>
+        </action>
+
+		<!-- get reources -->
+		<action name="doGetMyResources" class="resourceAction" method="doGetMyResources">
+            <result name="success">index.jsp</result>
+        </action>
+
+		<action name="doGetResourceList" class="resourceAction" method="doGetResourceList">
+			<result/>
+		</action>
+
+
+		<action name="doGetResource" class="resourceAction" method="doGetResource">
+			<result/>
+		</action>
+
+    </package>
 	 
 </struts>
