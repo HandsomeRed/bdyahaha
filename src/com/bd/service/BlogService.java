@@ -19,4 +19,6 @@ public interface BlogService {
 	List<BlogArticleEntity> getMyArticles(UserEntity user, BlogArticleEntity ba);
 
 	List<BlogArticleEntity> getBlogMng(UserEntity user);
+
+    String doDeleteBlogArticle(UserEntity user, BlogArticleEntity ba);
 }

@@ -1,43 +1,43 @@
 /* CSS Document */
-body{ 
-	background:#f5f6f7;
+body {
+    background: #f5f6f7;
 }
 
 
-.navigation{
-	height:40px;
-	background:#fff;
-	color:#333;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-	width:100%;
-	padding: 0 28px 0 17px;
-	
-	}
+.navigation {
+    height: 40px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    width: 100%;
+    padding: 0 28px 0 17px;
 
-.navigatLeft{
-	width: 1200px;
+}
+
+.navigatLeft {
+    width: 1200px;
     margin: 0px auto;
-	padding:0px;
-	}
+    padding: 0px;
+}
 
-.navigatLeft>ul{
-	margin-left: -12px;
-	margin:0px;
-	padding:0px;
-	height:100%;
-	}
+.navigatLeft > ul {
+    margin-left: -12px;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
 
-.navigatLeft>ul>li:first-child>a{
-	float:left;
+.navigatLeft > ul > li:first-child > a {
+    float: left;
     margin-right: 0px;
     margin-left: 0px;
     width: 90px;
     height: 40px;
-	}
+}
 
-.navigatLeft>ul>li>a{
-	float:left;
-	display: block;
+.navigatLeft > ul > li > a {
+    float: left;
+    display: block;
     margin-left: 6px;
     margin-right: 6px;
     height: 38px;
@@ -45,20 +45,20 @@ body{
     text-align: center;
     font-size: 14px;
     color: #3D3D3D;
-	}
+}
 
 .navigatLeftSearch {
-	margin-left:100px;
-	float:left;
+    margin-left: 100px;
+    float: left;
     width: 180px;
     height: 26px;
     border: 1px solid #CCC;
     border-radius: 4px;
-	margin-top:6px; 
-	}
+    margin-top: 6px;
+}
 
-.inputSearch{
-	font-size: 14px;
+.inputSearch {
+    font-size: 14px;
     color: #999;
     display: block;
     float: left;
@@ -68,13 +68,13 @@ body{
     height: 18px;
     border-radius: 10px;
     background: 0 0;
-	}
+}
 
-.icoSearch{
-	height:18px;
-	width:18px;
-	margin-top:4px;
-	}
+.icoSearch {
+    height: 18px;
+    width: 18px;
+    margin-top: 4px;
+}
 
 .loginedUserBox {
     float: left;
@@ -114,6 +114,7 @@ body{
     color: #1f1f1f;
     line-height: 20px;
 }
+
 .news_nav .container {
     margin: 0 auto;
     width: 1200px;
@@ -149,10 +150,12 @@ body{
     color: red;
     transform: scale(.583);
 }
+
 .search_download {
     float: right;
     margin-top: 8px;
 }
+
 .meeting_main {
     width: 1200px;
     margin: 8px auto;
@@ -161,16 +164,18 @@ body{
 .download_profile {
     margin-top: 8px;
 }
+
 .profile_card {
     padding: 20px 20px 0;
     background: #fff;
     border: 1px solid #eee;
-	height:150px;
+    height: 150px;
 }
 
 .profile_card .cardl {
     width: 65%;
 }
+
 .profile_card .cardl .user_img {
     position: relative;
     float: left;
@@ -180,6 +185,7 @@ body{
     border-radius: 50%;
     border: 1px solid #eee;
 }
+
 .profile_card .cardl .user_img img {
     display: inline-block;
     width: 100%;
@@ -187,6 +193,7 @@ body{
     max-width: 100%;
     border: none;
 }
+
 .avatar {
     float: left;
     width: 80px;
@@ -200,9 +207,11 @@ body{
     display: inline-block;
     float: left;
 }
+
 .profile_card .cardl .brief .name {
     font-size: 16px;
 }
+
 .rights {
     line-height: 1;
     margin-top: 14px;
@@ -213,6 +222,7 @@ body{
     position: relative;
     bottom: -1px;
 }
+
 .rights span, .rights span label {
     line-height: 16px;
     font-size: 14px;
@@ -221,55 +231,68 @@ body{
 .datas {
     margin: 28px 0 26px -20px;
 }
+
 .datas li {
     float: left;
     width: 15%;
 }
+
 .datas label {
     font-size: 14px;
     color: #666;
     margin-bottom: 15px;
-	text-align:center;
+    text-align: center;
 }
+
 .cardr label, .datas label, .datas span {
     display: block;
     line-height: 1;
 }
+
 .datas span {
     font-family: arial;
     font-weight: 700;
     font-size: 24px;
     color: #ff9358;
-	text-align:center;
+    text-align: center;
 }
+
 .profile_card .cardr {
     width: 35%;
 }
+
 .profile_card .cardr {
     display: inline-block;
     float: left;
 }
+
 .cardr {
-	background: #fff;
-	float:right;
+    background: #fff;
+    float: right;
     text-align: right;
-	margin-top:-100px;
+    margin-top: -100px;
 }
+
 .cardr .non_members {
     margin: 70px;
 }
-.cardr ul li{ text-align:center;}
-.cardr .btn_vip{
-	margin-right:50px;
+
+.cardr ul li {
+    text-align: center;
+}
+
+.cardr .btn_vip {
+    margin-right: 50px;
     display: block;
     padding: 0 25px;
     font-size: 14px;
     line-height: 36px;
     height: 36px;
-    background:red;
+    background: red;
     color: #fff;
     border-radius: 4px;
 }
+
 .datas_detail {
     margin-top: 8px;
     width: 892px;
@@ -286,7 +309,7 @@ body{
 }
 
 .datas_detail .tabs li {
-	text-align:center;
+    text-align: center;
     float: left;
     width: 122px;
     height: 42px;
@@ -296,14 +319,17 @@ body{
     border-bottom: 1px solid #eee;
     cursor: pointer;
 }
+
 .selector_box {
     padding: 16px 20px 0;
     background-color: #fff;
 }
+
 .selector-box .btn_selector .active, .selector_box .btn_selector:hover {
     background: #ca0c16;
     color: #fff;
 }
+
 .selector_box .btn_selector {
     display: inline-block;
     margin-right: 6px;
@@ -322,6 +348,7 @@ body{
     padding: 18px;
     margin-top: 0;
 }
+
 .aside {
     margin: 8px 0 0 8px;
     width: calc(100% - 900px);
@@ -336,21 +363,24 @@ body{
     font-size: 16px;
     line-height: 44px;
     color: #fff;
-	text-align:center;
-	margin-bottom:25px;
+    text-align: center;
+    margin-bottom: 25px;
 }
+
 .aside .tags {
     margin-top: 8px;
     padding: 20px;
     border: 1px solid #eee;
     background: #fff;
 }
+
 .aside .tags h3 {
     font-size: 16px;
     color: #4a4a4a;
     line-height: 24px;
     margin-bottom: 12px;
 }
+
 .aside .tags .content {
     margin-left: -4px;
 }

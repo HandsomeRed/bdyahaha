@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.ResourceMngEntity" table="resource_mng" schema="blog" lazy="false">
+    <class name="com.bd.entity.ResourceMngEntity" table="resource_mng" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -27,7 +27,7 @@
             </key>
             <one-to-many class="com.bd.entity.FavoriteResourceEntity"/>
         </set>
-        <set name="resources" inverse="true">
+        <set name="resources" inverse="true" cascade="all">
             <key>
                 <column name="rmId"/>
             </key>

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.BlogArticleEntity" table="blog_article" schema="blog" lazy="false">
+    <class name="com.bd.entity.BlogArticleEntity" table="blog_article" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -33,7 +33,7 @@
         <property name="likeNum">
             <column name="likeNum" sql-type="int(12)" not-null="false"/>
         </property>
-        <many-to-one name="blogMng" class="com.bd.entity.BlogMngEntity" cascade="all">
+        <many-to-one name="blogMng" class="com.bd.entity.BlogMngEntity" cascade="save-update">
             <column name="bmId" not-null="false"/>
         </many-to-one>
         <many-to-one name="blogClassify" class="com.bd.entity.BlogClassifyEntity" cascade="all">

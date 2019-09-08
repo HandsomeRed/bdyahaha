@@ -23,10 +23,6 @@ public class BlogServiceImply implements BlogService {
 
 	@Override
 	public List<BlogArticleEntity> getSelectBlogArticles(BlogClassifyEntity bc) {
-
-		if (bc ==null ||bc.getName() == null)
-			return blogDao.getAllArticles();
-		else
 			return blogDao.getSelectArticle(bc);
 	}
 
@@ -44,9 +40,13 @@ public class BlogServiceImply implements BlogService {
 	public List<BlogArticleEntity> getBlogMng(UserEntity user) {
 
 		BlogArticleEntity example = new BlogArticleEntity();
-		example.setStatus("public");
 		return blogDao.getArticles(user, example);
 
 	}
+
+    @Override
+    public String doDeleteBlogArticle(UserEntity user, BlogArticleEntity ba) {
+        return blogDao.deleteArticle(user, ba);
+    }
 
 }

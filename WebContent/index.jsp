@@ -81,7 +81,7 @@
     	<ul class="classifyUL">
     		<li class="focus"><a  href="">推荐</a></li>
     		<s:iterator id="classify" value="#request.ArticleClassifyList"><!-- blogclassifyList 包含分类以及分类下文章集合的集合 -->
-            <li><a href="list?type.name=${classify.name}">${classify.name}</a></li>
+            <li><a href="list?type.id=${classify.id}">${classify.name}</a></li>
     		</s:iterator>
         </ul>
     </div><!--左侧分类-->
@@ -96,14 +96,14 @@
                         	<h2><a href="doGetBlogArticle?ba.id=${blogList.id}" class="titleH2">${blogList.title}</a></h2>
                         </div>
                         <div class="summary"><!-- 概要 -->
-                        	${blogList.content}
+                        	${blogList.content.substring(0,15)}...
                         </div>
                         <dl class="listUserBar">
                    			<dt><!-- 头像 -->
                             	<a href="" class="userImg"><img src="images/touxiang.jpg"/></a>
                             </dt>
                             <dd class="name">
-                            	<a href="">${blogList.blogMng.title}</a>
+                            	<a href="">${blogList.blogMng.user.account}</a>
                             </dd>
                             <div class="fenge"></div>
                             <dd class="time">${blogList.releaseTime}</dd>
