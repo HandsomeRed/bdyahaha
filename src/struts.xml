@@ -96,8 +96,9 @@
         </action>
 
         <!--upload file-->
-        <action name="upload" class="uploadAction" method="uploadFile">
-            <result name="success" type="redirect">list</result>
+        <action name="uploadFile" class="uploadAction" method="uploadFile">
+            <result name="success" type="redirectAction">doGetMyResources</result>
+        	<result name="fail" type="redirect">/Login.jsp</result>
         </action>
 
 		<!-- get reources -->

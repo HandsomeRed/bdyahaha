@@ -55,6 +55,12 @@
                     	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
                     </div>
             	</li>
+            	<li>
+            		<a href="doGetMyArticles">博客管理</a>
+            	</li>
+            	<li>
+            		<a href="doGetMyResources">资源管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>

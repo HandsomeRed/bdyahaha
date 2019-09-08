@@ -62,6 +62,9 @@
                 <li>
             		<a href="doGetMyArticles" style="margin-left:30px;">博客管理</a>
             	</li>
+            	<li>
+            		<a href="doGetMyResources">资源管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>

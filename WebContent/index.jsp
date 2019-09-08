@@ -72,7 +72,7 @@
             		<a href="doGetMyArticles">博客管理</a>
             	</li>
             	<li>
-            		<a href="doGetResourceList">资源管理</a>
+            		<a href="doGetMyResources">资源管理</a>
             	</li>
             </s:else>
         </ul>

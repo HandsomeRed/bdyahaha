@@ -38,7 +38,10 @@ public class ResourceDaoImply implements ResourceDao {
 
     @Override
     public List<ResourceEntity> getResources(UserEntity user, ResourceEntity resource) {
-        List list = sessionFactory
+        
+    	if(resource == null) resource = new ResourceEntity();
+    	
+    	List list = sessionFactory
                 .getCurrentSession()
                 .createCriteria(ResourceEntity.class)
                 .add(Example.create(resource))
@@ -51,6 +54,7 @@ public class ResourceDaoImply implements ResourceDao {
 
     @Override
     public ResourceEntity getResource(ResourceEntity re) {
+    	if(re == null) re = new ResourceEntity();
         return sessionFactory
                 .getCurrentSession()
                 .load(ResourceEntity.class, re.getId());
@@ -58,6 +62,9 @@ public class ResourceDaoImply implements ResourceDao {
 
     @Override
     public List<ResourceEntity> getResourceList(ResourceEntity resource) {
+    	
+    	if(resource == null) resource = new ResourceEntity();
+    	
         return sessionFactory.getCurrentSession().createCriteria(ResourceEntity.class).add(Example.create(resource)).addOrder(Order.desc("releaseTime")).list();
     }
 

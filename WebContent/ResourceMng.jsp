@@ -56,6 +56,12 @@
                         <a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
                     </div>
                 </li>
+                <li>
+            		<a href="doGetMyArticles">博客管理</a>
+            	</li>
+            	<li>
+            		<a href="doGetMyResources">资源管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>
@@ -154,7 +160,7 @@
                                     <div class="clears"></div>
                                     <div class="resourceTagBox">
                                     	<p class="resourceTag">
-                                        	<a target="_blank" href="">${mResource.introduction}</a>
+                                        	<a target="_blank" href="">${mResource.resourceKeyword.name}</a>
                                         </p>
                                         <div class="resourceState">
                                         	<span class="resourceStatu">${mResource.status}</span>

@@ -1,8 +1,10 @@
-<!doctype html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>上传文件</title>
 <link rel="stylesheet" type="text/css" href="css/public.css">
 <link rel="stylesheet" type="text/css" href="css/Uploading.css">
 </head>
@@ -53,6 +55,12 @@
                     	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
                     </div>
             	</li>
+            	<li>
+            		<a href="doGetMyArticles">博客管理</a>
+            	</li>
+            	<li>
+            		<a href="doGetMyResources">资源管理</a>
+            	</li>
             </s:else>
         </ul>
     </div>
@@ -89,11 +97,11 @@
                                 <div class="choose_weap">
                                     <div id="progress_box_new">
                                         <div id="progress_box_new"></div>
-                                        <span id="progress_status_new">上传中...(0%)</span>
+                                        <!--<span id="progress_status_new">上传中...(0%)</span>-->
                                     </div>
                                     <span class="choose_intro choose_file"><em
-                                            id="li_userfile">✙点击上传资源，文件小于220M</em></span>
-                                    <input type="file" name="resource.addr" class="file">
+                                            id="li_userfile">✙点击上传资源，文件小于2M</em></span>
+                                    <input type="file" name="file" class="file">
 
                                 </div>
                                 <em class="form_error"></em>
