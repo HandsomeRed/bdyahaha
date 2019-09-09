@@ -18,7 +18,7 @@
 		
 		<!-- 配置拦截器 AuthorizationInterceptor -->
 		<interceptors>
-			<interceptor name="loginCheck" class="com.bd.interceptor.AuthorizationInterceptor"></interceptor>
+			<interceptor name="loginCheck" class="com.bd.interceptor.AuthorizationInterceptor"/>
 			<interceptor-stack name="myInterceptorStack">
                 <interceptor-ref name="defaultStack" />
                 <interceptor-ref name="loginCheck" />

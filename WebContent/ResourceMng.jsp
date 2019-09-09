@@ -160,7 +160,7 @@
                                     <div class="clears"></div>
                                     <div class="resourceTagBox">
                                     	<p class="resourceTag">
-                                        	<a target="_blank" href="">${mResource.resourceKeyword.name}</a>
+                                            <a target="_blank" href="">${mResource.resourceKeyword}</a>
                                         </p>
                                         <div class="resourceState">
                                         	<span class="resourceStatu">${mResource.status}</span>

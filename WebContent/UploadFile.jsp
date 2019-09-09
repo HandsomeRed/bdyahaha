@@ -90,7 +90,7 @@
             <div class="create_album_wrap">
                 <h4 class="dl_common_t"><span>上传资源</span></h4>
                 <div class="create_album upl_resources">
-                    <form class="form">
+                    <form action="uploadFile" class="form" method="post" enctype="multipart/form-data">
                         <div id="targetLayer"></div>
                         <ul class="create_album_list">
                             <li class="resource_li">
@@ -160,8 +160,8 @@
                                 <div class="txt-box">
                                     <div class="txt-box">
                                        <!--<button id="addTag" class="btn_add_tag">添加标签</button>-->
-                                       <textarea name="txt_tag" max="500"
-                                          placeholder="最多添加5个标签，每个标签不超过16个字符"></textarea>
+                                        <textarea name="resource.resourceKeyword" max="500"
+                                                  placeholder="最多添加5个标签，每个标签不超过16个字符"></textarea>
                                     </div>
                                 </div>
                                 <em class="form_error"></em>
@@ -181,7 +181,7 @@
                                 <label style="width:auto;" for="cb_agree">同意<a href="">资源共享规则</a></label>
                             </li>
                             <div class="create_album_b">
-                                <input type="button" value="提交" class="album_submit">
+                                <input type="submit" value="提交" class="album_submit">
                                 <button class="btn btn_report">意见反馈</button>
                             </div>
                         </ul>

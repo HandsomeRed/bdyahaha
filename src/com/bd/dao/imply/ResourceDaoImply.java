@@ -2,6 +2,7 @@ package com.bd.dao.imply;
 
 import com.bd.dao.ResourceDao;
 import com.bd.entity.ResourceEntity;
+import com.bd.entity.ResourceKeywordEntity;
 import com.bd.entity.ResourceMngEntity;
 import com.bd.entity.UserEntity;
 import org.hibernate.Criteria;
@@ -25,10 +26,21 @@ public class ResourceDaoImply implements ResourceDao {
         user = session.load(UserEntity.class, user.getId());
         resource.setReleaseTime(new Date(new java.util.Date().getTime()));
         resource.setResourceMng(user.getResourceMng());
-        resource.setType("原创");
         resource.setStatus("公开");
+
+        for (ResourceKeywordEntity rk : resource.getResourceKeyword()) {
+            System.out.println(rk.getName());
+            ResourceKeywordEntity r = (ResourceKeywordEntity) session
+                    .createCriteria(ResourceKeywordEntity.class)
+                    .add(Restrictions.eq("name", rk.getName()))
+                    .uniqueResult();
+            if (r != null) rk.setId(r.getId());
+            else rk.setId((Integer) session.save(rk));
+
+        }
+
         try {
-            session.saveOrUpdate(resource);
+            session.save(resource);
         } catch (HibernateException he) {
             he.printStackTrace();
             return false;

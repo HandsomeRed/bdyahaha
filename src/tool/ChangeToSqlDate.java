@@ -3,7 +3,6 @@ package tool;
 import com.opensymphony.xwork2.conversion.impl.DefaultTypeConverter;
 
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class ChangeToSqlDate extends DefaultTypeConverter {
 

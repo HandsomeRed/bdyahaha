@@ -22,6 +22,7 @@ public class UserEntity {
     private String userPic;
     private Integer fansNum;
     private String status;
+    private Integer code;
 
     //fans - attention : many to many
     private Set<UserEntity> fans;
@@ -206,7 +207,7 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, password, name, realName, sex, birth, address, trade, position, introduction, registDate, email, phone, userPic, fansNum, status);
+        return Objects.hash(id, account, password, name, realName, sex, birth, address, trade, position, introduction, registDate, email, phone, userPic, fansNum, status, code);
     }
 
     public Set<UserEntity> getAttentions() {
@@ -279,5 +280,13 @@ public class UserEntity {
 
     public void setResourceMng(ResourceMngEntity resourceMng) {
         this.resourceMng = resourceMng;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }

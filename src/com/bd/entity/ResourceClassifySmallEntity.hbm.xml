@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bd.entity.ResourceClassifySmallEntity" table="resource_classify_small" schema="blog" lazy="false">
+    <class name="com.bd.entity.ResourceClassifySmallEntity" table="resource_classify_small" schema="blog" lazy="true">
         <id name="id">
             <column name="id" sql-type="int(10)"/>
             <generator class="native"/>
@@ -12,8 +12,8 @@
         <property name="name">
             <column name="name" sql-type="varchar(32)" length="32"/>
         </property>
-        <many-to-one name="resourceClassifyBig" class="com.bd.entity.ResourceClassifyBigEntity">
-            <column name="rcbId"/>
+        <many-to-one name="resourceClassifyBig" class="com.bd.entity.ResourceClassifyBigEntity" cascade="save-update">
+            <column name="rcbId" not-null="false"/>
         </many-to-one>
         <set name="resources" inverse="true">
             <key>
