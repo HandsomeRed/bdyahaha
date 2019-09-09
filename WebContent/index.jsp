@@ -74,6 +74,9 @@
             	<li>
             		<a href="doGetMyResources">资源管理</a>
             	</li>
+            	<li>
+            		<a href="doGetResource?resource.id=1">资源页面测试</a>
+            	</li>
             </s:else>
         </ul>
     </div>

@@ -113,7 +113,8 @@
 
 
 		<action name="doGetResource" class="resourceAction" method="doGetResource">
-			<result/>
+			<result name="success">ResourceDetail.jsp</result>
+            <result name="fail">/Login.jsp</result>
 		</action>
 
     </package>
