@@ -126,7 +126,7 @@
                         <a><img src="images/defaultPic.jpg"/></a>
                     </div>
                     <div class="authorInfor"><!--用户名-->
-                        <p><a class="authorName">${ba.blogMng.user.account}</a></p>
+                        <p><a class="authorName" href="doGetBlogMng?user.id=${ba.blogMng.user.id}">${ba.blogMng.user.name}</a></p>
                         <p><a class="homePage" href="doGetBlogMng?user.id=${ba.blogMng.user.id}">TA的个人主页</a></p>
                     </div>
                     <div class="guanzhuBtnBox"><!--关注按钮-->

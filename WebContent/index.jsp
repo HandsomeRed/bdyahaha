@@ -106,7 +106,7 @@
                             	<a href="" class="userImg"><img src="images/touxiang.jpg"/></a>
                             </dt>
                             <dd class="name">
-                            	<a href="">${blogList.blogMng.user.account}</a>
+                            	<a href="doGetBlogMng?user.id=${blogList.blogMng.user.id}">${blogList.blogMng.user.name}</a>
                             </dd>
                             <div class="fenge"></div>
                             <dd class="time">${blogList.releaseTime}</dd>

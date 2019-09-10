@@ -84,9 +84,9 @@
 	<div class="container">
     	<div class="title">
         	<h1 class="title_blog">
-            	<a href="" class="a_text_white">${author.name }</a>
+            	<a href="" class="a_text_white">${author.blogMng.title }</a>
             </h1>
-            <p class="description">一个有趣的程序员，带你突围职场蜕变</p>
+            <p class="description">${author.blogMng.desc }</p>
         </div>
     </div>
 
@@ -100,7 +100,7 @@
                         <a><img src="images/defaultPic.jpg"/></a>
                     </div>
                     <div class="authorInfor"><!--用户名-->
-                        <p><a class="authorName">LIBD</a></p>
+                        <p><a class="authorName">${author.name}</a></p>
                         <p><a class="homePage">TA的个人主页</a></p>
                     </div>
                     <div class="guanzhuBtnBox"><!--关注按钮-->
@@ -177,14 +177,14 @@
 			<s:iterator id="sArticle" value="#request.someoneArticleList"><!-- 循环开始 -->
             <div class="articleBox">
             	<h4>
-            		<a href="" class="a_text_black">
+            		<a href="doGetBlogArticle?ba.id=${sArticle.id}" class="a_text_black">
             			<span class="article_type">${sArticle.type}</span>
             			${sArticle.title}
             		</a>
             	</h4>
             	<div class="cnt">
             		<a href="" class="a_text_black">
-            			${sArticle.content}
+            			${sArticle.content.substring(0,10)}...
             		</a>
             	</div>
 
