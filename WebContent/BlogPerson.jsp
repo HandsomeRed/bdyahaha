@@ -15,8 +15,8 @@
     	<ul>
         	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
             <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
-            <li><a href="" title="博客">博客</a></li>
-            <li><a href="" title="下载">下载</a></li>
+            <li><a href="list" title="博客">博客</a></li>
+            <li><a href="rList" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>
             <li><a href="" title="专题">专题</a></li>
             <li><a href="" title="招聘">招聘</a></li>
@@ -30,19 +30,20 @@
                     </a>
                 </div>
             </li>
-            <li class="writeBlog">
-            	<a href="WriteBlog.jsp" title="writeBlog">
-                	<img src="images/write_blog.jpg"/>
-                    <span>写博客</span>
-                </a>
-            </li>
-            <li class="message">
-            	<a href="" title="message">
-                	<img src="images/message.jpg" />
-                    <span>消息</span>
-                </a>
-            </li>
+            
             <s:if test="#session.saveUserInformationTOSession==null">
+            	<li class="writeBlog">
+            		<a href="doLoginWriteBlog" title="writeBlog">
+                		<img src="images/write_blog.jpg"/>
+                    	<span>写博客</span>
+                	</a>
+            	</li>
+            	<li class="message">
+            		<a href="" title="message">
+                		<img src="images/message.jpg" />
+                    	<span>消息</span>
+                	</a>
+            	</li>
             	<li class="login_regist">
             		<a href="Login.jsp" title="login">登陆</a>
              	   <span></span>
@@ -50,6 +51,18 @@
             	</li>
             </s:if>
             <s:else>
+            	<li class="writeBlog">
+            		<a href="WriteBlog.jsp" title="writeBlog">
+                		<img src="images/write_blog.jpg"/>
+                    	<span>写博客</span>
+                	</a>
+            	</li>
+            	<li class="message">
+            		<a href="" title="message">
+                		<img src="images/message.jpg" />
+                    	<span>消息</span>
+                	</a>
+            	</li>
             	<li class="loginedUser">
             		<div class="loginedUserBox">
                     	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
@@ -66,11 +79,12 @@
     </div>
 </div>
 <div class="clears"></div>
+<s:div id="author" value="#request.author">
 <div class="banner">
 	<div class="container">
     	<div class="title">
         	<h1 class="title_blog">
-            	<a href="" class="a_text_white">沉默王者</a>
+            	<a href="" class="a_text_white">${author.name }</a>
             </h1>
             <p class="description">一个有趣的程序员，带你突围职场蜕变</p>
         </div>
@@ -138,7 +152,7 @@
             <!--以下为左侧自定义框体-->
         </div>
     
-    
+    </s:div>
     <div class="main left">
    		<div class="filter_box ">
     		<table width="700" border="0">

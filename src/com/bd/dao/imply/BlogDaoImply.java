@@ -121,6 +121,18 @@ public class BlogDaoImply implements BlogDao {
 
     }
 
+
+	@Override
+	public UserEntity getUser(UserEntity user) {
+
+		Session session = sessionFactory.getCurrentSession();
+		
+		//‘§º”‘ÿuser∂‘œÛ
+        user = session.load(UserEntity.class, user.getId());
+        		
+		return user;
+	}
+
 }
 
 

@@ -15,8 +15,8 @@
     	<ul>
         	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
             <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
-            <li><a href="" title="博客">博客</a></li>
-            <li><a href="" title="下载">下载</a></li>
+            <li><a href="list" title="博客">博客</a></li>
+            <li><a href="rList" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>
             <li><a href="" title="专题">专题</a></li>
             <li><a href="" title="招聘">招聘</a></li>

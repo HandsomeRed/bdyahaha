@@ -49,4 +49,10 @@ public class BlogServiceImply implements BlogService {
         return blogDao.deleteArticle(user, ba);
     }
 
+
+	@Override
+	public UserEntity getUser(UserEntity user) {
+		return blogDao.getUser(user);
+	}
+
 }

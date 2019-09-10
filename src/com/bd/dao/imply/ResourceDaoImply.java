@@ -1,7 +1,10 @@
 package com.bd.dao.imply;
 
 import com.bd.dao.ResourceDao;
-import com.bd.entity.*;
+import com.bd.entity.ResourceClassifySmallEntity;
+import com.bd.entity.ResourceEntity;
+import com.bd.entity.ResourceKeywordEntity;
+import com.bd.entity.UserEntity;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

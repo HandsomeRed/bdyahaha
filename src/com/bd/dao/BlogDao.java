@@ -18,4 +18,7 @@ public interface BlogDao {
     List<BlogArticleEntity> getArticles(UserEntity user, BlogArticleEntity ba);
 
     String deleteArticle(UserEntity user, BlogArticleEntity ba);
+    
+    // 获取某个用户
+    UserEntity getUser(UserEntity user);
 }
