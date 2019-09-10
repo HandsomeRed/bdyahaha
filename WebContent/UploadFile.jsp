@@ -121,11 +121,11 @@
                                     资源类型：
                                 </label>
                                 <select def="0" name="resource.type" class="select" id="">
-                                    <option value="0">请选择</option>
-                                    <option value="1">文档类</option>
-                                    <option value="2">代码类</option>
-                                    <option value="3">工具类</option>
-                                    <option value="4">其他</option>
+                                    <option>请选择</option>
+                                    <option value="文档">文档类</option>
+                                    <option value="代码">代码类</option>
+                                    <option value="工具">工具类</option>
+                                    <option value="其他">其他</option>
                                 </select>
                                 <div class="res_tip"></div>
                                 <em class="form_error"></em>
