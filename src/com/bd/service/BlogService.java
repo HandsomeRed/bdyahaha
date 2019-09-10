@@ -21,4 +21,7 @@ public interface BlogService {
 	List<BlogArticleEntity> getBlogMng(UserEntity user);
 
     String doDeleteBlogArticle(UserEntity user, BlogArticleEntity ba);
+
+    //根据 user.id 获取某个用户
+    UserEntity getUser(UserEntity user);
 }

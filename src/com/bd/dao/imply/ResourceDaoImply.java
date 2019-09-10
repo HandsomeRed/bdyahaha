@@ -1,6 +1,7 @@
 package com.bd.dao.imply;
 
 import com.bd.dao.ResourceDao;
+import com.bd.entity.ResourceClassifySmallEntity;
 import com.bd.entity.ResourceEntity;
 import com.bd.entity.ResourceKeywordEntity;
 import com.bd.entity.ResourceMngEntity;
@@ -76,8 +77,18 @@ public class ResourceDaoImply implements ResourceDao {
     public List<ResourceEntity> getResourceList(ResourceEntity resource) {
     	
     	if(resource == null) resource = new ResourceEntity();
-    	
-        return sessionFactory.getCurrentSession().createCriteria(ResourceEntity.class).add(Example.create(resource)).addOrder(Order.desc("releaseTime")).list();
+
+        Criteria li = sessionFactory.getCurrentSession()
+                                .createCriteria(ResourceEntity.class)
+                                .add(Example.create(resource))
+                                .addOrder(Order.desc("releaseTime"));
+
+        if (resource.getResourceClassifySmall() != null){
+            li.createCriteria("resourceClassifySmall")
+                    .add(Restrictions.eq("id",resource.getResourceClassifySmall().getId()));
+        }
+
+        return li.list();
     }
 
     public SessionFactory getSessionFactory() {

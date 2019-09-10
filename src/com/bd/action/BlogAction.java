@@ -83,6 +83,12 @@ public class BlogAction extends ActionSupport implements RequestAware,SessionAwa
         List<BlogArticleEntity> publicArticles;
         publicArticles = blogService.getBlogMng(user);
         request.put("someoneArticleList", publicArticles);
+        
+        UserEntity someone = new UserEntity();
+        someone = blogService.getUser(user);
+        request.put("author", user);
+        System.out.println("wdmnd"+user.getAccount());
+        
         return "success";
     }
 

@@ -21,10 +21,9 @@ public class ResourceAction extends ActionSupport implements SessionAware, Reque
 
     public String doGetResourceList() {
 
-        UserEntity user = (UserEntity) session.get(Key_Value.user);
-        if (user == null) return "fail";
         List<ResourceEntity> list;
         list = resourceService.getResourceList(resource);
+        System.out.println("asdasdasdadas" + ((ResourceEntity)list.get(0)).getResourceCode());
         request.put("resourceList", list);
         return "success";
     }

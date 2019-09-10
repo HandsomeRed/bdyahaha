@@ -17,8 +17,8 @@
     	<ul>
         	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
             <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
-            <li><a href="" title="博客">博客</a></li>
-            <li><a href="" title="下载">下载</a></li>
+            <li><a href="list" title="博客">博客</a></li>
+            <li><a href="rList" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>
             <li><a href="" title="专题">专题</a></li>
             <li><a href="" title="招聘">招聘</a></li>
@@ -141,9 +141,22 @@
 	        <div class="dl_download dl_pdf">
 	        	<div class=" dl_download_box dl_download_l">
 	            	<label>
-	                	所需：<em>3</em>积分/C币
+	                	所需：<em>${rsc.resourceCode }</em>积分/C币
 	                </label>
-	                <a class="open_vip">
+	                <s:if test="#session.saveUserInformationTOSession==null"><!-- 此处是因时间问题，暂时以前端判断代替下后台拦截器验证登录，后面会改QAQ -->
+	               	<a class="open_vip" href="Login.jsp">
+	                	<img src="images/VIP.png">
+	                    <span>高贡献用户免积分下载</span>
+	                </a>
+	    			<!--  
+	                <a class="student">
+	                	<span>学生认证会员7折</span>
+	                </a>
+	                -->
+	                <a class="" href="Login.jsp">立即下载</a>
+	                </s:if>
+	                <s:else>
+	                <a class="open_vip" download="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">
 	                	<img src="images/VIP.png">
 	                    <span>高贡献用户免积分下载</span>
 	                </a>
@@ -153,6 +166,8 @@
 	                </a>
 	                -->
 	                <a class="" download="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">立即下载</a>
+	                </s:else>
+
 	            </div>
 	            <div class=" dl_download_box_r right">
 	            	<div class=" dl_func right libd_share_btn" id="libd-share-btn">分享</div>

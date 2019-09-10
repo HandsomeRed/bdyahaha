@@ -15,8 +15,8 @@
     	<ul>
         	<li><a href="list" title="首页图片"><img src="images/ico.jpg"/></a></li>
             <li><a href="list" title="首页" style="margin-left:0px">首页</a></li>
-            <li><a href="" title="博客">博客</a></li>
-            <li><a href="" title="下载">下载</a></li>
+            <li><a href="list" title="博客">博客</a></li>
+            <li><a href="rList" title="下载">下载</a></li>
             <li><a href="" title="APP">APP</a></li>
             <li><a href="" title="专题">专题</a></li>
             <li><a href="" title="招聘">招聘</a></li>
@@ -82,7 +82,7 @@
 <div class="content"><!--大内容框架-->
 	<div class="classify">
     	<ul class="classifyUL">
-    		<li class="focus"><a  href="">推荐</a></li>
+    		<li class="focus"><a  href="list">推荐</a></li>
     		<s:iterator id="classify" value="#request.ArticleClassifyList"><!-- blogclassifyList 包含分类以及分类下文章集合的集合 -->
             <li><a href="list?type.id=${classify.id}">${classify.name}</a></li>
     		</s:iterator>

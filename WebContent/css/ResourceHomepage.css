@@ -516,6 +516,7 @@ img {
 }
 .home_personal .user_sign_tips .dl_upload_btn {
     display: block;
+    margin: 8px;
     width: 100%;
     height: 36px;
     line-height: 36px;
