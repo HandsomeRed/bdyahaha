@@ -462,7 +462,8 @@ body {
 
 .resourceTagBox{
     margin-top: 10px;
-    margin-bottom: 20px;	
+    margin-bottom: 20px;
+    margin-left: 60px;	
 	}
 
 .resourceTag{
@@ -472,6 +473,7 @@ body {
 	}
 
 .resourceTag>a{
+	float: left;
     cursor: pointer;
     display: inline-block;
     padding: 0 8px;

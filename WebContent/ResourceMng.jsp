@@ -154,15 +154,15 @@
                                     </div>
                                     <div class="resourceCon"><!--资源信息-->
                                     	<h3>
-                                        	<a target="_blank" href="">${mResource.name}</a>
+                                        	<a target="_blank" href="doGetResource?resource.id=${mResource.id }">${mResource.name}</a>
                                         </h3>
                                     </div>
                                     <div class="clears"></div>
                                     <div class="resourceTagBox">
-                                        <s:iterator id="keyword" value="mResource.resourceKeyword">
-                                            <p class="resourceTag">
+                                        <s:iterator id="keyword" value="#mResource.resourceKeyword">
+                                            <label class="resourceTag">
                                                 <a target="_blank" href="">${keyword.name}</a>
-                                        </p>
+                                        	</label>
                                         </s:iterator>
                                     	
                                         <div class="resourceState">
