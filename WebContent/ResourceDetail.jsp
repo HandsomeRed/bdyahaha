@@ -152,7 +152,7 @@
 	                	<span>学生认证会员7折</span>
 	                </a>
 	                -->
-	                <a class="" href="virtualResource/${rsc.addr }">立即下载</a>
+	                <a class="" download="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">立即下载</a>
 	            </div>
 	            <div class=" dl_download_box_r right">
 	            	<div class=" dl_func right libd_share_btn" id="libd-share-btn">分享</div>
