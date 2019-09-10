@@ -195,8 +195,13 @@
             </div>
 
             <div class="aside right">
-                <div class="btns">
-                    <a href="">上传资源</a>
+                <div class="btns"><!-- 暂做静态拦截，后续修改 -->
+                    <s:if test="#session.saveUserInformationTOSession==null">
+                        <a href="Login.jsp">上传资源</a>
+                    </s:if>
+                    <s:else>
+                        <a href="UploadFile.jsp">上传资源</a>
+                    </s:else>
                 </div>
                 <div class="tags">
                     <h3>我的tag</h3>
