@@ -48,6 +48,8 @@ public class UserDaoImply implements UserDao{
         cond.getBlogMng().setLv(1);
         cond.getBlogMng().setRank(-1);
         cond.setName(cond.getAccount());
+        cond.setCode(50);
+        cond.setFansNum(0);
 		cond.getBlogMng().setTitle(cond.getAccount() + " µÄ²©¿Í");
 
 		try {

@@ -1,10 +1,7 @@
 package com.bd.dao.imply;
 
 import com.bd.dao.ResourceDao;
-import com.bd.entity.ResourceEntity;
-import com.bd.entity.ResourceKeywordEntity;
-import com.bd.entity.ResourceMngEntity;
-import com.bd.entity.UserEntity;
+import com.bd.entity.*;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -26,7 +23,13 @@ public class ResourceDaoImply implements ResourceDao {
         user = session.load(UserEntity.class, user.getId());
         resource.setReleaseTime(new Date(new java.util.Date().getTime()));
         resource.setResourceMng(user.getResourceMng());
-        resource.setStatus("公开");
+        resource.setStatus("已通过");
+        resource.setResourceCode(5);
+        if (resource.getResourceClassifySmall() == null) {
+            resource.setResourceClassifySmall(new ResourceClassifySmallEntity());
+            resource.getResourceClassifySmall().setId(1);
+        }
+
 
         for (ResourceKeywordEntity rk : resource.getResourceKeyword()) {
             System.out.println(rk.getName());
@@ -76,8 +79,18 @@ public class ResourceDaoImply implements ResourceDao {
     public List<ResourceEntity> getResourceList(ResourceEntity resource) {
     	
     	if(resource == null) resource = new ResourceEntity();
-    	
-        return sessionFactory.getCurrentSession().createCriteria(ResourceEntity.class).add(Example.create(resource)).addOrder(Order.desc("releaseTime")).list();
+
+        Criteria li = sessionFactory.getCurrentSession()
+                .createCriteria(ResourceEntity.class)
+                .add(Example.create(resource))
+                .addOrder(Order.desc("releaseTime"));
+
+        if (resource.getResourceClassifySmall() != null) {
+            li.createCriteria("resourceClassifySmall")
+                    .add(Restrictions.eq("id", resource.getResourceClassifySmall().getId()));
+        }
+
+        return li.list();
     }
 
     public SessionFactory getSessionFactory() {

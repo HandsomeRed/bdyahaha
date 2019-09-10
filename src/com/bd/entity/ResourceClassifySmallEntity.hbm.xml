@@ -15,7 +15,7 @@
         <many-to-one name="resourceClassifyBig" class="com.bd.entity.ResourceClassifyBigEntity" cascade="save-update">
             <column name="rcbId" not-null="false"/>
         </many-to-one>
-        <set name="resources" inverse="true">
+        <set name="resources" inverse="true" cascade="save-update">
             <key>
                 <column name="rcsId"/>
             </key>

@@ -87,6 +87,14 @@ public class BlogDaoImply implements BlogDao {
 		//blogMng约束
 		criteria.add(Restrictions.eq("blogMng", ba.getBlogMng()));
 
+        //title key 约束
+        if (ba.getTitle() != null)
+            criteria.add(Restrictions.like("title", "%" + ba.getTitle() + "%"));
+
+        //type 约束
+        if (ba.getType() != null)
+            criteria.add(Restrictions.eq("type", ba.getType()));
+
 		//按日期降序
 		criteria.addOrder(Order.desc("releaseTime"));
 

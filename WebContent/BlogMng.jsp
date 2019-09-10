@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/BlogMng.css"/>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/submit.js"></script>
     <script src="js/test.js" type="text/javascript"></script>
     <link type="text/css" rel="stylesheet" href="css/test.css"/>
 </head>
@@ -121,8 +122,9 @@
             </div>
 
             <div class="mainSearchBox"><!--searchBox--><!--暂做静态处理-->
-                <form action="doGetMyArticles" class="mainSearchForm">
+                <form action="doGetMyArticles" id="serach" class="mainSearchForm">
                     <div class="select dowebok">
+                        <input name="ba.releaseTime" style="display: none" id="badate">
                         <span class="placeholder" id="year">年</span>
                         <ul>
                             <li>不限</li>
@@ -150,6 +152,7 @@
                     </div>
                     <div class="select dowebok">
                         <span class="placeholder" id="type">类型</span>
+                        <input style="display: none" name="ba.type" id="batype">
                         <ul>
                             <li>不限</li>
                             <li>原创</li>
@@ -163,8 +166,8 @@
                             <li>不限</li>
                         </ul>
                     </div>
-                    <input class="keywordInput" id="key" type="text" name="ba.title" value="" placeholder="标题关键词"/>
-                    <button type="button" class="mainSearchBtn" onclick="">搜索</button>
+                    <input class="keywordInput" id="key" type="text" name="ba.title" placeholder="标题关键词"/>
+                    <button type="button" class="mainSearchBtn" id="searchBt">搜索</button>
                     <div class="clears"></div>
                 </form>
 	
