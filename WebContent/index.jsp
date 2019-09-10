@@ -99,7 +99,7 @@
                         	<h2><a href="doGetBlogArticle?ba.id=${blogList.id}" class="titleH2">${blogList.title}</a></h2>
                         </div>
                         <div class="summary"><!-- 概要 -->
-                        	${blogList.content.substring(0,15)}...
+                        	${blogList.content.substring(0,10)}...
                         </div>
                         <dl class="listUserBar">
                    			<dt><!-- 头像 -->
