@@ -122,9 +122,11 @@
                             <div class="download_b">
                             	<div class="pre_description">${rsc.introduction }</div>
                                 <div class="dl_b">
+                                	<s:iterator id="keyword" value="#request.resource.resourceKeyword">
                                 	<label>
                                     	<a href="" class="tag">${rsc.resourceKeyword.name }</a>
                                     </label>
+                                    </s:iterator>
                                     <strong class="size_box">
                                     	<span>${rsc.releaseTime }上传</span>
                                         <span>大小：<em>2.22MB</em></span><!-- 此为静态 -->

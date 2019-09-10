@@ -160,7 +160,7 @@
                                 <div class="txt-box">
                                     <div class="txt-box">
                                        <!--<button id="addTag" class="btn_add_tag">添加标签</button>-->
-                                       <textarea name="resource.resourceKeyword.name" max="500"
+                                       <textarea name="resource.resourceKeyword" max="500"
                                           placeholder="最多添加5个标签，每个标签不超过16个字符"></textarea>
                                     </div>
                                 </div>
