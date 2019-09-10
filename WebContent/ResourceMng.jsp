@@ -161,7 +161,7 @@
                                     <div class="resourceTagBox">
                                     	<s:iterator id="keyword" value="mResource.resourceKeyword">
                                 		<p class="resourceTag">
-                                            <a target="_blank" href="">${keyword.name}</a>
+                                            <a target="_blank" href="doGetResource?resource.id=${mResource.id }">${keyword.name}</a>
                                         </p>
                                     	</s:iterator>
                                     	
