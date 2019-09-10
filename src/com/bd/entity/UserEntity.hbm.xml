@@ -57,6 +57,9 @@
         <property name="status">
             <column name="status" sql-type="varchar(16)" length="16"/>
         </property>
+        <property name="code">
+            <column name="code" sql-type="int(12)" not-null="false"/>
+        </property>
 
 
         <set name="attentions" table="attention_fans" inverse="true">
@@ -65,6 +68,7 @@
             </key>
             <many-to-many class="com.bd.entity.UserEntity" column="targetId"/>
         </set>
+
         <set name="fans" table="attention_fans" inverse="true">
             <key>
                 <column name="targetId"/>

@@ -27,15 +27,25 @@
         <property name="addr">
             <column name="addr" sql-type="varchar(255)" not-null="false"/>
         </property>
+
+        <property name="resourceCode">
+            <column name="resourceCode" not-null="false" sql-type="int(12)"/>
+        </property>
         <many-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity" cascade="save-update">
             <column name="rmId" not-null="false"/>
         </many-to-one>
-        <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity">
+        <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity" cascade="none">
             <column name="rcsId" not-null="false"/>
         </many-to-one>
-        <many-to-one name="resourceKeyword" class="com.bd.entity.ResourceKeywordEntity">
-            <column name="rkId" not-null="false"/>
-        </many-to-one>
+
+        <set name="resourceKeyword" table="keyword_resource" inverse="false">
+            <key>
+                <column name="rid"/>
+            </key>
+            <many-to-many column="kid" class="com.bd.entity.ResourceKeywordEntity"/>
+        </set>
+
+
         <set name="details" inverse="true">
             <key>
                 <column name="rId" not-null="false"/>

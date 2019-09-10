@@ -159,9 +159,12 @@
                                     </div>
                                     <div class="clears"></div>
                                     <div class="resourceTagBox">
-                                    	<p class="resourceTag">
-                                        	<a target="_blank" href="">${mResource.resourceKeyword.name}</a>
+                                        <s:iterator id="keyword" value="mResource.resourceKeyword">
+                                            <p class="resourceTag">
+                                                <a target="_blank" href="">${keyword.name}</a>
                                         </p>
+                                        </s:iterator>
+                                    	
                                         <div class="resourceState">
                                         	<span class="resourceStatu">${mResource.status}</span>
                                         </div>

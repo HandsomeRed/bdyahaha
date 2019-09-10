@@ -12,11 +12,15 @@ public class ResourceEntity {
     private String introduction;
     private String status;
     private String addr;
+    private Integer resourceCode;
     private Set<DetailEntity> details;
     private Set<FavoriteResourceEntity> favoriteResources;
     private ResourceMngEntity resourceMng;
     private ResourceClassifySmallEntity resourceClassifySmall;
-    private ResourceKeywordEntity resourceKeyword;
+
+
+    private Set<ResourceKeywordEntity> resourceKeyword;
+
 
     public int getId() {
         return id;
@@ -90,7 +94,7 @@ public class ResourceEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, releaseTime, name, type, introduction, status, addr);
+        return Objects.hash(id, releaseTime, name, type, introduction, status, addr, resourceCode);
     }
 
     public Set<DetailEntity> getDetails() {
@@ -125,11 +129,19 @@ public class ResourceEntity {
         this.resourceClassifySmall = resourceClassifySmall;
     }
 
-    public ResourceKeywordEntity getResourceKeyword() {
+    public Set<ResourceKeywordEntity> getResourceKeyword() {
         return resourceKeyword;
     }
 
-    public void setResourceKeyword(ResourceKeywordEntity resourceKeyword) {
+    public void setResourceKeyword(Set<ResourceKeywordEntity> resourceKeyword) {
         this.resourceKeyword = resourceKeyword;
+    }
+
+    public Integer getResourceCode() {
+        return resourceCode;
+    }
+
+    public void setResourceCode(Integer resourceCode) {
+        this.resourceCode = resourceCode;
     }
 }
