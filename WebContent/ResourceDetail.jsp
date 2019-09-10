@@ -124,7 +124,7 @@
                                 <div class="dl_b">
                                 	<s:iterator id="keyword" value="#request.resource.resourceKeyword">
                                 	<label>
-                                    	<a href="" class="tag">${rsc.resourceKeyword.name }</a>
+                                    	<a href="" class="tag">${keyword.name }</a>
                                     </label>
                                     </s:iterator>
                                     <strong class="size_box">
