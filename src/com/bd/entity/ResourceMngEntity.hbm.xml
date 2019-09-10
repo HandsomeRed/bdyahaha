@@ -19,8 +19,11 @@
             <column name="rank" sql-type="int(12)" default="-1"/>
         </property>
 
-        <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all"/>
-
+        <!--  <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all"/>-->
+		<many-to-one name="user" class="com.bd.entity.UserEntity" cascade="save-update">
+			<column name="uId" not-null="false" />
+		</many-to-one>
+		
         <set name="favoriteResources" inverse="true">
             <key>
                 <column name="rmId"/>

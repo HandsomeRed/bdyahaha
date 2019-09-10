@@ -247,7 +247,12 @@
                     </dl>
                     <div class="user_sign_tips">
                     	<div class="btn_group">
-                        	<a class="dl_upload_btn">上传资源</a>
+                    		<s:if test="#session.saveUserInformationTOSession==null">
+                				<a class="dl_upload_btn" href="Login.jsp">上传资源</a>
+            				</s:if>
+            				<s:else>
+                				<a class="dl_upload_btn" href="UploadFile.jsp">上传资源</a>
+            				</s:else>  
                         </div>
                     </div>
                 </div>

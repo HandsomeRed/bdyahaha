@@ -34,8 +34,7 @@
         <many-to-one name="resourceMng" class="com.bd.entity.ResourceMngEntity" cascade="save-update">
             <column name="rmId" not-null="false"/>
         </many-to-one>
-        <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity"
-                     cascade="save-update">
+        <many-to-one name="resourceClassifySmall" class="com.bd.entity.ResourceClassifySmallEntity">
             <column name="rcsId" not-null="false"/>
         </many-to-one>
 

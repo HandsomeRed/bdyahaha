@@ -22,8 +22,10 @@
             <column name="`desc`" sql-type="varchar(255)"/>
         </property>
 
-        <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all" lazy="proxy"/>
-
+        <!-- <one-to-one name="user" class="com.bd.entity.UserEntity" cascade="all" lazy="proxy"/> -->
+		<many-to-one name="user" class="com.bd.entity.UserEntity" cascade="save-update">
+			<column name="uId" not-null="false"/>
+		</many-to-one>
         <set name="blogArticles" inverse="true" cascade="all">
             <key>
                 <column name="bmId"/>
