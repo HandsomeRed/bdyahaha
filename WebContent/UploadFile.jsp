@@ -172,7 +172,7 @@
                                     <span class="requird_icon">*</span>
                                     资源描述：
                                 </label>
-                                <textarea name="txt_desc" max="500"
+                                <textarea name="resource.introduction" max="500"
                                           placeholder="描述不支持HTML标签；详细的资源描述有机会获得我们的推荐，更有利于他人下载，赚更多积分。如描述不清，有可能审核不能通过。"></textarea>
                                 <em class="form_error"></em>
                             </li>
