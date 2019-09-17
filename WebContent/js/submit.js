@@ -6,7 +6,7 @@ $(document).ready(function () {
         var month = $("#month").text();
         var title = $("#key").val();
 
-        if ($("#type").text() == "类型") {
+        if ($("#type").text() == "类型" || $("#type").text() == "不限") {
             $("#batype").attr("name", null);
         } else {
             $("#batype").attr("name", "ba.type");

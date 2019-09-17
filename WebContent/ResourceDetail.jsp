@@ -156,7 +156,7 @@
 	                <a class="" href="Login.jsp">立即下载</a>
 	                </s:if>
 	                <s:else>
-	                <a class="open_vip" download="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">
+	                <a class="open_vip" download="${rsc.addr.substring(14) }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">
 	                	<img src="images/VIP.png">
 	                    <span>高贡献用户免积分下载</span>
 	                </a>
@@ -165,7 +165,7 @@
 	                	<span>学生认证会员7折</span>
 	                </a>
 	                -->
-	                <a class="" download="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">立即下载</a>
+	                <a class="" download="${rsc.addr.substring(14) }" href="virtualResource/${rsc.resourceMng.user.id }/${rsc.addr }">立即下载</a>
 	                </s:else>
 
 	            </div>

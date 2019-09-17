@@ -95,7 +95,7 @@
                         <div class="clears"></div>
                         <div class="blogInfor">
                             <span>${ba.releaseTime}</span>
-                            <a class="" href="">${ba.blogMng.user.account}</a>
+                            <a class="" href="">${ba.blogMng.user.name}</a>
                             <span>阅读数 ${ba.readNum}</span>
                         </div>
                     </div>
