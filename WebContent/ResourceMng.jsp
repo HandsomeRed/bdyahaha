@@ -70,7 +70,7 @@
 <div class="news_nav">
     <div class="container">
         <div class="nav_bar">
-            <a href="">下载首页</a>
+            <a href="rList">下载首页</a>
             <a href="">精品推荐</a>
             <a href="">我的资源</a>
             <a href="">上传资源赚积分</a>
@@ -119,7 +119,7 @@
         <div class="cardr">
             <ul class="non_nembers">
                 <li>
-                    <a href="" class="btn_vip">下载资源</a>
+                    <a href="rList" class="btn_vip">下载资源</a>
                 </li>
             </ul>
         </div>
