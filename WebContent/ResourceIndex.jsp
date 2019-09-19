@@ -31,19 +31,19 @@
                     </a>
                 </div>
             </li>
-            <li class="writeBlog">
-            	<a href="WriteBlog.jsp" title="writeBlog">
-                	<img src="images/write_blog.jpg"/>
-                    <span>写博客</span>
-                </a>
-            </li>
-            <li class="message">
-            	<a href="" title="message">
-                	<img src="images/message.jpg" />
-                    <span>消息</span>
-                </a>
-            </li>
             <s:if test="#session.saveUserInformationTOSession==null">
+            	<li class="writeBlog">
+            		<a href="doLoginWriteBlog" title="writeBlog">
+                		<img src="images/write_blog.jpg"/>
+                    	<span>写博客</span>
+                	</a>
+            	</li>
+            	<li class="message">
+            		<a href="" title="message">
+                		<img src="images/message.jpg" />
+                    	<span>消息</span>
+                	</a>
+            	</li>
             	<li class="login_regist">
             		<a href="Login.jsp" title="login">登陆</a>
              	   <span></span>
@@ -51,6 +51,18 @@
             	</li>
             </s:if>
             <s:else>
+            	<li class="writeBlog">
+            		<a href="WriteBlog.jsp" title="writeBlog">
+                		<img src="images/write_blog.jpg"/>
+                    	<span>写博客</span>
+                	</a>
+            	</li>
+            	<li class="message">
+            		<a href="" title="message">
+                		<img src="images/message.jpg" />
+                    	<span>消息</span>
+                	</a>
+            	</li>
             	<li class="loginedUser">
             		<div class="loginedUserBox">
                     	<a href="" class="loginedUserBoxA"><img class="loginedUserBoxAImg" src="images/defaultPic.jpg"></a>
