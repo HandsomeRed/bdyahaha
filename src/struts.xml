@@ -62,14 +62,14 @@
 		
 		<!-- 加载写博文页面 -->
 		<action name="doLoginWriteBlog" class="wbAction" method="doLoginWriteBlog">
-			<result name="success" type="redirectAction">doWriteBlog</result>
+			<result name="success" type="redirect">doWriteBlog</result>
 			<interceptor-ref name="defaultStack"/>
             <interceptor-ref name="loginCheck" />
 		</action>
 		
 		<!-- 写博文 -->
 		<action name="doWriteBlog" class="wbAction" method="doWriteBlog">
-			<result name="success" type="redirectAction">doGetMyArticles</result>
+			<result name="success" type="redirect">doGetMyArticles</result>
 		</action>
 
 		<!-- 找博文 -->
@@ -92,13 +92,13 @@
 
         <!--删除blogArticle-->
         <action name="doDeleteBlogArticle" class="bAction" method="doDeleteBlogArticle">
-            <result name="success">list</result>
+			<result name="success" type="redirect">doGetMyArticles</result>
             <result name="fail">/404.html</result>
         </action>
 
         <!--upload file-->
         <action name="uploadFile" class="uploadAction" method="uploadFile">
-            <result name="success" type="redirectAction">doGetMyResources</result>
+			<result name="success" type="redirect">doGetMyResources</result>
         	<result name="fail" type="redirect">/Login.jsp</result>
         </action>
 
@@ -108,17 +108,22 @@
             <result name="fail">404.html</result>
         </action>
 
-		<action name="rList" class="resourceAction" method="doGetResourceList">
+		<action name="rList" class="resource" method="doGetResourceList">
 			<result name="success">ResourceIndex.jsp</result>
 			<result name="fail">404.html</result>
 		</action>
 
 
-		<action name="doGetResource" class="resourceAction" method="doGetResource">
+		<action name="doGetResource" class="resource" method="doGetResource">
 			<result name="success">ResourceDetail.jsp</result>
             <result name="fail">/Login.jsp</result>
 		</action>
 
-    </package>
+		<action name="doResourcePrivate" class="resource" method="doChangeResourceInfor">
+			<result name="success" type="redirect">/doGetMyResources</result>
+			<result name="fail">/404.html</result>
+		</action>
+
+	</package>
 	 
 </struts>

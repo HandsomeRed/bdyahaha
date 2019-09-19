@@ -43,6 +43,13 @@ public class ResourceAction extends ActionSupport implements SessionAware, Reque
         return "success";
     }
 
+
+    public String doChangeResourceInfor() {
+        if (session.get(Key_Value.user) == null) return "fail";
+        if (resource.getId() == 0) return "fail";
+        return resourceService.changeResourceInfor(resource);
+    }
+
     @Override
     public void setSession(Map<String, Object> map) {
         this.session = map;

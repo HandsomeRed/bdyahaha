@@ -194,7 +194,8 @@
                             </div>
                             <div class="contentArticleInforRight">
                                 <a href="doGetBlogArticle?ba.id=${bAriticle.id}" class="a_text_blue"><span>查看</span></a>
-                                <a href="" class="a_text_red"><span>删除</span></a><!-- 有bug，待解决 -->
+                                <a href="doDeleteBlogArticle?ba.id=${bAriticle.id}"
+                                   class="a_text_red"><span>删除</span></a><!-- 有bug，待解决 -->
                             </div>
                         </div>
                     </div>

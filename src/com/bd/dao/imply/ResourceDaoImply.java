@@ -12,7 +12,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import tool.ChangeObject;
 
+import javax.annotation.Resource;
+import java.lang.reflect.Method;
 import java.sql.Date;
 import java.util.List;
 
@@ -94,6 +97,21 @@ public class ResourceDaoImply implements ResourceDao {
         }
 
         return li.list();
+    }
+
+    @Override
+    public String changeResourceInfor(ResourceEntity resource) {
+        Session session = sessionFactory.getCurrentSession();
+        ResourceEntity update = session.load(resource.getClass(), resource.getId());
+        resource.setReleaseTime(new Date(new java.util.Date().getTime()));
+        new ChangeObject(resource, update).change();
+
+        try {
+            session.update(update);
+            return "success";
+        } catch (Exception e) {
+            return "fail";
+        }
     }
 
     public SessionFactory getSessionFactory() {
