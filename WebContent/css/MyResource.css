@@ -321,7 +321,7 @@ body {
     border: 1px solid #eee;
     border-bottom: 1px solid transparent;
 }
-
+.datas_detail .tabs li.cur a{ color: red;}
 .datas_detail .tabs li {
     text-align: center;
     float: left;
@@ -339,11 +339,6 @@ body {
     background-color: #fff;
 }
 
-.selector-box .btn_selector .active, .selector_box .btn_selector:hover {
-    background: #ca0c16;
-    color: #fff;
-}
-
 .selector_box .btn_selector {
     display: inline-block;
     margin-right: 6px;
@@ -354,6 +349,15 @@ body {
     color: #6b6b6b;
     background: #f5f6f7;
     transition: all .3s ease-in-out;
+}
+.selector_box .btn_selector.active, .selector_box .btn_selector:hover {
+    background: #ca0c16;
+    color: #fff;
+}
+
+.hide{
+	display: none;
+	
 }
 
 .list_container {
@@ -561,3 +565,145 @@ body {
     text-align: center;
     font-size: 0;	
 	}
+	
+.score_detail>ul>li .card {
+    width: calc(100% - 40px);
+    height: 50px;
+    line-height: 50px;
+}
+
+.score_detail>ul>li:first-child {
+    padding-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+.score_detail>ul>li .card, .score_detail>ul>li:first-child .card, .score_detail>ul>li:last-child .card, .vip_service .no_detail .card {
+    border-bottom: 1px dashed #e6e6e6;
+}
+.score_detail>ul>li .score {
+    width: 186px;
+}
+.score_detail>ul>li div {
+    float: left;
+}
+.score_detail>ul>li .date {
+    width: 196px;
+}
+
+.page_nav {
+    background: #fff;
+    margin: -10px 0 0;
+    padding: 24px 0;
+    border: 1px solid #eee;
+    border-top-width: 0;
+    text-align: center;
+    font-size: 0;
+}
+.dresource>ul>li, .myalbum>ul>li, .myfav>ul>li, .score_detail>ul>li, .uresource>ul>li {
+    padding-top: 16px;
+    background: #fff;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.dresource .card, .myalbum .card, .myfav .card, .score_detail .card, .uresource .card {
+    padding-bottom: 10px;
+    margin: 0 20px;
+    border-bottom: 1px dashed #e6e6e6;
+    position: relative;
+}
+.dresource>ul>li:last-child .card, .myalbum>ul>li:last-child .card, .myfav>ul>li:last-child .card, .score_detail>ul>li:last-child .card, .uresource>ul>li:last-child .card {
+    border-bottom: 1px solid #e6e6e6;
+}
+.dresource .img, .myalbum .img, .myfav .img, .score_detail .img, .uresource .img {
+    float: left;
+    width: 42px;
+    height: 48px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.dresource .img img, .myalbum .img img, .myfav .img img, .score_detail .img img, .uresource .img img {
+    width: 42px;
+    height: 48px;
+}
+.dresource .content, .myalbum .content, .myfav .content, .score_detail .content, .uresource .content {
+    
+    width: calc(100% - 42px);
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+.dresource h3 a, .myalbum h3 a, .myfav h3 a, .score_detail h3 a, .uresource h3 a {
+    display: block;
+    font-size: 16px;
+    line-height: 32px;
+    color: #3d3d3d;
+    font-weight: 700;
+    margin-top: -9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dresource .content .tags a, .myalbum .content .tags a, .myfav .content .tags a, .score_detail .content .tags a, .uresource .content .tags a {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 8px;
+    line-height: 22px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #4d4d4d;
+    border-radius: 11px;
+    margin-right: 8px;
+    word-break: break-all;
+    text-decoration: none;
+}
+.dresource .content .brief, .myalbum .content .brief, .myfav .content .brief, .score_detail .content .brief, .uresource .content .brief {
+    font-size: 14px;
+    line-height: 20px;
+    color: #8a8a8a;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+.dresource .content .date, .dresource .content .times, .myalbum .content .date, .myalbum .content .times, .myfav .content .date, .myfav .content .times, .score_detail .content .date, .score_detail .content .times, .uresource .content .date, .uresource .content .times {
+    font-size: 12px;
+    line-height: 24px;
+    color: #333;
+    margin-right: 30px;
+    float: left;
+}
+.dresource .content .date label, .dresource .content .times label, .myalbum .content .date label, .myalbum .content .times label, .myfav .content .date label, .myfav .content .times label, .score_detail .content .date label, .score_detail .content .times label, .uresource .content .date label, .uresource .content .times label {
+    color: #888;
+    margin-bottom: 0;
+}
+.dresource .content .score, .myalbum .content .score, .myfav .content .score, .score_detail .content .score, .uresource .content .score {
+    float: left;
+    font-size: 20px;
+    line-height: 24px;
+    color: #f5a623;
+}
+.dresource .content .score label, .myalbum .content .score label, .myfav .content .score label, .score_detail .content .score label, .uresource .content .score label {
+    position: relative;
+    top: -2px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 0;
+}
+.dresource .content .flag, .myalbum .content .flag, .myfav .content .flag, .score_detail .content .flag, .uresource .content .flag {
+    float: right;
+    font-size: 12px;
+    color: #888;
+    line-height: 20px;
+}
+.dresource .content .flag a, .myalbum .content .flag a, .myfav .content .flag a, .score_detail .content .flag a, .uresource .content .flag a {
+    font-size: 12px;
+    color: #546a7e;
+}
+.list-container {
+    min-height: 530px;
+    background: #fff;
+    padding: 18px;
+    margin-top: 0;
+}
