@@ -15,4 +15,6 @@ public interface ResourceService {
     List<ResourceEntity> getResourceList(ResourceEntity resource);
 
     ResourceEntity getResource(ResourceEntity resource);
+
+    String changeResourceInfor(ResourceEntity resource);
 }

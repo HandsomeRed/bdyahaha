@@ -56,6 +56,11 @@ public class ResourceServiceImply implements ResourceService {
         return resourceDao.getResource(resource);
     }
 
+    @Override
+    public String changeResourceInfor(ResourceEntity resource) {
+        return resourceDao.changeResourceInfor(resource);
+    }
+
     //保存文件 常见的 io 操作
     private Boolean uploadFile(File file, String path, String fileName) {
 

@@ -14,4 +14,6 @@ public interface ResourceDao {
     ResourceEntity getResource(ResourceEntity re);
 
     List<ResourceEntity> getResourceList(ResourceEntity resource);
+
+    String changeResourceInfor(ResourceEntity resource);
 }
