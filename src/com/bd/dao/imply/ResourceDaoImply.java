@@ -102,7 +102,7 @@ public class ResourceDaoImply implements ResourceDao {
     @Override
     public String changeResourceInfor(ResourceEntity resource) {
         Session session = sessionFactory.getCurrentSession();
-        ResourceEntity update = session.load(resource.getClass(), resource.getId());
+        ResourceEntity update = session.get(resource.getClass(), resource.getId());
         resource.setReleaseTime(new Date(new java.util.Date().getTime()));
         new ChangeObject(resource, update).change();
 

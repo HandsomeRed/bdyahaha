@@ -8,6 +8,7 @@
     <title>资源管理</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/MyResource.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-3.3.1.min.js">
 </head>
 
 <body>
@@ -182,9 +183,9 @@
 	                                    <div class="resourceOperate">
 	                                    	<a href="" class="">编辑</a>
 	                                       	<label class="ShuXian"></label>
-	                                        <a href="" class="">私密</a>
+	                                        <a href="doResourcePrivate?resource.id=${mResource.id }& resource.status=已私密" class="">私密</a>
 	                                        <label class="ShuXian"></label>
-	                                        <a href="" class="">复制链接</a>
+	                                        <input class="" id="copyUrl" value="复制链接" onclick="copyUrl('doGetResource?resource.id=${mResource.id}')" readonly="readonly"/>
 	                                    </div>
 	                                </div>
 	                                
@@ -275,6 +276,7 @@
 
 </body>
 <script type="text/javascript">
+//切换
 function change(t,suoyin){
 	var tabs = document.getElementById("tabs");
 	var li = tabs.getElementsByTagName("li");
@@ -289,6 +291,16 @@ function change(t,suoyin){
 			divs[i].className = "hide";
 			}
 	divs[suoyin].className = ""
+}
+
+//复制标签
+function copyUrl(str) {  
+    var copyUrl=document.getElementById("copyUrl");
+	copyUrl.value="http://localhost:8080/Blog_Download/"+str;
+    copyUrl.select(); // 选择对象  
+    document.execCommand("Copy"); // 执行浏览器复制命令  
+	copyUrl.value="复制链接";
+    alert("已复制到剪贴板✔");  
 }
 </script>
 </html>

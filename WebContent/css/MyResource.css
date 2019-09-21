@@ -547,6 +547,18 @@ body {
     margin-right: 8px;
 	}
 
+.resourceOperate>input{
+	background: none;
+	outline: none;
+	border: none;
+	display: block;
+    font-size: 13px;
+    color: #3399ea;
+    line-height: 21px;
+    width:51px;
+    cursor: pointer;
+	}
+
 .resourceOprerate>a{
 	margin-left:5px;
     display: block;
