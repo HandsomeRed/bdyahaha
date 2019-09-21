@@ -23,7 +23,6 @@ public class ResourceAction extends ActionSupport implements SessionAware, Reque
 
         List<ResourceEntity> list;
         list = resourceService.getResourceList(resource);
-        System.out.println("asdasdasdadas" + ((ResourceEntity)list.get(0)).getResourceCode());
         request.put("resourceList", list);
         return "success";
     }
