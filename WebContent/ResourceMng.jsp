@@ -8,6 +8,7 @@
     <title>资源管理</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/MyResource.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-3.3.1.min.js">
 </head>
 
 <body>
@@ -126,70 +127,127 @@
         <div class="clears"></div>
         <div class="main">
             <div class="datas_detail left">
-                <ul class="tabs">
-                    <li class="cur"><a href="">上传资源</a></li>
-                    <li><a href="">积分明细</a></li>
-                    <li><a href="">下载明细</a></li>
-                    <li><a href="">我的收藏</a></li>
+                <ul class="tabs" id="tabs">
+                    <li class="cur" onClick="change(this,0)"><a href="">上传资源</a></li>
+                    <li onclick="change(this,1)"><a>积分明细</a></li>
+                    <li onclick="change(this,2)"><a>下载明细</a></li>
+                    <li onclick="change(this,3)"><a>我的收藏</a></li>
                 </ul>
                 <div class="clears"></div>
-                <div class="items">
-                    <div class="selector_box">
-                        <a href="" class="btn_selector active">全部</a>
-                        <a href="" class="btn_selector">待审核</a>
-                        <a href="" class="btn_selector">已通过</a>
-                        <a href="" class="btn_selector">未通过</a>
-                        <a href="" class="btn_selector">已私密</a>
+                <div class="items" id="items">
+                	
+                    <div id = "uploading_div">
+                    	<div class="selector_box">
+	                        <a href="" class="btn_selector active">全部</a>
+	                        <a href="" class="btn_selector">待审核</a>
+	                        <a href="" class="btn_selector">已通过</a>
+	                        <a href="" class="btn_selector">未通过</a>
+	                        <a href="" class="btn_selector">已私密</a>
+	                    </div>
+	                    <div class="clears"></div>
+	                    <div class="list_container">
+	                    <s:iterator id="mResource" value="#request.myResources">
+	                    	<!--循环开始-->
+	                    	<ul>
+	                        	<li>
+	                            	<div class="resourceBox">
+	                                
+	                                	<div class="resourceImg"><!--资源类型图片-->
+	                                    	<a><img src="images/fileImg.jpg"/></a>
+	                                    </div>
+	                                    <div class="resourceCon"><!--资源信息-->
+	                                    	<h3>
+	                                        	<a target="_blank" href="doGetResource?resource.id=${mResource.id }">${mResource.name}</a>
+	                                        </h3>
+	                                    </div>
+	                                    <div class="clears"></div>
+	                                    <div class="resourceTagBox">
+	                                        <s:iterator id="keyword" value="#mResource.resourceKeyword">
+	                                            <label class="resourceTag">
+	                                                <a target="_blank" href="">${keyword.name}</a>
+	                                        	</label>
+	                                        </s:iterator>
+	                                    	
+	                                        <div class="resourceState">
+	                                        	<span class="resourceStatu">${mResource.status}</span>
+	                                        </div>
+	                                    </div>
+	                                    <div class="resourceDate">
+	                                    	<label>上传时间：</label>
+	                                        ${mResource.releaseTime}
+	                                    </div>
+	                                    <div class="resourceScore">
+	                                    	<label>所需积分/C币：</label>
+	                                        5
+	                                    </div>
+	                                    <div class="resourceOperate">
+	                                    	<a href="" class="">编辑</a>
+	                                       	<label class="ShuXian"></label>
+	                                        <a href="doResourcePrivate?resource.id=${mResource.id }& resource.status=已私密" class="">私密</a>
+	                                        <label class="ShuXian"></label>
+	                                        <a class="" id="copyUrl" onclick="copyUrl('doGetResource?resource.id=${mResource.id}')">复制链接</a>
+	                                    </div>
+	                                </div>
+	                                
+	                            </li>
+	                        </ul>
+	                        <div class="list_container_nav"><!--分割线--></div>
+						</s:iterator>
+	                    </div>
                     </div>
-                    <div class="clears"></div>
-                    <div class="list_container">
-                    <s:iterator id="mResource" value="#request.myResources">
-                    	<!--循环开始-->
-                    	<ul>
-                        	<li>
-                            	<div class="resourceBox">
-                                
-                                	<div class="resourceImg"><!--资源类型图片-->
-                                    	<a><img src="images/fileImg.jpg"/></a>
+                    <div id="integral_div" class="hide">
+                    	<div class="item score_detail" style="background: white;">
+                        	<ul>
+                            	<li>
+                                	<div class="card">
+                                    	<div class="score">分数</div>
+                                        <div class="date">时间</div>
+                                        <div class="from">下载资源</div>
+                                        
                                     </div>
-                                    <div class="resourceCon"><!--资源信息-->
-                                    	<h3>
-                                        	<a target="_blank" href="doGetResource?resource.id=${mResource.id }">${mResource.name}</a>
-                                        </h3>
-                                    </div>
-                                    <div class="clears"></div>
-                                    <div class="resourceTagBox">
-                                        <s:iterator id="keyword" value="#mResource.resourceKeyword">
-                                            <label class="resourceTag">
-                                                <a target="_blank" href="">${keyword.name}</a>
-                                        	</label>
-                                        </s:iterator>
-                                    	
-                                        <div class="resourceState">
-                                        	<span class="resourceStatu">${mResource.status}</span>
+                                </li>
+                            </ul>
+                            <div class="clears"></div>
+                            <div class="page_nav"></div>
+                        </div>
+                    </div>
+                	<div id="download_div" class="hide">
+                		<div class="item uresource">
+                        	<ul>
+                            	<li>
+                                	<div class="card" style="background:#FFF">
+                                    	<div class="img rar1">
+                                        	<a><img src="images/img_rar.png"></a>
                                         </div>
+                                        <div class="content">
+                                        	<h3>
+                                            	<a>愤怒的小鸟项目源代码</a>
+                                            </h3>
+                                            <p class="brief">项目源代码，Java实现的</p>
+                                            <div class="flec-box state-box">
+                                            	<p class="tags"><a>项目源码</a></p>
+                                            </div>
+                                            <div class="date">
+                                            	<label>上传时间：</label>
+                                                2015-06-03
+                                            </div>
+                                            <div class="score">
+                                            	<label>所需积分：</label>3
+                                            </div>
+                                            <div class="flag">
+                                            	<a>立即评价</a>
+                                            </div>
+                                        </div>
+                                        <div class="content" style="margin-left:42px; display:none;"></div>
                                     </div>
-                                    <div class="resourceDate">
-                                    	<label>上传时间：</label>
-                                        ${mResource.releaseTime}
-                                    </div>
-                                    <div class="resourceScore">
-                                    	<label>所需积分/C币：</label>
-                                        5
-                                    </div>
-                                    <div class="resourceOperate">
-                                    	<a href="" class="">编辑</a>
-                                       	<label class="ShuXian"></label>
-                                        <a href="" class="">私密</a>
-                                        <label class="ShuXian"></label>
-                                        <a href="" class="">复制链接</a>
-                                    </div>
-                                </div>
-                                
-                            </li>
-                        </ul>
-                        <div class="list_container_nav"><!--分割线--></div>
-					</s:iterator>
+                                </li>
+                            </ul>
+                            <div class="clears"></div>
+                        	<div class="page_nav"></div>
+                        </div>
+                	</div>
+                	<div id="collect_div" class="hide">
+                    	<div class=" list-container"></div>
                     </div>
                 </div>
             </div>
@@ -217,4 +275,35 @@
 </div>
 
 </body>
+<script type="text/javascript">
+//切换
+function change(t,suoyin){
+	var tabs = document.getElementById("tabs");
+	var li = tabs.getElementsByTagName("li");
+	var i = 0;
+	for(i = 0;i<=li.length-1;i++){
+		li[i].className = "";
+		}
+	t.className="cur";
+	var items = document.getElementById("items");
+	var divs = items.children;
+		for(i = 0;i<=divs.length-1;i++){
+			divs[i].className = "hide";
+			}
+	divs[suoyin].className = ""
+}
+
+//复制标签
+function copyUrl(str) {  
+	inp = document.createElement("input");
+	inp.id = "copy";
+	inp.type="text"
+	inp.value = "http://localhost:8080/Blog_Download/" + str;
+	document.body.appendChild(inp)
+	inp.select();
+	document.execCommand("Copy")
+	document.body.removeChild(inp)
+    alert("已复制到剪贴板✔");  
+}
+</script>
 </html>

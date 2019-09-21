@@ -104,7 +104,7 @@
                     <div class="articleContent">
                         <span>版权声明：本文为博主原创，转载请附上原文出处链接和本声明。</span>
                         <div class="linkBox">
-                            本文链接：<a href="" class="link">https://www.libd.com</a>
+                            本文链接：<a href="" class="link" id="thisUrl"></a>
                         </div>
                     </div>
                     <div class="blogContent"><!--博客正文-->
@@ -182,4 +182,10 @@
 </s:div>
 
 </body>
+
+<script><!-- 获取本页地址 -->
+	var thisUrl = document.getElementById('thisUrl');
+	var hhref = window.location.href; // 创建一个名为hhref的变量，并赋值为当前页面地址。
+	thisUrl.innerHTML = hhref;
+</script>
 </html>
