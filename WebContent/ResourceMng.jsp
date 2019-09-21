@@ -183,7 +183,7 @@
 	                                    <div class="resourceOperate">
 	                                    	<a href="" class="">编辑</a>
 	                                       	<label class="ShuXian"></label>
-	                                        <a href="doResourcePrivate?resource.id=${mResource.id }& resource.status=已私密" class="">私密</a>
+	                                        <a href="doResourcePrivate?resource.id=${mResource.id }&resource.status=已私密" class="">私密</a>
 	                                        <label class="ShuXian"></label>
 	                                        <a class="" id="copyUrl" onclick="copyUrl('doGetResource?resource.id=${mResource.id}')">复制链接</a>
 	                                    </div>

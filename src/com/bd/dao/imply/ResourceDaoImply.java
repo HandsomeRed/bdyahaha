@@ -85,11 +85,12 @@ public class ResourceDaoImply implements ResourceDao {
     public List<ResourceEntity> getResourceList(ResourceEntity resource) {
     	
     	if(resource == null) resource = new ResourceEntity();
-
+    	
+    	resource.setStatus("已通过"); // 设置已通过的资源作为example
         Criteria li = sessionFactory.getCurrentSession()
                 .createCriteria(ResourceEntity.class)
-                .add(Example.create(resource))
-                .addOrder(Order.desc("releaseTime"));
+                .add(Example.create(resource)) // 筛选
+                .addOrder(Order.desc("releaseTime")); // 按时间排序
 
         if (resource.getResourceClassifySmall() != null) {
             li.createCriteria("resourceClassifySmall")
@@ -112,9 +113,6 @@ public class ResourceDaoImply implements ResourceDao {
             return "fail";
         }
 
-        System.out.println("---------------------------------------------------");
-        System.out.println(resource.getStatus());
-        System.out.println(update.getStatus());
 
         try {
             session.update(update);
