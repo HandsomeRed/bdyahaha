@@ -185,7 +185,7 @@
 	                                       	<label class="ShuXian"></label>
 	                                        <a href="doResourcePrivate?resource.id=${mResource.id }& resource.status=已私密" class="">私密</a>
 	                                        <label class="ShuXian"></label>
-	                                        <input class="" id="copyUrl" value="复制链接" onclick="copyUrl('doGetResource?resource.id=${mResource.id}')" readonly="readonly"/>
+	                                        <a class="" id="copyUrl" onclick="copyUrl('doGetResource?resource.id=${mResource.id}')">复制链接</a>
 	                                    </div>
 	                                </div>
 	                                
@@ -295,11 +295,14 @@ function change(t,suoyin){
 
 //复制标签
 function copyUrl(str) {  
-    var copyUrl=document.getElementById("copyUrl");
-	copyUrl.value="http://localhost:8080/Blog_Download/"+str;
-    copyUrl.select(); // 选择对象  
-    document.execCommand("Copy"); // 执行浏览器复制命令  
-	copyUrl.value="复制链接";
+	inp = document.createElement("input");
+	inp.id = "copy";
+	inp.type="text"
+	inp.value = "http://localhost:8080/Blog_Download/" + str;
+	document.body.appendChild(inp)
+	inp.select();
+	document.execCommand("Copy")
+	document.body.removeChild(inp)
     alert("已复制到剪贴板✔");  
 }
 </script>
