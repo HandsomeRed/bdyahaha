@@ -205,6 +205,12 @@
                                         <div class="from">下载资源</div>
                                         
                                     </div>
+                                    <div class="card" style="font-size: 20px; color: black;">
+                                    	<div class="score" style="color: red;">-5</div>
+                                        <div class="date">2015-06-03</div>
+                                        <div class="from">愤怒的小鸟项目源代码</div>
+                                        
+                                    </div>
                                 </li>
                             </ul>
                             <div class="clears"></div>
