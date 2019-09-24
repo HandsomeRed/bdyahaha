@@ -21,7 +21,7 @@ public class ResourceServiceImply implements ResourceService {
     public String saveResource(UserEntity user, File file, String fileFileName, ResourceEntity resource) {
 
         String path = Key_Value.fileUrl + Key_Value.enter + user.getId();
-        String fileName = new Date().getTime() + Key_Value.spile + fileFileName;
+        String fileName = new Date().getTime() + Key_Value.split + fileFileName;
         //System.out.println(file.toURI().toString());
         if (!uploadFile(file, path, fileName)) {
             return "fail";

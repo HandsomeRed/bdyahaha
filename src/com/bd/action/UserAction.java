@@ -71,6 +71,9 @@ public class UserAction extends ActionSupport implements SessionAware {
 			System.out.println("账户不可用");
 			out.print("fail");
 		}
+
+        out.flush();
+        out.close();
 		return "test";
 	}
 

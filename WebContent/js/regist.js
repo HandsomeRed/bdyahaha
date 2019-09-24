@@ -23,7 +23,8 @@ function checkUser(t){
 			upormpt.setAttribute("style","color:red;");
 		}else{
 			$.post("doCheck",{"ue.account":t.value},function(data){
-				
+
+                console.log(data.toString());
 					if(data == "success" && t.value != ""){
 						upormpt.innerHTML = "☑  该账户可用";
 						upormpt.setAttribute("style","color:green;");

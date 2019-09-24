@@ -96,6 +96,10 @@
             <result name="fail">/404.html</result>
         </action>
 
+        <!-- 异步提交博客图片 -->
+        <action name="doUploadPicture" class="wbAction" method="doUploadPicture">
+            <result name="success">404.html</result>
+        </action>
         <!--upload file-->
         <action name="uploadFile" class="uploadAction" method="uploadFile">
 			<result name="success" type="redirect">doGetMyResources</result>
