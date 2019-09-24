@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/BlogArticle.css">
+    <link rel="stylesheet" type="text/css" href="ckeditor5-build-classic/sample/css/sample.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="ckeditor5-build-classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -33,7 +36,7 @@
                     </a>
                 </div>
             </li>
-            
+
             <s:if test="#session.saveUserInformationTOSession==null">
             	<li class="writeBlog">
             		<a href="doLoginWriteBlog" title="writeBlog">
@@ -107,8 +110,8 @@
                             本文链接：<a href="" class="link" id="thisUrl"></a>
                         </div>
                     </div>
-                    <div class="blogContent"><!--博客正文-->
-                            ${ba.content}
+                    <div id="editor">
+
                     </div>
                 </div>
             </div>
@@ -182,6 +185,26 @@
 </s:div>
 
 </body>
+
+<script>
+    $(function () {
+        $("#editor").ready(function () {
+            ClassicEditor.create(document.querySelector('#editor'), {
+                toolbar: []
+            }).then(editor => {
+                editor.isReadOnly = true; //将编辑器设为只读
+                editor.setData('${ba.content}') //显示文章内容 content只是我存的一个变量 保存了要显示的文章内容 自行替换
+            }).catch(error => {
+                console.error(error);
+            }).finally(function () {
+                $(".ck-blurred").css("border", "none");
+            });
+        })
+
+        var hideborder = $(".ck-blurred .ck .ck-content .ck-editor__editable .ck-rounded-corners .ck-editor__editable_inline .ck-read-only")
+    })
+
+</script>
 
 <script><!-- 获取本页地址 -->
 	var thisUrl = document.getElementById('thisUrl');

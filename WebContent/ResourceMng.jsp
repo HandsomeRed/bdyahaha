@@ -205,6 +205,12 @@
                                         <div class="from">下载资源</div>
                                         
                                     </div>
+                                    <div class="card" style="font-size: 20px; color: black;">
+                                    	<div class="score" style="color: red;">-5</div>
+                                        <div class="date">2015-06-03</div>
+                                        <div class="from">愤怒的小鸟项目源代码</div>
+                                        
+                                    </div>
                                 </li>
                             </ul>
                             <div class="clears"></div>
@@ -247,7 +253,39 @@
                         </div>
                 	</div>
                 	<div id="collect_div" class="hide">
-                    	<div class=" list-container"></div>
+                    	<div class="item uresource">
+                        	<ul>
+                            	<li>
+                                	<div class="card" style="background:#FFF">
+                                    	<div class="img rar1">
+                                        	<a><img src="images/img_rar.png"></a>
+                                        </div>
+                                        <div class="content">
+                                        	<h3>
+                                            	<a>filter,安卓系统.zip</a>
+                                            </h3>
+                                            <p class="brief">Android 热修复框架 （基于类加载机制的代码修复）支持 Android 5.0 以上设备运行时修复，应用无需重启版本更新时要注意 dex 修复包的清理1.如何接入Project 层级下的 build.gradle 文件Module 层级下的 build.gradle 文件2.类及其方法介绍Fe</p>
+                                            <div class="flec-box state-box">
+                                            	<p class="tags"><a>开源项目</a></p>
+                                            </div>
+                                            <div class="date">
+                                            	<label>上传时间：</label>
+                                                2018-09-24
+                                            </div>
+                                            <div class="score">
+                                            	<label>所需积分：</label>5
+                                            </div>
+                                            <div class="flag">
+                                            	<a>取消收藏</a>
+                                            </div>
+                                        </div>
+                                        <div class="content" style="margin-left:42px; display:none;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="clears"></div>
+                        	<div class="page_nav"></div>
+                        </div>
                     </div>
                 </div>
             </div>

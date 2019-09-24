@@ -162,6 +162,7 @@
 </script>
 <style>
     .ck-editor__editable {
+        /*max-width: 300px;*/
         min-height: 600px;
         max-height: 600px;
     }
